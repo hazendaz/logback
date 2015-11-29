@@ -152,9 +152,9 @@
           <scope>test</scope>
         </dependency>
         <dependency>
-          <groupId>postgresql</groupId>
+          <groupId>org.postgresql</groupId>
           <artifactId>postgresql</artifactId>
-          <version>8.2-507.jdbc3</version>
+          <version>9.4.1212.jre6</version>
         </dependency>
         <!-- locally installed artifact -->
         <dependency>
