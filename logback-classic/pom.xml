@@ -16,6 +16,20 @@
   <name>Logback Classic Module</name>
   <description>logback-classic module</description>
 
+  <repositories>
+    <repository>
+      <!-- Required for ojdbc -->
+      <snapshots>
+        <enabled>false</enabled>
+        <updatePolicy>never</updatePolicy>
+      </snapshots>
+      <id>code.lds.org</id>
+      <name>code.lds.org</name>
+      <url>https://code.lds.org/nexus/content/repositories/main-repo/</url>
+      <layout>default</layout>
+    </repository>
+  </repositories>
+  
   <dependencies>
     <dependency>
       <groupId>ch.qos.logback</groupId>
@@ -416,8 +430,8 @@
         <!-- locally installed artifact -->
         <dependency>
           <groupId>com.oracle</groupId>
-          <artifactId>ojdbc14</artifactId>
-          <version>10.2.0.1</version>
+          <artifactId>ojdbc6</artifactId>
+          <version>11.2.0.2.0</version>
           <scope>test</scope>
         </dependency>
       </dependencies>
