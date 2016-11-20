@@ -10,7 +10,7 @@
 		When running this build file through Ant directly, you must
 		define the currentVersion property on the command line, e.g.:
 		
-		ant  -DcurrentVersion=1.5.4-SNAPSHOT	
+		ant  -DcurrentVersion=1.7.22-SNAPSHOT	
 
     See test results in target/unit-reports 
 	-->
@@ -19,8 +19,8 @@
        to true. See also http://jira.qos.ch/browse/LBCLASSIC-191 -->
 
 <!--
-  <property name="slf4j.version" value="1.7.20"/>
-  <property name="org.slf4j:slf4j-api:jar" value="c:/Users/ceki/.m2/repository/org/slf4j/slf4j-api/1.7.20/slf4j-api-1.7.20.jar"/>
+  <property name="slf4j.version" value="1.7.21"/>
+  <property name="org.slf4j:slf4j-api:jar" value="c:/Users/ceki/.m2/repository/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.jar"/>
 
   <property name="org.apache.felix:org.apache.felix.main:jar" value="c:/Users/ceki/.m2/repository/org/apache/felix/org.apache.felix.main/5.6.1/org.apache.felix.main-5.6.1.jar" />
 -->

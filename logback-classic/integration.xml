@@ -7,7 +7,7 @@
 		When running this build file through Ant directly, you must
 		define the slf4jVersion property on the command line, e.g.:
 		
-		ant  -Dslf4jVersion=1.5.4-SNAPSHOT	
+		ant  -Dslf4jVersion=1.7.22-SNAPSHOT	
 	-->
 	
 	<echo message="slf4j.version:  ${slf4j.version}" />
