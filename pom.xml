@@ -51,7 +51,7 @@
     <maven.compiler.target>1.7</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>4.12</junit.version>
-    <javax.mail.version>1.4</javax.mail.version>
+    <javax.mail.version>1.4.1</javax.mail.version>
     <janino.version>3.0.6</janino.version>
     <groovy.version>2.4.8</groovy.version>
     <!-- slf4j.version property is used below, in
