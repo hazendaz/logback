@@ -33,8 +33,8 @@ import ch.qos.logback.core.spi.FilterReply;
  */
 public class AccessContext extends ContextBase implements AppenderAttachable<IAccessEvent>, FilterAttachable<IAccessEvent> {
 
-    AppenderAttachableImpl<IAccessEvent> aai = new AppenderAttachableImpl<IAccessEvent>();
-    FilterAttachableImpl<IAccessEvent> fai = new FilterAttachableImpl<IAccessEvent>();
+    AppenderAttachableImpl<IAccessEvent> aai = new AppenderAttachableImpl<>();
+    FilterAttachableImpl<IAccessEvent> fai = new FilterAttachableImpl<>();
 
     public void callAppenders(IAccessEvent event) {
         aai.appendLoopOnAppenders(event);

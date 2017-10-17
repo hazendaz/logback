@@ -53,7 +53,7 @@ public class TomcatServerAdapter implements ServerAdapter {
 
     @Override
     public Map<String, String> buildResponseHeaderMap() {
-        Map<String, String> responseHeaderMap = new HashMap<String, String>();
+        Map<String, String> responseHeaderMap = new HashMap<>();
         for (String key : response.getHeaderNames()) {
             String value = response.getHeader(key);
             responseHeaderMap.put(key, value);

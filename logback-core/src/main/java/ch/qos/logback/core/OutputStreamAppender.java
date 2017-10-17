@@ -87,7 +87,7 @@ public class OutputStreamAppender<E> extends UnsynchronizedAppenderBase<E> {
         addWarn("This appender no longer admits a layout as a sub-component, set an encoder instead.");
         addWarn("To ensure compatibility, wrapping your layout in LayoutWrappingEncoder.");
         addWarn("See also " + CODES_URL + "#layoutInsteadOfEncoder for details");
-        LayoutWrappingEncoder<E> lwe = new LayoutWrappingEncoder<E>();
+        LayoutWrappingEncoder<E> lwe = new LayoutWrappingEncoder<>();
         lwe.setLayout(layout);
         lwe.setContext(context);
         this.encoder = lwe;

@@ -36,7 +36,7 @@ public class CollisionDetectionTest {
 
     
     FileAppender<String> buildFileAppender(String name, String filenameSuffix) {
-        FileAppender<String> fileAppender = new FileAppender<String>();
+        FileAppender<String> fileAppender = new FileAppender<>();
         fileAppender.setName(name);
         fileAppender.setContext(context);
         fileAppender.setFile(randomOutputDir+filenameSuffix);
@@ -45,13 +45,13 @@ public class CollisionDetectionTest {
     }
     
     RollingFileAppender<String> buildRollingFileAppender(String name, String filenameSuffix, String patternSuffix) {
-        RollingFileAppender<String> rollingFileAppender = new RollingFileAppender<String>();
+        RollingFileAppender<String> rollingFileAppender = new RollingFileAppender<>();
         rollingFileAppender.setName(name);
         rollingFileAppender.setContext(context);
         rollingFileAppender.setFile(randomOutputDir+filenameSuffix);
         rollingFileAppender.setEncoder(new NopEncoder<String>());
         
-        TimeBasedRollingPolicy<String> tbrp = new TimeBasedRollingPolicy<String>();
+        TimeBasedRollingPolicy<String> tbrp = new TimeBasedRollingPolicy<>();
         tbrp.setContext(context);
         tbrp.setFileNamePattern(randomOutputDir+patternSuffix);
         tbrp.setParent(rollingFileAppender);

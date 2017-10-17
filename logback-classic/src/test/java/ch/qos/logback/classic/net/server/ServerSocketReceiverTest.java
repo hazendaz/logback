@@ -42,9 +42,9 @@ public class ServerSocketReceiverTest {
 
     private MockContext context = new MockContext();
 
-    private MockServerRunner<RemoteAppenderClient> runner = new MockServerRunner<RemoteAppenderClient>();
+    private MockServerRunner<RemoteAppenderClient> runner = new MockServerRunner<>();
 
-    private MockServerListener<RemoteAppenderClient> listener = new MockServerListener<RemoteAppenderClient>();
+    private MockServerListener<RemoteAppenderClient> listener = new MockServerListener<>();
 
     private ServerSocket serverSocket;
     private InstrumentedServerSocketReceiver receiver;

@@ -54,7 +54,7 @@ public class IfThenElseAndIncludeCompositionTest {
 
     @Before
     public void setUp() throws Exception {
-        HashMap<ElementSelector, Action> rulesMap = new HashMap<ElementSelector, Action>();
+        HashMap<ElementSelector, Action> rulesMap = new HashMap<>();
         rulesMap.put(new ElementSelector("x"), new NOPAction());
         rulesMap.put(new ElementSelector("x/stack"), stackAction);
         rulesMap.put(new ElementSelector("*/if"), new IfAction());
@@ -84,7 +84,7 @@ public class IfThenElseAndIncludeCompositionTest {
     }
 
     void verifyConfig(String[] expected) {
-        Stack<String> witness = new Stack<String>();
+        Stack<String> witness = new Stack<>();
         witness.addAll(Arrays.asList(expected));
         assertEquals(witness, stackAction.getStack());
     }

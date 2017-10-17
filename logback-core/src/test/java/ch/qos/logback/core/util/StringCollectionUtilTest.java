@@ -73,7 +73,7 @@ public class StringCollectionUtilTest {
 
     @SuppressWarnings("unchecked")
     private List<String> stringToList(String... values) {
-        List<String> result = new ArrayList<String>(values.length);
+        List<String> result = new ArrayList<>(values.length);
         result.addAll(Arrays.asList(values));
         return result;
     }

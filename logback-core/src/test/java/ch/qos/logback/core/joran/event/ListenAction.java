@@ -24,7 +24,7 @@ import ch.qos.logback.core.joran.spi.InterpretationContext;
 
 public class ListenAction extends Action implements InPlayListener {
 
-    List<SaxEvent> seList = new ArrayList<SaxEvent>();
+    List<SaxEvent> seList = new ArrayList<>();
 
     @Override
     public void begin(InterpretationContext ec, String name, Attributes attributes) throws ActionException {

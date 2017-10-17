@@ -82,11 +82,11 @@ public class OutputStreamAppenderTest {
     }
 
     public void headerFooterCheck(String fileHeader, String presentationHeader, String presentationFooter, String fileFooter) {
-        OutputStreamAppender<Object> wa = new OutputStreamAppender<Object>();
+        OutputStreamAppender<Object> wa = new OutputStreamAppender<>();
         wa.setContext(context);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
-        SamplePatternLayout<Object> spl = new SamplePatternLayout<Object>();
+        SamplePatternLayout<Object> spl = new SamplePatternLayout<>();
         spl.setContext(context);
 
         spl.setFileHeader(fileHeader);
@@ -95,7 +95,7 @@ public class OutputStreamAppenderTest {
         spl.setFileFooter(fileFooter);
 
         spl.start();
-        LayoutWrappingEncoder<Object> encoder = new LayoutWrappingEncoder<Object>();
+        LayoutWrappingEncoder<Object> encoder = new LayoutWrappingEncoder<>();
         encoder.setLayout(spl);
         encoder.setContext(context);
 

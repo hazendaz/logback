@@ -55,7 +55,7 @@ public class StringCollectionUtil {
     public static void retainMatching(Collection<String> values, Collection<String> patterns) {
         if (patterns.isEmpty())
             return;
-        List<String> matches = new ArrayList<String>(values.size());
+        List<String> matches = new ArrayList<>(values.size());
         for (String p : patterns) {
             Pattern pattern = Pattern.compile(p);
             for (String value : values) {
@@ -94,7 +94,7 @@ public class StringCollectionUtil {
      * @param patterns patterns to match
      */
     public static void removeMatching(Collection<String> values, Collection<String> patterns) {
-        List<String> matches = new ArrayList<String>(values.size());
+        List<String> matches = new ArrayList<>(values.size());
         for (String p : patterns) {
             Pattern pattern = Pattern.compile(p);
             for (String value : values) {

@@ -24,7 +24,7 @@ import java.util.Map;
  */
 public class DefaultNestedComponentRegistry {
 
-    Map<HostClassAndPropertyDouble, Class<?>> defaultComponentMap = new HashMap<HostClassAndPropertyDouble, Class<?>>();
+    Map<HostClassAndPropertyDouble, Class<?>> defaultComponentMap = new HashMap<>();
 
     public void add(Class<?> hostClass, String propertyName, Class<?> componentClass) {
         HostClassAndPropertyDouble hpDouble = new HostClassAndPropertyDouble(hostClass, propertyName.toLowerCase());

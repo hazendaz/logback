@@ -24,7 +24,7 @@ import static junit.framework.Assert.assertNotNull;
  */
 public class CyclicBufferTrackerTest {
 
-    CyclicBufferTracker<Object> tracker = new CyclicBufferTracker<Object>();
+    CyclicBufferTracker<Object> tracker = new CyclicBufferTracker<>();
     String key = "a";
 
     @Test

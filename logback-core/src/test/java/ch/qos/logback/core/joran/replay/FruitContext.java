@@ -20,7 +20,7 @@ import ch.qos.logback.core.ContextBase;
 
 public class FruitContext extends ContextBase {
 
-    List<FruitShell> fruitShellList = new ArrayList<FruitShell>();
+    List<FruitShell> fruitShellList = new ArrayList<>();
 
     public void addFruitShell(FruitShell fs) {
         fruitShellList.add(fs);

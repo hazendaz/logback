@@ -70,7 +70,7 @@ public abstract class SMTPAppenderBase<E> extends AppenderBase<E> {
     protected Layout<E> subjectLayout;
     protected Layout<E> layout;
 
-    private List<PatternLayoutBase<E>> toPatternLayoutList = new ArrayList<PatternLayoutBase<E>>();
+    private List<PatternLayoutBase<E>> toPatternLayoutList = new ArrayList<>();
     private String from;
     private String subjectStr = null;
     private String smtpHost;
@@ -92,7 +92,7 @@ public abstract class SMTPAppenderBase<E> extends AppenderBase<E> {
 
     protected EventEvaluator<E> eventEvaluator;
 
-    protected Discriminator<E> discriminator = new DefaultDiscriminator<E>();
+    protected Discriminator<E> discriminator = new DefaultDiscriminator<>();
     protected CyclicBufferTracker<E> cbTracker;
 
     private int errorCount = 0;
@@ -113,7 +113,7 @@ public abstract class SMTPAppenderBase<E> extends AppenderBase<E> {
     public void start() {
 
         if (cbTracker == null) {
-            cbTracker = new CyclicBufferTracker<E>();
+            cbTracker = new CyclicBufferTracker<>();
         }
 
         if (sessionViaJNDI)
@@ -199,14 +199,14 @@ public abstract class SMTPAppenderBase<E> extends AppenderBase<E> {
         try {
             if (eventEvaluator.evaluate(eventObject)) {
                 // clone the CyclicBuffer before sending out asynchronously
-                CyclicBuffer<E> cbClone = new CyclicBuffer<E>(cb);
+                CyclicBuffer<E> cbClone = new CyclicBuffer<>(cb);
                 // see http://jira.qos.ch/browse/LBCLASSIC-221
                 cb.clear();
 
                 if (asynchronousSending) {
                     // perform actual sending asynchronously
                     SenderRunnable senderRunnable = new SenderRunnable(cbClone, eventObject);
-                    context.getExecutorService().execute(senderRunnable);
+                    context.getScheduledExecutorService().execute(senderRunnable);
                 } else {
                     // synchronous sending
                     sendBuffer(cbClone, eventObject);
@@ -282,7 +282,7 @@ public abstract class SMTPAppenderBase<E> extends AppenderBase<E> {
     private List<InternetAddress> parseAddress(E event) {
         int len = toPatternLayoutList.size();
 
-        List<InternetAddress> iaList = new ArrayList<InternetAddress>();
+        List<InternetAddress> iaList = new ArrayList<>();
 
         for (int i = 0; i < len; i++) {
             try {
@@ -543,7 +543,7 @@ public abstract class SMTPAppenderBase<E> extends AppenderBase<E> {
         if (to == null || to.length() == 0) {
             throw new IllegalArgumentException("Null or empty <to> property");
         }
-        PatternLayoutBase plb = makeNewToPatternLayout(to.trim());
+        PatternLayoutBase<E> plb = makeNewToPatternLayout(to.trim());
         plb.setContext(context);
         plb.start();
         this.toPatternLayoutList.add(plb);
@@ -552,8 +552,8 @@ public abstract class SMTPAppenderBase<E> extends AppenderBase<E> {
     abstract protected PatternLayoutBase<E> makeNewToPatternLayout(String toPattern);
 
     public List<String> getToAsListOfString() {
-        List<String> toList = new ArrayList<String>();
-        for (PatternLayoutBase plb : toPatternLayoutList) {
+        List<String> toList = new ArrayList<>();
+        for (PatternLayoutBase<?> plb : toPatternLayoutList) {
             toList.add(plb.getPattern());
         }
         return toList;

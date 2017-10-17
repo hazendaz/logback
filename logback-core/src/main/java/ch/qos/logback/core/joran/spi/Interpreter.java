@@ -65,7 +65,7 @@ import ch.qos.logback.core.spi.ContextAwareImpl;
  * 
  */
 public class Interpreter {
-    private static List<Action> EMPTY_LIST = new Vector<Action>(0);
+    private static List<Action> EMPTY_LIST = new Vector<>(0);
 
     final private RuleStore ruleStore;
     final private InterpretationContext interpretationContext;
@@ -95,9 +95,9 @@ public class Interpreter {
         this.cai = new CAI_WithLocatorSupport(context, this);
         ruleStore = rs;
         interpretationContext = new InterpretationContext(context, this);
-        implicitActions = new ArrayList<ImplicitAction>(3);
+        implicitActions = new ArrayList<>(3);
         this.elementPath = initialElementPath;
-        actionListStack = new Stack<List<Action>>();
+        actionListStack = new Stack<>();
         eventPlayer = new EventPlayer(this);
     }
 
@@ -231,7 +231,7 @@ public class Interpreter {
             ImplicitAction ia = (ImplicitAction) implicitActions.get(i);
 
             if (ia.isApplicable(elementPath, attributes, ec)) {
-                List<Action> actionList = new ArrayList<Action>(1);
+                List<Action> actionList = new ArrayList<>(1);
                 actionList.add(ia);
 
                 return actionList;

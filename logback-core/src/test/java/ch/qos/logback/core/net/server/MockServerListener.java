@@ -30,7 +30,7 @@ import ch.qos.logback.core.net.server.ServerListener;
  */
 public class MockServerListener<T extends Client> implements ServerListener<T> {
 
-    private final BlockingQueue<T> queue = new LinkedBlockingQueue<T>();
+    private final BlockingQueue<T> queue = new LinkedBlockingQueue<>();
 
     private boolean closed;
     private Thread waiter;

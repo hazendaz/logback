@@ -62,7 +62,7 @@ public class LoggingEventSerializationPerfTest {
     public void tearDown() throws Exception {
     }
 
-    double doLoop(Builder builder, int loopLen) {
+    double doLoop(Builder<?> builder, int loopLen) {
         long start = System.nanoTime();
         int resetCounter = 0;
         for (int i = 0; i < loopLen; i++) {

@@ -89,7 +89,7 @@ public class IncludeActionTest {
     @Before
     public void setUp() throws Exception {
         FileTestUtil.makeTestOutputDir();
-        HashMap<ElementSelector, Action> rulesMap = new HashMap<ElementSelector, Action>();
+        HashMap<ElementSelector, Action> rulesMap = new HashMap<>();
         rulesMap.put(new ElementSelector("x"), new NOPAction());
         rulesMap.put(new ElementSelector("x/include"), new IncludeAction());
         rulesMap.put(new ElementSelector("x/stack"), stackAction);
@@ -201,7 +201,7 @@ public class IncludeActionTest {
         System.setProperty(SUB_FILE_KEY, SUB_FILE);
         System.setProperty(INCLUDE_KEY, INTERMEDIARY_FILE);
         tc.doConfigure(TOP_BY_FILE);
-        Stack<String> witness = new Stack<String>();
+        Stack<String> witness = new Stack<>();
         witness.push("a");
         witness.push("b");
         witness.push("c");
@@ -223,7 +223,7 @@ public class IncludeActionTest {
     }
     
     void verifyConfig(String[] expected) {
-        Stack<String> witness = new Stack<String>();
+        Stack<String> witness = new Stack<>();
         witness.addAll(Arrays.asList(expected));
         assertEquals(witness, stackAction.getStack());
     }

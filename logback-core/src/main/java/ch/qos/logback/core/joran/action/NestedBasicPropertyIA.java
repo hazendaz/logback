@@ -39,7 +39,7 @@ public class NestedBasicPropertyIA extends ImplicitAction {
     // action is applicable) and pop it in the end() method.
     // The XML well-formedness property will guarantee that a push will eventually
     // be followed by the corresponding pop.
-    Stack<IADataForBasicProperty> actionDataStack = new Stack<IADataForBasicProperty>();
+    Stack<IADataForBasicProperty> actionDataStack = new Stack<>();
 
     private final BeanDescriptionCache beanDescriptionCache;
 

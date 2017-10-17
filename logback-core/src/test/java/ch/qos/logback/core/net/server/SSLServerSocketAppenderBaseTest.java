@@ -31,7 +31,7 @@ public class SSLServerSocketAppenderBaseTest {
 
     private MockContext context = new MockContext(ExecutorServiceUtil.newScheduledExecutorService());
 
-    private SSLServerSocketAppenderBase appender = new InstrumentedSSLServerSocketAppenderBase();
+    private SSLServerSocketAppenderBase<?> appender = new InstrumentedSSLServerSocketAppenderBase();
 
     @Before
     public void setUp() throws Exception {

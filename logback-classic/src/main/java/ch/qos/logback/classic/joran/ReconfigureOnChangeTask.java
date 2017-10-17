@@ -30,7 +30,7 @@ public class ReconfigureOnChangeTask extends ContextAwareBase implements Runnabl
     
     void addListener(ReconfigureOnChangeTaskListener listener) {
         if(listeners==null)
-            listeners = new ArrayList<ReconfigureOnChangeTaskListener>();
+            listeners = new ArrayList<>();
         listeners.add(listener);
     }
     
@@ -121,7 +121,7 @@ public class ReconfigureOnChangeTask extends ContextAwareBase implements Runnabl
     }
 
     private List<SaxEvent> removeIncludeEvents(List<SaxEvent> unsanitizedEventList) {
-        List<SaxEvent> sanitizedEvents = new ArrayList<SaxEvent>();
+        List<SaxEvent> sanitizedEvents = new ArrayList<>();
         if (unsanitizedEventList == null)
             return sanitizedEvents;
 

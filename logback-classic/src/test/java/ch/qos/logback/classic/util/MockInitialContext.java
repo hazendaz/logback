@@ -21,7 +21,7 @@ import javax.naming.NamingException;
 
 public class MockInitialContext extends InitialContext {
 
-    public Map<String, Object> map = new HashMap<String, Object>();
+    public Map<String, Object> map = new HashMap<>();
 
     public MockInitialContext() throws NamingException {
         super();

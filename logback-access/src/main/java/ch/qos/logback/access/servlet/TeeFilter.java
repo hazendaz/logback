@@ -85,7 +85,7 @@ public class TeeFilter implements Filter {
     }
 
     static List<String> extractNameList(String nameListAsStr) {
-        List<String> nameList = new ArrayList<String>();
+        List<String> nameList = new ArrayList<>();
         if (nameListAsStr == null) {
             return nameList;
         }

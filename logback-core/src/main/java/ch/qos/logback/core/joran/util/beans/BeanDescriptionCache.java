@@ -19,7 +19,7 @@ import ch.qos.logback.core.spi.ContextAwareBase;
  */
 public class BeanDescriptionCache extends ContextAwareBase {
 
-    private Map<Class<?>, BeanDescription> classToBeanDescription = new HashMap<Class<?>, BeanDescription>();
+    private Map<Class<?>, BeanDescription> classToBeanDescription = new HashMap<>();
     private BeanDescriptionFactory beanDescriptionFactory;
 
     public BeanDescriptionCache(Context context) {

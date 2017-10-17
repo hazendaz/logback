@@ -56,7 +56,7 @@ public class OptionTokenizer {
 
     void tokenize(char firstChar, List<Token> tokenList) throws ScanException {
         StringBuffer buf = new StringBuffer();
-        List<String> optionList = new ArrayList<String>();
+        List<String> optionList = new ArrayList<>();
         char c = firstChar;
 
         while (tokenStream.pointer < patternLength) {

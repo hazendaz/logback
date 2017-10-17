@@ -34,7 +34,7 @@ public class Calculator1 {
     public static void main(String[] args) throws Exception {
         Context context = new ContextBase();
 
-        Map<ElementSelector, Action> ruleMap = new HashMap<ElementSelector, Action>();
+        Map<ElementSelector, Action> ruleMap = new HashMap<>();
 
         // Associate "/computation" pattern with ComputationAction1
         ruleMap.put(new ElementSelector("/computation"), new ComputationAction1());

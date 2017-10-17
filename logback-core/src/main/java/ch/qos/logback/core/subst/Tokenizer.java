@@ -37,7 +37,7 @@ public class Tokenizer {
     int pointer = 0;
 
     List<Token> tokenize() throws ScanException {
-        List<Token> tokenList = new ArrayList<Token>();
+        List<Token> tokenList = new ArrayList<>();
         StringBuilder buf = new StringBuilder();
 
         while (pointer < patternLength) {

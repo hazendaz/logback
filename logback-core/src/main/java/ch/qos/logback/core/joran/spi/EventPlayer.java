@@ -37,7 +37,7 @@ public class EventPlayer {
      * @since 0.9.20
      */
     public List<SaxEvent> getCopyOfPlayerEventList() {
-        return new ArrayList<SaxEvent>(eventList);
+        return new ArrayList<>(eventList);
     }
 
     public void play(List<SaxEvent> aSaxEventList) {

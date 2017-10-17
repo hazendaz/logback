@@ -44,14 +44,14 @@ import ch.qos.logback.core.spi.ScanException;
 public class Parser<E> extends ContextAwareBase {
 
     public final static String MISSING_RIGHT_PARENTHESIS = CoreConstants.CODES_URL + "#missingRightParenthesis";
-    public final static Map<String, String> DEFAULT_COMPOSITE_CONVERTER_MAP = new HashMap<String, String>();
+    public final static Map<String, String> DEFAULT_COMPOSITE_CONVERTER_MAP = new HashMap<>();
     public final static String REPLACE_CONVERTER_WORD = "replace";
     static {
         DEFAULT_COMPOSITE_CONVERTER_MAP.put(Token.BARE_COMPOSITE_KEYWORD_TOKEN.getValue().toString(), IdentityCompositeConverter.class.getName());
         DEFAULT_COMPOSITE_CONVERTER_MAP.put(REPLACE_CONVERTER_WORD, ReplacingCompositeConverter.class.getName());
     }
 
-    final List tokenList;
+    final List<?> tokenList;
     int pointer = 0;
 
     Parser(TokenStream ts) throws ScanException {
@@ -80,8 +80,8 @@ public class Parser<E> extends ContextAwareBase {
      * @return
      * @throws ScanException
      */
-    public Converter<E> compile(final Node top, Map converterMap) {
-        Compiler<E> compiler = new Compiler<E>(top, converterMap);
+    public Converter<E> compile(final Node top, Map<?, ?> converterMap) {
+        Compiler<E> compiler = new Compiler<>(top, converterMap);
         compiler.setContext(context);
         // compiler.setStatusManager(statusManager);
         return compiler.compile();

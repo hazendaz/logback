@@ -140,7 +140,7 @@ public class JaninoEventEvaluatorTest {
 
     @Test
     public void evaluatorFilterWithNullMarker_LBCORE_118() throws Exception {
-        EvaluatorFilter<ILoggingEvent> ef = new EvaluatorFilter<ILoggingEvent>();
+        EvaluatorFilter<ILoggingEvent> ef = new EvaluatorFilter<>();
         ef.setContext(loggerContext);
 
         ef.setOnMatch(FilterReply.ACCEPT);

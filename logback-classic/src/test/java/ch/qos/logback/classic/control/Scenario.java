@@ -19,14 +19,14 @@ import java.util.Vector;
 
 public class Scenario {
 
-    private List<ScenarioAction> actionList = new Vector<ScenarioAction>();
+    private List<ScenarioAction> actionList = new Vector<>();
 
     public void add(ScenarioAction action) {
         actionList.add(action);
     }
 
     public List<ScenarioAction> getActionList() {
-        return new ArrayList<ScenarioAction>(actionList);
+        return new ArrayList<>(actionList);
     }
 
     public int size() {

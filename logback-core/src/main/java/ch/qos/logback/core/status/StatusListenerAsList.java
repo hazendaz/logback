@@ -24,7 +24,7 @@ import java.util.List;
  */
 public class StatusListenerAsList implements StatusListener {
 
-    List<Status> statusList = new ArrayList<Status>();
+    List<Status> statusList = new ArrayList<>();
 
     public void addStatusEvent(Status status) {
         statusList.add(status);

@@ -18,7 +18,7 @@ import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.spi.LoggingEvent;
 
-public class TrivialLoggingEventBuilder implements Builder {
+public class TrivialLoggingEventBuilder implements Builder<Object> {
 
     LoggerContext loggerContext = new LoggerContext();
 

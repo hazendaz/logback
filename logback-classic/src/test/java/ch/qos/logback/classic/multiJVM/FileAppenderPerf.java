@@ -31,7 +31,7 @@ public class FileAppenderPerf {
     static LoggerContext buildLoggerContext(String filename, boolean safetyMode) {
         LoggerContext loggerContext = new LoggerContext();
 
-        FileAppender<ILoggingEvent> fa = new FileAppender<ILoggingEvent>();
+        FileAppender<ILoggingEvent> fa = new FileAppender<>();
 
         PatternLayoutEncoder patternLayout = new PatternLayoutEncoder();
         patternLayout.setPattern("%5p %c - %m%n");

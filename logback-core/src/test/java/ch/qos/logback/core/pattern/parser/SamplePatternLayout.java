@@ -22,7 +22,7 @@ import ch.qos.logback.core.pattern.PatternLayoutBase;
 
 public class SamplePatternLayout<E> extends PatternLayoutBase<E> {
 
-    Map<String, String> converterMap = new HashMap<String, String>();
+    Map<String, String> converterMap = new HashMap<>();
 
     public SamplePatternLayout() {
         converterMap.put("OTT", Converter123.class.getName());

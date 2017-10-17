@@ -32,7 +32,7 @@ abstract public class PatternLayoutBase<E> extends LayoutBase<E> {
     String pattern;
     protected PostCompileProcessor<E> postCompileProcessor;
     
-    Map<String, String> instanceConverterMap = new HashMap<String, String>();
+    Map<String, String> instanceConverterMap = new HashMap<>();
     protected boolean outputPatternAsHeader = false;
     
     /**
@@ -48,7 +48,7 @@ abstract public class PatternLayoutBase<E> extends LayoutBase<E> {
      * contained in the context.
      */
     public Map<String, String> getEffectiveConverterMap() {
-        Map<String, String> effectiveMap = new HashMap<String, String>();
+        Map<String, String> effectiveMap = new HashMap<>();
 
         // add the least specific map fist
         Map<String, String> defaultMap = getDefaultConverterMap();
@@ -76,7 +76,7 @@ abstract public class PatternLayoutBase<E> extends LayoutBase<E> {
             return;
         }
         try {
-            Parser<E> p = new Parser<E>(pattern);
+            Parser<E> p = new Parser<>(pattern);
             if (getContext() != null) {
                 p.setContext(getContext());
             }

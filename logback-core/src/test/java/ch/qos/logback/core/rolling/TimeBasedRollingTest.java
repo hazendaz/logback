@@ -55,13 +55,13 @@ public class TimeBasedRollingTest extends ScaffoldingForRollingTests {
     static final boolean FILE_OPTION_SET = true;
     static final boolean FILE_OPTION_BLANK = false;
 
-    RollingFileAppender<Object> rfa1 = new RollingFileAppender<Object>();
-    TimeBasedRollingPolicy<Object> tbrp1 = new TimeBasedRollingPolicy<Object>();
+    RollingFileAppender<Object> rfa1 = new RollingFileAppender<>();
+    TimeBasedRollingPolicy<Object> tbrp1 = new TimeBasedRollingPolicy<>();
 
-    RollingFileAppender<Object> rfa2 = new RollingFileAppender<Object>();
-    TimeBasedRollingPolicy<Object> tbrp2 = new TimeBasedRollingPolicy<Object>();
+    RollingFileAppender<Object> rfa2 = new RollingFileAppender<>();
+    TimeBasedRollingPolicy<Object> tbrp2 = new TimeBasedRollingPolicy<>();
 
-    EchoEncoder<Object> encoder = new EchoEncoder<Object>();
+    EchoEncoder<Object> encoder = new EchoEncoder<>();
 
     RolloverChecker rolloverChecker;
 
@@ -87,7 +87,7 @@ public class TimeBasedRollingTest extends ScaffoldingForRollingTests {
         tbrp.setContext(context);
         tbrp.setFileNamePattern(filenamePattern);
         tbrp.setParent(rfa);
-        tbrp.timeBasedFileNamingAndTriggeringPolicy = new DefaultTimeBasedFileNamingAndTriggeringPolicy<Object>();
+        tbrp.timeBasedFileNamingAndTriggeringPolicy = new DefaultTimeBasedFileNamingAndTriggeringPolicy<>();
         tbrp.timeBasedFileNamingAndTriggeringPolicy.setCurrentTime(givenTime);
         rfa.setRollingPolicy(tbrp);
         tbrp.start();

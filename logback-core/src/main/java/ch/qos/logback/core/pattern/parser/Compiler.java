@@ -28,9 +28,9 @@ class Compiler<E> extends ContextAwareBase {
     Converter<E> head;
     Converter<E> tail;
     final Node top;
-    final Map converterMap;
+    final Map<?, ?> converterMap;
 
-    Compiler(final Node top, final Map converterMap) {
+    Compiler(final Node top, final Map<?, ?> converterMap) {
         this.top = top;
         this.converterMap = converterMap;
     }
@@ -52,7 +52,7 @@ class Compiler<E> extends ContextAwareBase {
                 }
                 compositeConverter.setFormattingInfo(cn.getFormatInfo());
                 compositeConverter.setOptionList(cn.getOptions());
-                Compiler<E> childCompiler = new Compiler<E>(cn.getChildNode(), converterMap);
+                Compiler<E> childCompiler = new Compiler<>(cn.getChildNode(), converterMap);
                 childCompiler.setContext(context);
                 Converter<E> childConverter = childCompiler.compile();
                 compositeConverter.setChildConverter(childConverter);
@@ -68,7 +68,7 @@ class Compiler<E> extends ContextAwareBase {
                 } else {
                     // if the appropriate dynaconverter cannot be found, then replace
                     // it with a dummy LiteralConverter indicating an error.
-                    Converter<E> errConveter = new LiteralConverter<E>("%PARSER_ERROR[" + kn.getValue() + "]");
+                    Converter<E> errConveter = new LiteralConverter<>("%PARSER_ERROR[" + kn.getValue() + "]");
                     addStatus(new ErrorStatus("[" + kn.getValue() + "] is not a valid conversion word", this));
                     addToList(errConveter);
                 }
@@ -101,7 +101,7 @@ class Compiler<E> extends ContextAwareBase {
 
         if (converterClassStr != null) {
             try {
-                return (DynamicConverter) OptionHelper.instantiateByClassName(converterClassStr, DynamicConverter.class, context);
+                return (DynamicConverter<E>) OptionHelper.instantiateByClassName(converterClassStr, DynamicConverter.class, context);
             } catch (Exception e) {
                 addError("Failed to instantiate converter class [" + converterClassStr + "] for keyword [" + keyword + "]", e);
                 return null;
@@ -126,7 +126,7 @@ class Compiler<E> extends ContextAwareBase {
 
         if (converterClassStr != null) {
             try {
-                return (CompositeConverter) OptionHelper.instantiateByClassName(converterClassStr, CompositeConverter.class, context);
+                return (CompositeConverter<E>) OptionHelper.instantiateByClassName(converterClassStr, CompositeConverter.class, context);
             } catch (Exception e) {
                 addError("Failed to instantiate converter class [" + converterClassStr + "] as a composite converter for keyword [" + keyword + "]", e);
                 return null;

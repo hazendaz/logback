@@ -26,10 +26,10 @@ import ch.qos.logback.core.util.StatusPrinter;
 
 public class SizeBasedRollingTest extends ScaffoldingForRollingTests {
 
-    RollingFileAppender<Object> rfa = new RollingFileAppender<Object>();
+    RollingFileAppender<Object> rfa = new RollingFileAppender<>();
     FixedWindowRollingPolicy fwrp = new FixedWindowRollingPolicy();
-    SizeBasedTriggeringPolicy<Object> sizeBasedTriggeringPolicy = new SizeBasedTriggeringPolicy<Object>();
-    EchoEncoder<Object> encoder = new EchoEncoder<Object>();
+    SizeBasedTriggeringPolicy<Object> sizeBasedTriggeringPolicy = new SizeBasedTriggeringPolicy<>();
+    EchoEncoder<Object> encoder = new EchoEncoder<>();
 
     @Before
     public void setUp() {

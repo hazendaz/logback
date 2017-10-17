@@ -45,7 +45,7 @@ public class SaxEventRecorder extends DefaultHandler implements ContextAware {
         cai = new ContextAwareImpl(context, this);
     }
 
-    public List<SaxEvent> saxEventList = new ArrayList<SaxEvent>();
+    public List<SaxEvent> saxEventList = new ArrayList<>();
     Locator locator;
     ElementPath globalElementPath = new ElementPath();
 

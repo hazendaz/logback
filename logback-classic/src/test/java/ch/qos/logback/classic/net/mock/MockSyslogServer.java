@@ -27,7 +27,7 @@ public class MockSyslogServer extends Thread {
     final int loopLen;
     final int port;
 
-    List<byte[]> msgList = new ArrayList<byte[]>();
+    List<byte[]> msgList = new ArrayList<>();
     boolean finished = false;
 
     public MockSyslogServer(int loopLen, int port) {

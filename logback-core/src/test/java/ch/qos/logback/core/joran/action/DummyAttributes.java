@@ -19,7 +19,7 @@ import org.xml.sax.Attributes;
 
 public class DummyAttributes implements Attributes {
 
-    HashMap<String, String> atts = new HashMap<String, String>();
+    HashMap<String, String> atts = new HashMap<>();
 
     public int getIndex(String qName) {
         return 0;

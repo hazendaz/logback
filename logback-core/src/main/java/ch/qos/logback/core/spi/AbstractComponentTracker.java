@@ -43,10 +43,10 @@ abstract public class AbstractComponentTracker<C> implements ComponentTracker<C>
     protected long timeout = DEFAULT_TIMEOUT;
 
     // an access ordered map. Least recently accessed element will be removed after a 'timeout'
-    LinkedHashMap<String, Entry<C>> liveMap = new LinkedHashMap<String, Entry<C>>(32, .75f, ACCESS_ORDERED);
+    LinkedHashMap<String, Entry<C>> liveMap = new LinkedHashMap<>(32, .75f, ACCESS_ORDERED);
 
     // an access ordered map. Least recently accessed element will be removed after LINGERING_TIMEOUT
-    LinkedHashMap<String, Entry<C>> lingerersMap = new LinkedHashMap<String, Entry<C>>(16, .75f, ACCESS_ORDERED);
+    LinkedHashMap<String, Entry<C>> lingerersMap = new LinkedHashMap<>(16, .75f, ACCESS_ORDERED);
     long lastCheck = 0;
 
     /**
@@ -122,7 +122,7 @@ abstract public class AbstractComponentTracker<C> implements ComponentTracker<C>
         Entry<C> entry = getFromEitherMap(key);
         if (entry == null) {
             C c = buildComponent(key);
-            entry = new Entry<C>(key, c, timestamp);
+            entry = new Entry<>(key, c, timestamp);
             // new entries go into the main map
             liveMap.put(key, entry);
         } else {
@@ -224,13 +224,13 @@ abstract public class AbstractComponentTracker<C> implements ComponentTracker<C>
     }
 
     public Set<String> allKeys() {
-        HashSet<String> allKeys = new HashSet<String>(liveMap.keySet());
+        HashSet<String> allKeys = new HashSet<>(liveMap.keySet());
         allKeys.addAll(lingerersMap.keySet());
         return allKeys;
     }
 
     public Collection<C> allComponents() {
-        List<C> allComponents = new ArrayList<C>();
+        List<C> allComponents = new ArrayList<>();
         for (Entry<C> e : liveMap.values())
             allComponents.add(e.component);
         for (Entry<C> e : lingerersMap.values())

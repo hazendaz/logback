@@ -24,7 +24,7 @@ public class HardenedLoggingEventInputStream extends HardenedObjectInputStream {
     static final String ARRAY_PREFIX = "[L";
     
     static public List<String> getWhilelist() {
-        List<String> whitelist = new ArrayList<String>();
+        List<String> whitelist = new ArrayList<>();
         whitelist.add(LoggingEventVO.class.getName());
         whitelist.add(LoggerContextVO.class.getName());
         whitelist.add(LoggerRemoteView.class.getName());

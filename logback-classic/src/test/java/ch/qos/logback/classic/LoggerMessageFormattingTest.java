@@ -30,7 +30,7 @@ public class LoggerMessageFormattingTest {
     public void setUp() {
         lc = new LoggerContext();
         Logger logger = lc.getLogger(Logger.ROOT_LOGGER_NAME);
-        listAppender = new ListAppender<ILoggingEvent>();
+        listAppender = new ListAppender<>();
         listAppender.setContext(lc);
         listAppender.start();
         logger.addAppender(listAppender);

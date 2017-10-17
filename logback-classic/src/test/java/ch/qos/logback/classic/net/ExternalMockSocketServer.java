@@ -31,7 +31,7 @@ public class ExternalMockSocketServer {
     // static int loopLen;
     static int clientNumber;
 
-    static List<String> msgList = new ArrayList<String>();
+    static List<String> msgList = new ArrayList<>();
     static boolean finished = false;
 
     String className = LOGGINGEVENT;

@@ -20,7 +20,7 @@ public class CaseCombinator {
 
     List<String> combinations(String in) {
         int length = in.length();
-        List<String> permutationsList = new ArrayList<String>();
+        List<String> permutationsList = new ArrayList<>();
 
         int totalCombinations = computeTotalNumerOfCombinations(in, length);
 

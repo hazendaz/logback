@@ -22,7 +22,7 @@ import ch.qos.logback.core.joran.spi.InterpretationContext;
 
 public class StackAction extends Action {
 
-    Stack<String> stack = new Stack<String>();
+    Stack<String> stack = new Stack<>();
 
     public Stack<String> getStack() {
         return stack;

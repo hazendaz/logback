@@ -192,7 +192,7 @@ public class ContextInitializerTest {
             public Enumeration<URL> getResources(String name) throws IOException {
                 final Enumeration<URL> r;
                 if (name.endsWith("META-INF/services/ch.qos.logback.classic.spi.Configurator")) {
-                    Vector<URL> vs = new Vector<URL>();
+                    Vector<URL> vs = new Vector<>();
                     URL u = super.getResource("FAKE_META_INF_SERVICES_ch_qos_logback_classic_spi_Configurator");
                     vs.add(u);
                     return vs.elements();

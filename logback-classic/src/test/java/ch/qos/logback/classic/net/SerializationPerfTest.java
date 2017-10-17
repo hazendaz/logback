@@ -182,7 +182,7 @@ public class SerializationPerfTest extends TestCase {
     // }
 
     public void testWithMinimalSerialization() throws Exception {
-        Builder builder = new MinimalSerBuilder();
+        Builder<?> builder = new MinimalSerBuilder();
         runPerfTest(builder, "Minimal object serialization");
     }
 
@@ -192,7 +192,7 @@ public class SerializationPerfTest extends TestCase {
     // }
 
     public void testWithSerialization() throws Exception {
-        Builder builder = new TrivialLoggingEventVOBuilder();
+        Builder<?> builder = new TrivialLoggingEventVOBuilder();
         runPerfTest(builder, "LoggingEventVO object serialization");
     }
 

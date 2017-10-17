@@ -143,8 +143,8 @@ public class DatePatternToRegexTest {
     }
 
     private DateTokenConverter<?> makeDTC(String datePattern) {
-        DateTokenConverter<?> dtc = new DateTokenConverter<Object>();
-        List<String> optionList = new ArrayList<String>();
+        DateTokenConverter<?> dtc = new DateTokenConverter<>();
+        List<String> optionList = new ArrayList<>();
         optionList.add(datePattern);
         dtc.setOptionList(optionList);
         dtc.start();

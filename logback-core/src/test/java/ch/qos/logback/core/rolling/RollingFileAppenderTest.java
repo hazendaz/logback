@@ -35,10 +35,10 @@ import ch.qos.logback.core.util.StatusPrinter;
 
 public class RollingFileAppenderTest extends AbstractAppenderTest<Object> {
 
-    RollingFileAppender<Object> rfa = new RollingFileAppender<Object>();
+    RollingFileAppender<Object> rfa = new RollingFileAppender<>();
     Context context = new ContextBase();
 
-    TimeBasedRollingPolicy<Object> tbrp = new TimeBasedRollingPolicy<Object>();
+    TimeBasedRollingPolicy<Object> tbrp = new TimeBasedRollingPolicy<>();
     int diff = RandomUtil.getPositiveInt();
     String randomOutputDir = CoreTestConstants.OUTPUT_DIR_PREFIX + diff + "/";
 
@@ -47,7 +47,7 @@ public class RollingFileAppenderTest extends AbstractAppenderTest<Object> {
         // noStartTest fails if the context is set in setUp
         // rfa.setContext(context);
 
-        rfa.setEncoder(new DummyEncoder<Object>());
+        rfa.setEncoder(new DummyEncoder<>());
         rfa.setName("test");
         tbrp.setContext(context);
         tbrp.setParent(rfa);
@@ -122,7 +122,7 @@ public class RollingFileAppenderTest extends AbstractAppenderTest<Object> {
     @Test
     public void testFilePropertyAfterTriggeringPolicy() {
         rfa.setContext(context);
-        rfa.setTriggeringPolicy(new SizeBasedTriggeringPolicy<Object>());
+        rfa.setTriggeringPolicy(new SizeBasedTriggeringPolicy<>());
         rfa.setFile("x");
         StatusChecker statusChecker = new StatusChecker(context.getStatusManager());
         statusChecker.assertContainsMatch(Status.ERROR, "File property must be set before any triggeringPolicy ");
@@ -169,7 +169,7 @@ public class RollingFileAppenderTest extends AbstractAppenderTest<Object> {
         fwRollingPolicy.setFileNamePattern(CoreTestConstants.OUTPUT_DIR_PREFIX + "toto-%i.log.zip");
         fwRollingPolicy.setParent(rfa);
         fwRollingPolicy.start();
-        SizeBasedTriggeringPolicy<Object> sbTriggeringPolicy = new SizeBasedTriggeringPolicy<Object>();
+        SizeBasedTriggeringPolicy<Object> sbTriggeringPolicy = new SizeBasedTriggeringPolicy<>();
         sbTriggeringPolicy.setContext(context);
         sbTriggeringPolicy.start();
 
@@ -230,11 +230,11 @@ public class RollingFileAppenderTest extends AbstractAppenderTest<Object> {
     public void collidingFileNamePattern() {
         String filenamePattern = CoreTestConstants.OUTPUT_DIR_PREFIX + diff + "-collision-%d.log.zip";
 
-        RollingFileAppender<Object> appender0 = new RollingFileAppender<Object>();
+        RollingFileAppender<Object> appender0 = new RollingFileAppender<>();
         appender0.setName("FA0");
         appender0.setContext(context);
-        appender0.setEncoder(new DummyEncoder<Object>());
-        TimeBasedRollingPolicy<Object> tbrp0 = new TimeBasedRollingPolicy<Object>();
+        appender0.setEncoder(new DummyEncoder<>());
+        TimeBasedRollingPolicy<Object> tbrp0 = new TimeBasedRollingPolicy<>();
         tbrp0.setContext(context);
         tbrp0.setFileNamePattern(filenamePattern);
         tbrp0.setParent(appender0);
@@ -243,12 +243,12 @@ public class RollingFileAppenderTest extends AbstractAppenderTest<Object> {
         appender0.start();
         assertTrue(appender0.isStarted());
 
-        RollingFileAppender<Object> appender1 = new RollingFileAppender<Object>();
+        RollingFileAppender<Object> appender1 = new RollingFileAppender<>();
         appender1.setName("FA1");
         appender1.setFile("X");
         appender1.setContext(context);
-        appender1.setEncoder(new DummyEncoder<Object>());
-        TimeBasedRollingPolicy<Object> tbrp1 = new TimeBasedRollingPolicy<Object>();
+        appender1.setEncoder(new DummyEncoder<>());
+        TimeBasedRollingPolicy<Object> tbrp1 = new TimeBasedRollingPolicy<>();
         tbrp1.setContext(context);
         tbrp1.setFileNamePattern(filenamePattern);
         tbrp1.setParent(appender1);

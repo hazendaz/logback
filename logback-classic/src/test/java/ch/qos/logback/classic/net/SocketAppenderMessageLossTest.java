@@ -66,7 +66,7 @@ public class SocketAppenderMessageLossTest {
     // appender used to signal when the N'th event (as set in the latch) is received by the server
     // this allows us to have test which are both more robust and quicker.
     static public class ListAppenderWithLatch extends AppenderBase<ILoggingEvent> {
-        public List<ILoggingEvent> list = new ArrayList<ILoggingEvent>();
+        public List<ILoggingEvent> list = new ArrayList<>();
         CountDownLatch latch;
 
         ListAppenderWithLatch(CountDownLatch latch) {

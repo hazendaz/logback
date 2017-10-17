@@ -34,10 +34,10 @@ import ch.qos.logback.core.testUtil.NPEAppender;
 public class AsyncAppenderBaseTest {
 
     Context context = new ContextBase();
-    AsyncAppenderBase<Integer> asyncAppenderBase = new AsyncAppenderBase<Integer>();
+    AsyncAppenderBase<Integer> asyncAppenderBase = new AsyncAppenderBase<>();
     LossyAsyncAppender lossyAsyncAppender = new LossyAsyncAppender();
-    DelayingListAppender<Integer> delayingListAppender = new DelayingListAppender<Integer>();
-    ListAppender<Integer> listAppender = new ListAppender<Integer>();
+    DelayingListAppender<Integer> delayingListAppender = new DelayingListAppender<>();
+    ListAppender<Integer> listAppender = new ListAppender<>();
     OnConsoleStatusListener onConsoleStatusListener = new OnConsoleStatusListener();
     StatusChecker statusChecker = new StatusChecker(context);
 
@@ -70,7 +70,7 @@ public class AsyncAppenderBaseTest {
 
     @Test
     public void exceptionsShouldNotCauseHalting() throws InterruptedException {
-        NPEAppender<Integer> npeAppender = new NPEAppender<Integer>();
+        NPEAppender<Integer> npeAppender = new NPEAppender<>();
         npeAppender.setName("bad");
         npeAppender.setContext(context);
         npeAppender.start();

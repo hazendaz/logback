@@ -55,9 +55,9 @@ public class ConversionRuleAction extends Action {
         }
 
         try {
-            Map<String, String> ruleRegistry = (Map) context.getObject(CoreConstants.PATTERN_RULE_REGISTRY);
+            Map<String, String> ruleRegistry = (Map<String, String>) context.getObject(CoreConstants.PATTERN_RULE_REGISTRY);
             if (ruleRegistry == null) {
-                ruleRegistry = new HashMap<String, String>();
+                ruleRegistry = new HashMap<>();
                 context.putObject(CoreConstants.PATTERN_RULE_REGISTRY, ruleRegistry);
             }
             // put the new rule into the rule registry

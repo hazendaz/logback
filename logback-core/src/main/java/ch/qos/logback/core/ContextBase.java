@@ -42,13 +42,13 @@ public class ContextBase implements Context, LifeCycle {
     // TODO propertyMap should be observable so that we can be notified
     // when it changes so that a new instance of propertyMap can be
     // serialized. For the time being, we ignore this shortcoming.
-    Map<String, String> propertyMap = new HashMap<String, String>();
-    Map<String, Object> objectMap = new HashMap<String, Object>();
+    Map<String, String> propertyMap = new HashMap<>();
+    Map<String, Object> objectMap = new HashMap<>();
 
     LogbackLock configurationLock = new LogbackLock();
 
     private ScheduledExecutorService scheduledExecutorService;
-    protected List<ScheduledFuture<?>> scheduledFutures = new ArrayList<ScheduledFuture<?>>(1);
+    protected List<ScheduledFuture<?>> scheduledFutures = new ArrayList<>(1);
     private LifeCycleManager lifeCycleManager;
     private boolean started;
 
@@ -79,7 +79,7 @@ public class ContextBase implements Context, LifeCycle {
     }
 
     public Map<String, String> getCopyOfPropertyMap() {
-        return new HashMap<String, String>(propertyMap);
+        return new HashMap<>(propertyMap);
     }
 
     public void putProperty(String key, String val) {
@@ -273,7 +273,7 @@ public class ContextBase implements Context, LifeCycle {
     }
 
     public List<ScheduledFuture<?>> getScheduledFutures() {
-        return new ArrayList<ScheduledFuture<?>>(scheduledFutures);
+        return new ArrayList<>(scheduledFutures);
     }
 
 }

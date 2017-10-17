@@ -19,7 +19,7 @@ import java.util.List;
 public class Fruit {
 
     String name;
-    List<String> textList = new ArrayList<String>();
+    List<String> textList = new ArrayList<>();
 
     public void setName(String name) {
         this.name = name;

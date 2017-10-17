@@ -29,7 +29,7 @@ public class Worker extends RunnableWithCounterAndDone {
     static final int SLEEP_DUIRATION = 50;
 
     private Logger logger;
-    private final Vector lock = new Vector();
+    private final Vector<?> lock = new Vector<>();
 
     final LoggerContext loggerContext;
 

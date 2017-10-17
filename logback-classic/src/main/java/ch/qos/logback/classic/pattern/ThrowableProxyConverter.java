@@ -86,14 +86,14 @@ public class ThrowableProxyConverter extends ThrowableHandlingConverter {
 
     private void addEvaluator(EventEvaluator<ILoggingEvent> ee) {
         if (evaluatorList == null) {
-            evaluatorList = new ArrayList<EventEvaluator<ILoggingEvent>>();
+            evaluatorList = new ArrayList<>();
         }
         evaluatorList.add(ee);
     }
 
     private void addIgnoreStackTraceLine(String ignoredStackTraceLine) {
         if (ignoredStackTraceLines == null) {
-            ignoredStackTraceLines = new ArrayList<String>();
+            ignoredStackTraceLines = new ArrayList<>();
         }
         ignoredStackTraceLines.add(ignoredStackTraceLine);
     }

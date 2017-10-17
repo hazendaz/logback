@@ -31,7 +31,7 @@ public class CopyOnInheritThreadLocal extends InheritableThreadLocal<HashMap<Str
         if (parentValue == null) {
             return null;
         } else {
-            return new HashMap<String, String>(parentValue);
+            return new HashMap<>(parentValue);
         }
     }
 

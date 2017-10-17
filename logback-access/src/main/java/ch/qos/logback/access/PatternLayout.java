@@ -68,7 +68,7 @@ import java.util.Map;
  */
 public class PatternLayout extends PatternLayoutBase<IAccessEvent> {
 
-    public static final Map<String, String> defaultConverterMap = new HashMap<String, String>();
+    public static final Map<String, String> defaultConverterMap = new HashMap<>();
     public static final String HEADER_PREFIX = "#logback.access pattern: ";
 
     public static final String CLF_PATTERN = "%h %l %u [%t] \"%r\" %s %b";

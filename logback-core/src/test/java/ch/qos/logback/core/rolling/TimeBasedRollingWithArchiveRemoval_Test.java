@@ -50,11 +50,11 @@ public class TimeBasedRollingWithArchiveRemoval_Test extends ScaffoldingForRolli
     String MONTHLY_CRONOLOG_DATE_PATTERN = "yyyy/MM";
     final String DAILY_CRONOLOG_DATE_PATTERN = "yyyy/MM/dd";
 
-    RollingFileAppender<Object> rfa = new RollingFileAppender<Object>();
-    TimeBasedRollingPolicy<Object> tbrp = new TimeBasedRollingPolicy<Object>();
+    RollingFileAppender<Object> rfa = new RollingFileAppender<>();
+    TimeBasedRollingPolicy<Object> tbrp = new TimeBasedRollingPolicy<>();
 
     // by default tbfnatp is an instance of DefaultTimeBasedFileNamingAndTriggeringPolicy
-    TimeBasedFileNamingAndTriggeringPolicy<Object> tbfnatp = new DefaultTimeBasedFileNamingAndTriggeringPolicy<Object>();
+    TimeBasedFileNamingAndTriggeringPolicy<Object> tbfnatp = new DefaultTimeBasedFileNamingAndTriggeringPolicy<>();
 
     StatusChecker checker = new StatusChecker(context);
 
@@ -249,7 +249,7 @@ public class TimeBasedRollingWithArchiveRemoval_Test extends ScaffoldingForRolli
 
     @Test
     public void dailySizeBasedRolloverWithoutCap() {
-        SizeAndTimeBasedFNATP<Object> sizeAndTimeBasedFNATP = new SizeAndTimeBasedFNATP<Object>();
+        SizeAndTimeBasedFNATP<Object> sizeAndTimeBasedFNATP = new SizeAndTimeBasedFNATP<>();
         sizeAndTimeBasedFNATP.invocationGate = fixedRateInvocationGate;
 
         sizeAndTimeBasedFNATP.setMaxFileSize(new FileSize(10000));
@@ -263,7 +263,7 @@ public class TimeBasedRollingWithArchiveRemoval_Test extends ScaffoldingForRolli
 
     @Test
     public void dailySizeBasedRolloverWithSizeCap() {
-        SizeAndTimeBasedFNATP<Object> sizeAndTimeBasedFNATP = new SizeAndTimeBasedFNATP<Object>();
+        SizeAndTimeBasedFNATP<Object> sizeAndTimeBasedFNATP = new SizeAndTimeBasedFNATP<>();
         sizeAndTimeBasedFNATP.invocationGate = new FixedRateInvocationGate(ticksPerPeriod / 8);
         long bytesPerPeriod = 17000;
         long fileSize = (bytesPerPeriod) / 5;
@@ -295,7 +295,7 @@ public class TimeBasedRollingWithArchiveRemoval_Test extends ScaffoldingForRolli
 
     @Test
     public void dailyChronologSizeBasedRollover() {
-        SizeAndTimeBasedFNATP<Object> sizeAndTimeBasedFNATP = new SizeAndTimeBasedFNATP<Object>();
+        SizeAndTimeBasedFNATP<Object> sizeAndTimeBasedFNATP = new SizeAndTimeBasedFNATP<>();
         sizeAndTimeBasedFNATP.setMaxFileSize(new FileSize(10000));
         sizeAndTimeBasedFNATP.invocationGate = fixedRateInvocationGate;
         tbfnatp = sizeAndTimeBasedFNATP;
@@ -308,7 +308,7 @@ public class TimeBasedRollingWithArchiveRemoval_Test extends ScaffoldingForRolli
 
     @Test
     public void dailyChronologSizeBasedRolloverWithSecondPhase() {
-        SizeAndTimeBasedFNATP<Object> sizeAndTimeBasedFNATP = new SizeAndTimeBasedFNATP<Object>();
+        SizeAndTimeBasedFNATP<Object> sizeAndTimeBasedFNATP = new SizeAndTimeBasedFNATP<>();
         sizeAndTimeBasedFNATP.setMaxFileSize(new FileSize(10000));
         sizeAndTimeBasedFNATP.invocationGate = fixedRateInvocationGate;
         tbfnatp = sizeAndTimeBasedFNATP;
@@ -475,9 +475,9 @@ public class TimeBasedRollingWithArchiveRemoval_Test extends ScaffoldingForRolli
 
     void expectedFileAndDirCount(int expectedFileAndDirCount, int expectedDirCountMin, int expectedDirCountMax) {
         File dir = new File(randomOutputDir);
-        List<File> fileList = new ArrayList<File>();
+        List<File> fileList = new ArrayList<>();
         findFilesInFolderRecursivelyByPatterMatch(dir, fileList, "clean");
-        List<File> dirList = new ArrayList<File>();
+        List<File> dirList = new ArrayList<>();
         findAllFoldersInFolderRecursively(dir, dirList);
         String msg = "expectedDirCountMin=" + expectedDirCountMin + ", expectedDirCountMax=" + expectedDirCountMax + " actual value=" + dirList.size();
         assertTrue(msg, expectedDirCountMin <= dirList.size() && dirList.size() <= expectedDirCountMax);
@@ -485,14 +485,14 @@ public class TimeBasedRollingWithArchiveRemoval_Test extends ScaffoldingForRolli
 
     void checkFileCount(int expectedCount) {
         File dir = new File(randomOutputDir);
-        List<File> fileList = new ArrayList<File>();
+        List<File> fileList = new ArrayList<>();
         findAllDirsOrStringContainsFilesRecursively(dir, fileList, "clean");
         assertEquals(expectedCount, fileList.size());
     }
 
     void checkFileCountAtMost(int expectedCount) {
         File dir = new File(randomOutputDir);
-        List<File> fileList = new ArrayList<File>();
+        List<File> fileList = new ArrayList<>();
         findAllDirsOrStringContainsFilesRecursively(dir, fileList, "clean");
         int fileListSize = fileList.size();
         
@@ -552,7 +552,7 @@ public class TimeBasedRollingWithArchiveRemoval_Test extends ScaffoldingForRolli
 
     Set<String> groupByClass(List<File> fileList, String regex) {
         Pattern p = Pattern.compile(regex);
-        Set<String> set = new HashSet<String>();
+        Set<String> set = new HashSet<>();
         for (File f : fileList) {
             String n = f.getName();
             Matcher m = p.matcher(n);
@@ -571,7 +571,7 @@ public class TimeBasedRollingWithArchiveRemoval_Test extends ScaffoldingForRolli
 
     private List<File> findFilesByPattern(String regex) {
         File dir = new File(randomOutputDir);
-        List<File> fileList = new ArrayList<File>();
+        List<File> fileList = new ArrayList<>();
         findFilesInFolderRecursivelyByPatterMatch(dir, fileList, regex);
         return fileList;
     }
@@ -584,7 +584,7 @@ public class TimeBasedRollingWithArchiveRemoval_Test extends ScaffoldingForRolli
 
     void checkDirPatternCompliance(int expectedClassCount) {
         File dir = new File(randomOutputDir);
-        List<File> fileList = new ArrayList<File>();
+        List<File> fileList = new ArrayList<>();
         findAllFoldersInFolderRecursively(dir, fileList);
         for (File f : fileList) {
             assertTrue(f.list().length >= 1);

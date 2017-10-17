@@ -26,7 +26,7 @@ import ch.qos.logback.core.joran.spi.InterpretationContext;
 
 public class FruitFactoryAction extends Action implements InPlayListener {
 
-    List<SaxEvent> seList = new ArrayList<SaxEvent>();
+    List<SaxEvent> seList = new ArrayList<>();
 
     @Override
     public void begin(InterpretationContext ec, String name, Attributes attributes) throws ActionException {
@@ -41,7 +41,7 @@ public class FruitFactoryAction extends Action implements InPlayListener {
         if (o instanceof FruitShell) {
             FruitShell fs = (FruitShell) o;
             FruitFactory fruitFactory = new FruitFactory();
-            fruitFactory.setEventList(new ArrayList<SaxEvent>(seList));
+            fruitFactory.setEventList(new ArrayList<>(seList));
             fs.setFruitFactory(fruitFactory);
         }
     }

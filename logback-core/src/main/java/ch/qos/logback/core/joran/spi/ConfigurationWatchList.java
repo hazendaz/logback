@@ -27,14 +27,14 @@ import java.util.List;
 public class ConfigurationWatchList extends ContextAwareBase {
 
     URL mainURL;
-    List<File> fileWatchList = new ArrayList<File>();
-    List<Long> lastModifiedList = new ArrayList<Long>();
+    List<File> fileWatchList = new ArrayList<>();
+    List<Long> lastModifiedList = new ArrayList<>();
 
     public ConfigurationWatchList buildClone() {
         ConfigurationWatchList out = new ConfigurationWatchList();
         out.mainURL = this.mainURL;
-        out.fileWatchList = new ArrayList<File>(this.fileWatchList);
-        out.lastModifiedList = new ArrayList<Long>(this.lastModifiedList);
+        out.fileWatchList = new ArrayList<>(this.fileWatchList);
+        out.lastModifiedList = new ArrayList<>(this.lastModifiedList);
         return out;
     }
     
@@ -72,7 +72,7 @@ public class ConfigurationWatchList extends ContextAwareBase {
     }
 
     public List<File> getCopyOfFileWatchList() {
-        return new ArrayList<File>(fileWatchList);
+        return new ArrayList<>(fileWatchList);
     }
 
     public boolean changeDetected() {

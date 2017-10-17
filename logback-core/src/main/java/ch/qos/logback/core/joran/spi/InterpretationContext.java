@@ -44,15 +44,15 @@ public class InterpretationContext extends ContextAwareBase implements PropertyC
     Map<String, String> propertiesMap;
 
     Interpreter joranInterpreter;
-    final List<InPlayListener> listenerList = new ArrayList<InPlayListener>();
+    final List<InPlayListener> listenerList = new ArrayList<>();
     DefaultNestedComponentRegistry defaultNestedComponentRegistry = new DefaultNestedComponentRegistry();
 
     public InterpretationContext(Context context, Interpreter joranInterpreter) {
         this.context = context;
         this.joranInterpreter = joranInterpreter;
-        objectStack = new Stack<Object>();
-        objectMap = new HashMap<String, Object>(5);
-        propertiesMap = new HashMap<String, String>(5);
+        objectStack = new Stack<>();
+        objectMap = new HashMap<>(5);
+        propertiesMap = new HashMap<>(5);
     }
 
     public DefaultNestedComponentRegistry getDefaultNestedComponentRegistry() {
@@ -60,7 +60,7 @@ public class InterpretationContext extends ContextAwareBase implements PropertyC
     }
 
     public Map<String, String> getCopyOfPropertyMap() {
-        return new HashMap<String, String>(propertiesMap);
+        return new HashMap<>(propertiesMap);
     }
 
     void setPropertiesMap(Map<String, String> propertiesMap) {

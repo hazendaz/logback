@@ -24,7 +24,7 @@ import java.util.List;
  */
 public class ElementPath {
     // contains String instances
-    ArrayList<String> partList = new ArrayList<String>();
+    ArrayList<String> partList = new ArrayList<>();
 
     public ElementPath() {
     }
@@ -90,7 +90,7 @@ public class ElementPath {
     }
 
     public List<String> getCopyOfPartList() {
-        return new ArrayList<String>(partList);
+        return new ArrayList<>(partList);
     }
 
     public void push(String s) {

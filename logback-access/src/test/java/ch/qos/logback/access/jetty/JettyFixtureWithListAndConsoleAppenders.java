@@ -42,7 +42,7 @@ public class JettyFixtureWithListAndConsoleAppenders extends JettyFixtureBase {
         appender.setName("list");
         appender.start();
 
-        ConsoleAppender<IAccessEvent> console = new ConsoleAppender<IAccessEvent>();
+        ConsoleAppender<IAccessEvent> console = new ConsoleAppender<>();
         console.setContext(requestLogImpl);
         console.setName("console");
         PatternLayoutEncoder layout = new PatternLayoutEncoder();

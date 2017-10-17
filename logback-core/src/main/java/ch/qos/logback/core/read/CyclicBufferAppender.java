@@ -29,7 +29,7 @@ public class CyclicBufferAppender<E> extends AppenderBase<E> {
     int maxSize = 512;
 
     public void start() {
-        cb = new CyclicBuffer<E>(maxSize);
+        cb = new CyclicBuffer<>(maxSize);
         super.start();
     }
 

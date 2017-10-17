@@ -44,7 +44,7 @@ public class FileAppenderResilience_AS_ROOT_Test {
     String outputDirStr = MOUNT_POINT + "resilience-" + diff + "/";
     String logfileStr = outputDirStr + "output.log";
 
-    FileAppender<Object> fa = new FileAppender<Object>();
+    FileAppender<Object> fa = new FileAppender<>();
 
     static boolean isConformingHost() {
         return EnvUtilForTests.isLocalHostNameInList(new String[] { "haro" });
@@ -66,7 +66,7 @@ public class FileAppenderResilience_AS_ROOT_Test {
         System.out.println("FileAppenderResilienceTest output dir [" + outputDirStr + "]");
 
         fa.setName("FILE");
-        fa.setEncoder(new EchoEncoder<Object>());
+        fa.setEncoder(new EchoEncoder<>());
         fa.setFile(logfileStr);
         fa.start();
     }

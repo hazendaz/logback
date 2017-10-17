@@ -31,7 +31,7 @@ import java.util.logging.LogManager;
  */
 public class LevelChangePropagator extends ContextAwareBase implements LoggerContextListener, LifeCycle {
 
-    private Set<java.util.logging.Logger> julLoggerSet = new HashSet<java.util.logging.Logger>();
+    private Set<java.util.logging.Logger> julLoggerSet = new HashSet<>();
     boolean isStarted = false;
     boolean resetJUL = false;
 

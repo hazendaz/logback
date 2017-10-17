@@ -52,13 +52,13 @@ public class LogbackMDCAdapter implements MDCAdapter {
     // Initially the contents of the thread local in parent and child threads
     // reference the same map. However, as soon as a thread invokes the put()
     // method, the maps diverge as they should.
-    final ThreadLocal<Map<String, String>> copyOnThreadLocal = new ThreadLocal<Map<String, String>>();
+    final ThreadLocal<Map<String, String>> copyOnThreadLocal = new ThreadLocal<>();
 
     private static final int WRITE_OPERATION = 1;
     private static final int MAP_COPY_OPERATION = 2;
 
     // keeps track of the last operation performed
-    final ThreadLocal<Integer> lastOperation = new ThreadLocal<Integer>();
+    final ThreadLocal<Integer> lastOperation = new ThreadLocal<>();
 
     private Integer getAndSetLastOperation(int op) {
         Integer lastOp = lastOperation.get();
@@ -186,7 +186,7 @@ public class LogbackMDCAdapter implements MDCAdapter {
         if (hashMap == null) {
             return null;
         } else {
-            return new HashMap<String, String>(hashMap);
+            return new HashMap<>(hashMap);
         }
     }
 

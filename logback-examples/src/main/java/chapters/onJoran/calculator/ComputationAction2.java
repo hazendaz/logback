@@ -60,7 +60,7 @@ import ch.qos.logback.core.util.OptionHelper;
 public class ComputationAction2 extends Action {
     public static final String NAME_ATR = "name";
 
-    Stack<String> nameStrStack = new Stack<String>();
+    Stack<String> nameStrStack = new Stack<>();
 
     public void begin(InterpretationContext ec, String name, Attributes attributes) {
         String nameStr = attributes.getValue(NAME_ATR);

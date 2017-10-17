@@ -39,7 +39,7 @@ public class NewRuleCalculator {
 
         Context context = new ContextBase();
 
-        Map<ElementSelector, Action> ruleMap = new HashMap<ElementSelector, Action>();
+        Map<ElementSelector, Action> ruleMap = new HashMap<>();
 
         // we start with the rule for the top-most (root) element
         ruleMap.put(new ElementSelector("*/computation"), new ComputationAction1());

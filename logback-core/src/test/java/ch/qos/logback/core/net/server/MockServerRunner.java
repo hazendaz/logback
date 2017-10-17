@@ -50,7 +50,7 @@ public class MockServerRunner<T extends Client> extends ContextAwareBase impleme
         return startCount > 0;
     }
 
-    public void accept(ClientVisitor visitor) {
+    public void accept(ClientVisitor<T> visitor) {
         throw new UnsupportedOperationException();
     }
 

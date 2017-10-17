@@ -47,7 +47,7 @@ import static org.mockito.Mockito.when;
  */
 public class AppenderAttachableImplLockTest {
 
-    private AppenderAttachableImpl<Integer> aai = new AppenderAttachableImpl<Integer>();
+    private AppenderAttachableImpl<Integer> aai = new AppenderAttachableImpl<>();
 
     @SuppressWarnings("unchecked")
     @Test(timeout = 5000)

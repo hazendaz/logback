@@ -116,8 +116,8 @@ public class RequestLogImpl extends ContextBase implements RequestLog, AppenderA
 
     public final static String DEFAULT_CONFIG_FILE = "etc" + File.separatorChar + "logback-access.xml";
 
-    AppenderAttachableImpl<IAccessEvent> aai = new AppenderAttachableImpl<IAccessEvent>();
-    FilterAttachableImpl<IAccessEvent> fai = new FilterAttachableImpl<IAccessEvent>();
+    AppenderAttachableImpl<IAccessEvent> aai = new AppenderAttachableImpl<>();
+    FilterAttachableImpl<IAccessEvent> fai = new FilterAttachableImpl<>();
     String fileName;
     String resource;
     boolean started = false;

@@ -49,7 +49,7 @@ public class ScenarioMaker {
 
     static public Scenario makeRealisticCreationScenario(int len) {
         Scenario scenario = new Scenario();
-        LinkedList<String> queue = new LinkedList<String>();
+        LinkedList<String> queue = new LinkedList<>();
         int loggerCreationCount = 0;
 
         // add an empty string to get going

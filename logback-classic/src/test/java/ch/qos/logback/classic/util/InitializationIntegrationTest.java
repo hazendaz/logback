@@ -31,7 +31,7 @@ public class InitializationIntegrationTest {
     public void smoke() {
         Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
         Logger root = (Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
-        ListAppender la = (ListAppender) root.getAppender("LIST");
+        ListAppender<?> la = (ListAppender<?>) root.getAppender("LIST");
         assertNotNull(la);
     }
 }

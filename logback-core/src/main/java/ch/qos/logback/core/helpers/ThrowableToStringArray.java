@@ -21,7 +21,7 @@ import ch.qos.logback.core.CoreConstants;
 public class ThrowableToStringArray {
 
     public static String[] convert(Throwable t) {
-        List<String> strList = new LinkedList<String>();
+        List<String> strList = new LinkedList<>();
         extract(strList, t, null);
         return strList.toArray(new String[0]);
 

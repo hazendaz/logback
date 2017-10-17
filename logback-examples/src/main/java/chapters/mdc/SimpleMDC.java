@@ -66,7 +66,7 @@ public class SimpleMDC {
         layout.setContext(loggerContext);
         layout.setPattern("%X{first} %X{last} - %m%n");
         layout.start();
-        ConsoleAppender<ILoggingEvent> appender = new ConsoleAppender<ILoggingEvent>();
+        ConsoleAppender<ILoggingEvent> appender = new ConsoleAppender<>();
         appender.setContext(loggerContext);
         appender.setEncoder(layout);
         appender.start();

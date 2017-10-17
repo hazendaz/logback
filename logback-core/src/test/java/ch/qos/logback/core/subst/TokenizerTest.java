@@ -23,7 +23,7 @@ import static org.junit.Assert.assertEquals;
 
 public class TokenizerTest {
 
-    List<Token> witnessList = new ArrayList<Token>();
+    List<Token> witnessList = new ArrayList<>();
 
     @Test
     public void literalOnly() throws ScanException {

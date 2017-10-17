@@ -19,8 +19,8 @@ import java.util.List;
 public class Fruit {
 
     String name;
-    List<String> textList = new ArrayList<String>();
-    List<Cake> cakeList = new ArrayList<Cake>();
+    List<String> textList = new ArrayList<>();
+    List<Cake> cakeList = new ArrayList<>();
 
     public void setName(String n) {
         this.name = n;

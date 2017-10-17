@@ -49,7 +49,7 @@ public class RenameUtilTest {
 
     @Before
     public void setUp() throws Exception {
-        encoder = new EchoEncoder<Object>();
+        encoder = new EchoEncoder<>();
         // if this this the fist test run after 'build clean up' then the
         // OUTPUT_DIR_PREFIX might be not yet created
         randomOutputDir.mkdirs();

@@ -22,7 +22,7 @@ import ch.qos.logback.core.status.StatusListener;
 
 public class TrivialStatusListener implements StatusListener, LifeCycle {
 
-    public List<Status> list = new ArrayList<Status>();
+    public List<Status> list = new ArrayList<>();
     boolean start = false;
 
     public void addStatusEvent(Status status) {

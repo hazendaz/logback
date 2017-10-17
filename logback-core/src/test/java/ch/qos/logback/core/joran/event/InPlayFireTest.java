@@ -32,7 +32,7 @@ import ch.qos.logback.core.util.CoreTestConstants;
 public class InPlayFireTest {
 
     Context context = new ContextBase();
-    HashMap<ElementSelector, Action> rulesMap = new HashMap<ElementSelector, Action>();
+    HashMap<ElementSelector, Action> rulesMap = new HashMap<>();
 
     @Test
     public void testBasic() throws JoranException {

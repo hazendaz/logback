@@ -54,7 +54,7 @@ public class BasicStatusManagerTest {
         List<Status> statusList = bsm.getCopyOfStatusList();
         assertNotNull(statusList);
         assertEquals(MAX_HEADER_COUNT + TAIL_SIZE, statusList.size());
-        List<Status> witness = new ArrayList<Status>();
+        List<Status> witness = new ArrayList<>();
         for (int i = 0; i < MAX_HEADER_COUNT; i++) {
             witness.add(new ErrorStatus("" + i, this));
         }

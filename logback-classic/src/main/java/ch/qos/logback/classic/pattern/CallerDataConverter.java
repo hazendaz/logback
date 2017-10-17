@@ -104,7 +104,7 @@ public class CallerDataConverter extends ClassicConverter {
 
     private void addEvaluator(EventEvaluator<ILoggingEvent> ee) {
         if (evaluatorList == null) {
-            evaluatorList = new ArrayList<EventEvaluator<ILoggingEvent>>();
+            evaluatorList = new ArrayList<>();
         }
         evaluatorList.add(ee);
     }

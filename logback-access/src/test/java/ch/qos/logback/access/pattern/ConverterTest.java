@@ -100,7 +100,7 @@ public class ConverterTest {
     @Test
     public void testRequestAttributeConverter() {
         RequestAttributeConverter converter = new RequestAttributeConverter();
-        List<String> optionList = new ArrayList<String>();
+        List<String> optionList = new ArrayList<>();
         optionList.add("testKey");
         converter.setOptionList(optionList);
         converter.start();
@@ -111,7 +111,7 @@ public class ConverterTest {
     @Test
     public void testRequestCookieConverter() {
         RequestCookieConverter converter = new RequestCookieConverter();
-        List<String> optionList = new ArrayList<String>();
+        List<String> optionList = new ArrayList<>();
         optionList.add("testName");
         converter.setOptionList(optionList);
         converter.start();
@@ -123,7 +123,7 @@ public class ConverterTest {
     @Test
     public void testRequestHeaderConverter() {
         RequestHeaderConverter converter = new RequestHeaderConverter();
-        List<String> optionList = new ArrayList<String>();
+        List<String> optionList = new ArrayList<>();
         optionList.add("headerName1");
         converter.setOptionList(optionList);
         converter.start();
@@ -167,7 +167,7 @@ public class ConverterTest {
     @Test
     public void testResponseHeaderConverter() {
         ResponseHeaderConverter converter = new ResponseHeaderConverter();
-        List<String> optionList = new ArrayList<String>();
+        List<String> optionList = new ArrayList<>();
         optionList.add("headerName1");
         converter.setOptionList(optionList);
         converter.start();

@@ -27,11 +27,11 @@ public class LRUCacheTest {
     @Test
     public void smoke() {
 
-        LRUCache<String, String> cache = new LRUCache<String, String>(2);
+        LRUCache<String, String> cache = new LRUCache<>(2);
         cache.put("a", "a");
         cache.put("b", "b");
         cache.put("c", "c");
-        List<String> witness = new LinkedList<String>();
+        List<String> witness = new LinkedList<>();
         witness.add("b");
         witness.add("c");
         assertEquals(witness, cache.keyList());
@@ -65,8 +65,8 @@ public class LRUCacheTest {
         int get2PutRatio = 10;
         Simulator simulator = new Simulator(worldSize, get2PutRatio, false);
         List<Event> scenario = simulator.generateScenario(simulationLen);
-        LRUCache<String, String> lruCache = new LRUCache<String, String>(cacheSize);
-        T_LRUCache<String> tlruCache = new T_LRUCache<String>(cacheSize);
+        LRUCache<String, String> lruCache = new LRUCache<>(cacheSize);
+        T_LRUCache<String> tlruCache = new T_LRUCache<>(cacheSize);
         long start = System.nanoTime();
         simulator.simulate(scenario, lruCache, tlruCache);
         // assertEquals(tlruCache.keyList(), lruCache.keyList());
@@ -80,8 +80,8 @@ public class LRUCacheTest {
     public void multiThreadedScenario() throws InterruptedException {
         int cacheSize = 100;
         int worldSize = cacheSize * 2;
-        LRUCache<String, String> lruCache = new LRUCache<String, String>(cacheSize);
-        T_LRUCache<String> tlruCache = new T_LRUCache<String>(cacheSize);
+        LRUCache<String, String> lruCache = new LRUCache<>(cacheSize);
+        T_LRUCache<String> tlruCache = new T_LRUCache<>(cacheSize);
         SimulatorRunnable[] simulatorArray = new SimulatorRunnable[5];
         for (int i = 0; i < simulatorArray.length; i++) {
             simulatorArray[i] = new SimulatorRunnable(lruCache, tlruCache, worldSize);

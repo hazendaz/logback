@@ -41,7 +41,7 @@ public class ConverterTest {
     LoggerContext lc = new LoggerContext();
     Logger logger = lc.getLogger(ConverterTest.class);
     LoggingEvent le;
-    List<String> optionList = new ArrayList<String>();
+    List<String> optionList = new ArrayList<>();
 
     // The LoggingEvent is massaged with an FCQN of FormattingConverter. This
     // forces the returned caller information to match the caller stack for this
@@ -387,7 +387,7 @@ public class ConverterTest {
     public void contextProperty() {
         PropertyConverter converter = new PropertyConverter();
         converter.setContext(lc);
-        List<String> ol = new ArrayList<String>();
+        List<String> ol = new ArrayList<>();
         ol.add("k");
         converter.setOptionList(ol);
         converter.start();

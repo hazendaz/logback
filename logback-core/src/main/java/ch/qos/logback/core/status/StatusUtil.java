@@ -55,7 +55,7 @@ public class StatusUtil {
     }
 
     static public List<Status> filterStatusListByTimeThreshold(List<Status> rawList, long threshold) {
-        List<Status> filteredList = new ArrayList<Status>();
+        List<Status> filteredList = new ArrayList<>();
         for (Status s : rawList) {
             if (s.getDate() >= threshold)
                 filteredList.add(s);

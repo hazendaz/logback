@@ -32,7 +32,7 @@ import ch.qos.logback.core.util.ResilienceUtil;
 
 public class FileAppenderResilienceTest {
 
-    FileAppender<Object> fa = new FileAppender<Object>();
+    FileAppender<Object> fa = new FileAppender<>();
     Context context = new ContextBase();
     int diff = RandomUtil.getPositiveInt();
     String outputDirStr = CoreTestConstants.OUTPUT_DIR_PREFIX + "resilience-" + diff + "/";
@@ -51,7 +51,7 @@ public class FileAppenderResilienceTest {
 
         fa.setContext(context);
         fa.setName("FILE");
-        fa.setEncoder(new EchoEncoder<Object>());
+        fa.setEncoder(new EchoEncoder<>());
         fa.setFile(logfileStr);
         fa.start();
     }

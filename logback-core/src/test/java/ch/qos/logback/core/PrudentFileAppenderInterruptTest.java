@@ -30,7 +30,7 @@ import ch.qos.logback.core.util.CoreTestConstants;
 
 public class PrudentFileAppenderInterruptTest {
 
-    FileAppender<Object> fa = new FileAppender<Object>();
+    FileAppender<Object> fa = new FileAppender<>();
     Context context = new ContextBase();
     int diff = RandomUtil.getPositiveInt();
     String outputDirStr = CoreTestConstants.OUTPUT_DIR_PREFIX + "resilience-" + diff + "/";
@@ -46,7 +46,7 @@ public class PrudentFileAppenderInterruptTest {
         fa.setContext(context);
         fa.setName("FILE");
         fa.setPrudent(true);
-        fa.setEncoder(new EchoEncoder<Object>());
+        fa.setEncoder(new EchoEncoder<>());
         fa.setFile(logfileStr);
         fa.start();
     }

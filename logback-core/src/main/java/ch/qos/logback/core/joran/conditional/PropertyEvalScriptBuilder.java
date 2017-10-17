@@ -35,7 +35,7 @@ public class PropertyEvalScriptBuilder extends ContextAwareBase {
         this.localPropContainer = localPropContainer;
     }
 
-    Map<String, String> map = new HashMap<String, String>();
+    Map<String, String> map = new HashMap<>();
 
     public Condition build(String script) throws IllegalAccessException, CompileException, InstantiationException, SecurityException, NoSuchMethodException,
                     IllegalArgumentException, InvocationTargetException {

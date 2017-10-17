@@ -38,7 +38,7 @@ import ch.qos.logback.core.pattern.parser.Parser;
 
 public class PatternLayout extends PatternLayoutBase<ILoggingEvent> {
 
-    public static final Map<String, String> defaultConverterMap = new HashMap<String, String>();
+    public static final Map<String, String> defaultConverterMap = new HashMap<>();
     public static final String HEADER_PREFIX = "#logback.classic pattern: ";
 
     static {

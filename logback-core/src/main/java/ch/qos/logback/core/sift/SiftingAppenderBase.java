@@ -75,7 +75,7 @@ public abstract class SiftingAppenderBase<E> extends AppenderBase<E> {
             addError("AppenderFactory has not been set. Aborting");
             errors++;
         } else {
-            appenderTracker = new AppenderTracker<E>(context, appenderFactory);
+            appenderTracker = new AppenderTracker<>(context, appenderFactory);
             appenderTracker.setMaxComponents(maxAppenderCount);
             appenderTracker.setTimeout(timeout.getMilliseconds());
         }

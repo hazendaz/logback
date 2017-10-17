@@ -30,7 +30,7 @@ import static org.junit.Assert.assertEquals;
 
 public class CompilerTest {
 
-    Map<String, String> converterMap = new HashMap<String, String>();
+    Map<String, String> converterMap = new HashMap<>();
     Context context = new ContextBase();
 
     @Before
@@ -52,7 +52,7 @@ public class CompilerTest {
 
     @Test
     public void testLiteral() throws Exception {
-        Parser<Object> p = new Parser<Object>("hello");
+        Parser<Object> p = new Parser<>("hello");
         Node t = p.parse();
         Converter<Object> head = p.compile(t, converterMap);
         String result = write(head, new Object());
@@ -62,7 +62,7 @@ public class CompilerTest {
     @Test
     public void testBasic() throws Exception {
         {
-            Parser<Object> p = new Parser<Object>("abc %hello");
+            Parser<Object> p = new Parser<>("abc %hello");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -70,7 +70,7 @@ public class CompilerTest {
             assertEquals("abc Hello", result);
         }
         {
-            Parser<Object> p = new Parser<Object>("abc %hello %OTT");
+            Parser<Object> p = new Parser<>("abc %hello %OTT");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -82,7 +82,7 @@ public class CompilerTest {
     @Test
     public void testFormat() throws Exception {
         {
-            Parser<Object> p = new Parser<Object>("abc %7hello");
+            Parser<Object> p = new Parser<>("abc %7hello");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -91,7 +91,7 @@ public class CompilerTest {
         }
 
         {
-            Parser<Object> p = new Parser<Object>("abc %-7hello");
+            Parser<Object> p = new Parser<>("abc %-7hello");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -100,7 +100,7 @@ public class CompilerTest {
         }
 
         {
-            Parser<Object> p = new Parser<Object>("abc %.3hello");
+            Parser<Object> p = new Parser<>("abc %.3hello");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -109,7 +109,7 @@ public class CompilerTest {
         }
 
         {
-            Parser<Object> p = new Parser<Object>("abc %.-3hello");
+            Parser<Object> p = new Parser<>("abc %.-3hello");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -118,7 +118,7 @@ public class CompilerTest {
         }
 
         {
-            Parser<Object> p = new Parser<Object>("abc %4.5OTT");
+            Parser<Object> p = new Parser<>("abc %4.5OTT");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -126,7 +126,7 @@ public class CompilerTest {
             assertEquals("abc  123", result);
         }
         {
-            Parser<Object> p = new Parser<Object>("abc %-4.5OTT");
+            Parser<Object> p = new Parser<>("abc %-4.5OTT");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -134,7 +134,7 @@ public class CompilerTest {
             assertEquals("abc 123 ", result);
         }
         {
-            Parser<Object> p = new Parser<Object>("abc %3.4hello");
+            Parser<Object> p = new Parser<>("abc %3.4hello");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -142,7 +142,7 @@ public class CompilerTest {
             assertEquals("abc ello", result);
         }
         {
-            Parser<Object> p = new Parser<Object>("abc %-3.-4hello");
+            Parser<Object> p = new Parser<>("abc %-3.-4hello");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -163,7 +163,7 @@ public class CompilerTest {
         // }
         {
             Context c = new ContextBase();
-            Parser<Object> p = new Parser<Object>("%(ABC %hello)");
+            Parser<Object> p = new Parser<>("%(ABC %hello)");
             p.setContext(c);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -172,7 +172,7 @@ public class CompilerTest {
             assertEquals("ABC Hello", result);
         }
         {
-            Parser<Object> p = new Parser<Object>("%(ABC %hello)");
+            Parser<Object> p = new Parser<>("%(ABC %hello)");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -184,7 +184,7 @@ public class CompilerTest {
     @Test
     public void testCompositeFormatting() throws Exception {
         {
-            Parser<Object> p = new Parser<Object>("xyz %4.10(ABC)");
+            Parser<Object> p = new Parser<>("xyz %4.10(ABC)");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -193,7 +193,7 @@ public class CompilerTest {
         }
 
         {
-            Parser<Object> p = new Parser<Object>("xyz %-4.10(ABC)");
+            Parser<Object> p = new Parser<>("xyz %-4.10(ABC)");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -202,7 +202,7 @@ public class CompilerTest {
         }
 
         {
-            Parser<Object> p = new Parser<Object>("xyz %.2(ABC %hello)");
+            Parser<Object> p = new Parser<>("xyz %.2(ABC %hello)");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -211,7 +211,7 @@ public class CompilerTest {
         }
 
         {
-            Parser<Object> p = new Parser<Object>("xyz %.-2(ABC)");
+            Parser<Object> p = new Parser<>("xyz %.-2(ABC)");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -220,7 +220,7 @@ public class CompilerTest {
         }
 
         {
-            Parser<Object> p = new Parser<Object>("xyz %30.30(ABC %20hello)");
+            Parser<Object> p = new Parser<>("xyz %30.30(ABC %20hello)");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);
@@ -231,7 +231,7 @@ public class CompilerTest {
 
     @Test
     public void testUnknownWord() throws Exception {
-        Parser<Object> p = new Parser<Object>("%unknown");
+        Parser<Object> p = new Parser<>("%unknown");
         p.setContext(context);
         Node t = p.parse();
         p.compile(t, converterMap);
@@ -242,7 +242,7 @@ public class CompilerTest {
     @Test
     public void testWithNopEscape() throws Exception {
         {
-            Parser<Object> p = new Parser<Object>("xyz %hello\\_world");
+            Parser<Object> p = new Parser<>("xyz %hello\\_world");
             p.setContext(context);
             Node t = p.parse();
             Converter<Object> head = p.compile(t, converterMap);

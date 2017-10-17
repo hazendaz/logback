@@ -65,6 +65,6 @@ final public class FilterAttachableImpl<E> implements FilterAttachable<E> {
     }
 
     public List<Filter<E>> getCopyOfAttachedFiltersList() {
-        return new ArrayList<Filter<E>>(filterList);
+        return new ArrayList<>(filterList);
     }
 }

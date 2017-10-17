@@ -88,7 +88,7 @@ public class TimeBasedRollingPolicy<E> extends RollingPolicyBase implements Trig
         }
 
         if (timeBasedFileNamingAndTriggeringPolicy == null) {
-            timeBasedFileNamingAndTriggeringPolicy = new DefaultTimeBasedFileNamingAndTriggeringPolicy<E>();
+            timeBasedFileNamingAndTriggeringPolicy = new DefaultTimeBasedFileNamingAndTriggeringPolicy<>();
         }
         timeBasedFileNamingAndTriggeringPolicy.setContext(context);
         timeBasedFileNamingAndTriggeringPolicy.setTimeBasedRollingPolicy(this);

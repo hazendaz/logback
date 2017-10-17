@@ -57,7 +57,7 @@ public class SafeModeRollingFileAppender {
     static LoggerContext buildLoggerContext(String stamp, String filename, boolean safetyMode) {
         LoggerContext loggerContext = new LoggerContext();
 
-        RollingFileAppender<ILoggingEvent> rfa = new RollingFileAppender<ILoggingEvent>();
+        RollingFileAppender<ILoggingEvent> rfa = new RollingFileAppender<>();
         PatternLayoutEncoder patternLayout = new PatternLayoutEncoder();
         patternLayout.setPattern(stamp + " %5p - %-50m%n");
         patternLayout.setContext(loggerContext);
@@ -69,7 +69,7 @@ public class SafeModeRollingFileAppender {
         rfa.setPrudent(safetyMode);
         rfa.setContext(loggerContext);
 
-        TimeBasedRollingPolicy tbrp = new TimeBasedRollingPolicy();
+        TimeBasedRollingPolicy<?> tbrp = new TimeBasedRollingPolicy<>();
 
         tbrp.setContext(loggerContext);
         tbrp.setFileNamePattern(filename + "-%d{" + DATE_PATTERN + "}.log");

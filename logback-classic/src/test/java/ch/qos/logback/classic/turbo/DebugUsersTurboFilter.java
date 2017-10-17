@@ -37,7 +37,7 @@ import ch.qos.logback.core.spi.FilterReply;
  */
 public class DebugUsersTurboFilter extends TurboFilter {
 
-    List<String> userList = new ArrayList<String>();
+    List<String> userList = new ArrayList<>();
 
     @Override
     public FilterReply decide(Marker marker, Logger logger, Level level, String format, Object[] params, Throwable t) {

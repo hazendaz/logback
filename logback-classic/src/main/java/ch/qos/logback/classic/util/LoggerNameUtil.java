@@ -50,7 +50,7 @@ public class LoggerNameUtil {
     }
 
     public static List<String> computeNameParts(String loggerName) {
-        List<String> partList = new ArrayList<String>();
+        List<String> partList = new ArrayList<>();
 
         int fromIndex = 0;
         while (true) {

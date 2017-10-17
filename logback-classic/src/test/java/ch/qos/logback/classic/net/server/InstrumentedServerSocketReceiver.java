@@ -37,7 +37,7 @@ public class InstrumentedServerSocketReceiver extends ServerSocketReceiver {
     private final ServerListener<RemoteAppenderClient> listener;
     private final ServerRunner<RemoteAppenderClient> runner;
 
-    private ServerListener lastListener;
+    private ServerListener<RemoteAppenderClient> lastListener;
 
     public InstrumentedServerSocketReceiver(ServerSocket serverSocket) {
         this(serverSocket, new RemoteAppenderServerListener(serverSocket), null);
@@ -71,7 +71,7 @@ public class InstrumentedServerSocketReceiver extends ServerSocketReceiver {
     }
 
     @Override
-    protected ServerRunner createServerRunner(ServerListener<RemoteAppenderClient> listener, Executor executor) {
+    protected ServerRunner<?> createServerRunner(ServerListener<RemoteAppenderClient> listener, Executor executor) {
         lastListener = listener;
         return runner != null ? runner : super.createServerRunner(listener, executor);
     }
@@ -81,7 +81,7 @@ public class InstrumentedServerSocketReceiver extends ServerSocketReceiver {
         return listener;
     }
 
-    public ServerListener getLastListener() {
+    public ServerListener<RemoteAppenderClient> getLastListener() {
         return lastListener;
     }
 

@@ -111,7 +111,7 @@ public class SSLParametersConfiguration extends ContextAwareBase {
      *    matched by any pattern in {@code excluded}
      */
     private String[] includedStrings(String[] defaults, String included, String excluded) {
-        List<String> values = new ArrayList<String>(defaults.length);
+        List<String> values = new ArrayList<>(defaults.length);
         values.addAll(Arrays.asList(defaults));
         if (included != null) {
             StringCollectionUtil.retainMatching(values, stringToArray(included));

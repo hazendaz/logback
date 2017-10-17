@@ -69,7 +69,7 @@ public class AppenderTracker<E> extends AbstractComponentTracker<Appender<E>> {
             nopaWarningCount++;
             contextAware.addError("Building NOPAppender for discriminating value [" + key + "]");
         }
-        NOPAppender<E> nopa = new NOPAppender<E>();
+        NOPAppender<E> nopa = new NOPAppender<>();
         nopa.setContext(context);
         nopa.start();
         return nopa;

@@ -55,7 +55,7 @@ public class SimpleSocketServer extends Thread {
     private final LoggerContext lc;
     private boolean closed = false;
     private ServerSocket serverSocket;
-    private List<SocketNode> socketNodeList = new ArrayList<SocketNode>();
+    private List<SocketNode> socketNodeList = new ArrayList<>();
 
     // used for testing purposes
     private CountDownLatch latch;

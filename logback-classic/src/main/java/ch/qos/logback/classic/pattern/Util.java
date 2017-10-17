@@ -26,7 +26,7 @@ import ch.qos.logback.classic.spi.ClassPackagingData;
  */
 public class Util {
 
-    static Map<String, ClassPackagingData> cache = new HashMap<String, ClassPackagingData>();
+    static Map<String, ClassPackagingData> cache = new HashMap<>();
 
     static public boolean match(Marker marker, Marker[] markerArray) {
         if (markerArray == null) {

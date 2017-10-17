@@ -33,7 +33,7 @@ public class IfAction extends Action {
     public static final String MISSING_JANINO_MSG = "Could not find Janino library on the class path. Skipping conditional processing.";
     public static final String MISSING_JANINO_SEE = "See also " + CoreConstants.CODES_URL + "#ifJanino";
 
-    Stack<IfState> stack = new Stack<IfState>();
+    Stack<IfState> stack = new Stack<>();
 
     @Override
     public void begin(InterpretationContext ic, String name, Attributes attributes) throws ActionException {

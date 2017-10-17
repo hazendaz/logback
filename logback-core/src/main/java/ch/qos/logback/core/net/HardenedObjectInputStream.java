@@ -26,7 +26,7 @@ public class HardenedObjectInputStream extends ObjectInputStream {
     public HardenedObjectInputStream(InputStream in, String[] whilelist) throws IOException {
         super(in);
 
-        this.whitelistedClassNames = new ArrayList<String>();
+        this.whitelistedClassNames = new ArrayList<>();
         if (whilelist != null) {
             for (int i = 0; i < whilelist.length; i++) {
                 this.whitelistedClassNames.add(whilelist[i]);
@@ -37,7 +37,7 @@ public class HardenedObjectInputStream extends ObjectInputStream {
     public HardenedObjectInputStream(InputStream in, List<String> whitelist) throws IOException {
         super(in);
 
-        this.whitelistedClassNames = new ArrayList<String>();
+        this.whitelistedClassNames = new ArrayList<>();
         this.whitelistedClassNames.addAll(whitelist);
     }
 

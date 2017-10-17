@@ -9,7 +9,7 @@ import org.junit.Test;
 public class COWArrayListTest {
 
     Integer[] model = new Integer[0];
-    COWArrayList<Integer> cowaList = new COWArrayList<Integer>(model);
+    COWArrayList<Integer> cowaList = new COWArrayList<>(model);
 
     @Before
     public void setUp() throws Exception {

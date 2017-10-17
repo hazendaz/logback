@@ -44,7 +44,7 @@ abstract public class AppenderBase<E> extends ContextAwareBase implements Append
      */
     protected String name;
 
-    private FilterAttachableImpl<E> fai = new FilterAttachableImpl<E>();
+    private FilterAttachableImpl<E> fai = new FilterAttachableImpl<>();
 
     public String getName() {
         return name;

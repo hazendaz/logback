@@ -43,7 +43,7 @@ public class COWArrayList<E> implements List<E> {
     // explained by Rob Eden. See https://github.com/qos-ch/logback/commit/32a2047a1adfc#commitcomment-20791176
     
     AtomicBoolean fresh = new AtomicBoolean(false);
-    CopyOnWriteArrayList<E> underlyingList = new CopyOnWriteArrayList<E>();
+    CopyOnWriteArrayList<E> underlyingList = new CopyOnWriteArrayList<>();
     E[] ourCopy;
     final E[] modelArray;
 

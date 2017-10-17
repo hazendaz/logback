@@ -49,7 +49,7 @@ public class CyclicBufferTracker<E> extends AbstractComponentTracker<CyclicBuffe
 
     @Override
     protected CyclicBuffer<E> buildComponent(String key) {
-        return new CyclicBuffer<E>(bufferSize);
+        return new CyclicBuffer<>(bufferSize);
     }
 
     @Override
@@ -59,11 +59,11 @@ public class CyclicBufferTracker<E> extends AbstractComponentTracker<CyclicBuffe
 
     // for testing purposes
     List<String> liveKeysAsOrderedList() {
-        return new ArrayList<String>(liveMap.keySet());
+        return new ArrayList<>(liveMap.keySet());
     }
 
     List<String> lingererKeysAsOrderedList() {
-        return new ArrayList<String>(lingerersMap.keySet());
+        return new ArrayList<>(lingerersMap.keySet());
 
     }
 

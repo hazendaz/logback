@@ -35,7 +35,7 @@ import ch.qos.logback.core.net.server.ServerSocketListener;
 public class ServerSocketListenerTest {
 
     private ServerSocket serverSocket;
-    private ServerSocketListener listener;
+    private ServerSocketListener<?> listener;
 
     @Before
     public void setUp() throws Exception {

@@ -54,7 +54,7 @@ public class ContextJNDISelector implements ContextSelector {
     private final Map<String, LoggerContext> synchronizedContextMap;
     private final LoggerContext defaultContext;
 
-    private static final ThreadLocal<LoggerContext> threadLocal = new ThreadLocal<LoggerContext>();
+    private static final ThreadLocal<LoggerContext> threadLocal = new ThreadLocal<>();
 
     public ContextJNDISelector(LoggerContext context) {
         synchronizedContextMap = Collections.synchronizedMap(new HashMap<String, LoggerContext>());
@@ -162,7 +162,7 @@ public class ContextJNDISelector implements ContextSelector {
     }
 
     public List<String> getContextNames() {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         list.addAll(synchronizedContextMap.keySet());
         return list;
     }

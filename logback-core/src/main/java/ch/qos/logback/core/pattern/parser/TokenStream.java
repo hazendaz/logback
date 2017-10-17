@@ -73,8 +73,8 @@ class TokenStream {
         this.escapeUtil = escapeUtil;
     }
 
-    List tokenize() throws ScanException {
-        List<Token> tokenList = new ArrayList<Token>();
+    List<Token> tokenize() throws ScanException {
+        List<Token> tokenList = new ArrayList<>();
         StringBuffer buf = new StringBuffer();
 
         while (pointer < patternLength) {

@@ -30,7 +30,7 @@ import ch.qos.logback.core.boolex.EventEvaluatorBase;
  */
 public class OnMarkerEvaluator extends EventEvaluatorBase<ILoggingEvent> {
 
-    List<String> markerList = new ArrayList<String>();
+    List<String> markerList = new ArrayList<>();
 
     public void addMarker(String markerStr) {
         markerList.add(markerStr);

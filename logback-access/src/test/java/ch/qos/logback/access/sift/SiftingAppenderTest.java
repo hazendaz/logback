@@ -65,7 +65,7 @@ public class SiftingAppenderTest {
         Set<String> keySet = siftingAppender.getAppenderTracker().allKeys();
         assertEquals(3, keySet.size());
 
-        Set<String> witnessSet = new LinkedHashSet<String>();
+        Set<String> witnessSet = new LinkedHashSet<>();
         witnessSet.add("NA");
         witnessSet.add("x");
         witnessSet.add("y");

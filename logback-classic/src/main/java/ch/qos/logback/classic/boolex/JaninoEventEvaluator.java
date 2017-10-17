@@ -32,8 +32,8 @@ public class JaninoEventEvaluator extends JaninoEventEvaluatorBase<ILoggingEvent
 
     public final static String IMPORT_LEVEL = "import ch.qos.logback.classic.Level;\r\n";
 
-    public final static List<String> DEFAULT_PARAM_NAME_LIST = new ArrayList<String>();
-    public final static List<Class> DEFAULT_PARAM_TYPE_LIST = new ArrayList<Class>();
+    public final static List<String> DEFAULT_PARAM_NAME_LIST = new ArrayList<>();
+    public final static List<Class> DEFAULT_PARAM_TYPE_LIST = new ArrayList<>();
 
     static {
         DEFAULT_PARAM_NAME_LIST.add("DEBUG");
@@ -84,7 +84,7 @@ public class JaninoEventEvaluator extends JaninoEventEvaluatorBase<ILoggingEvent
     }
 
     protected String[] getParameterNames() {
-        List<String> fullNameList = new ArrayList<String>();
+        List<String> fullNameList = new ArrayList<>();
         fullNameList.addAll(DEFAULT_PARAM_NAME_LIST);
 
         for (int i = 0; i < matcherList.size(); i++) {
@@ -96,7 +96,7 @@ public class JaninoEventEvaluator extends JaninoEventEvaluatorBase<ILoggingEvent
     }
 
     protected Class[] getParameterTypes() {
-        List<Class> fullTypeList = new ArrayList<Class>();
+        List<Class> fullTypeList = new ArrayList<>();
         fullTypeList.addAll(DEFAULT_PARAM_TYPE_LIST);
         for (int i = 0; i < matcherList.size(); i++) {
             fullTypeList.add(Matcher.class);

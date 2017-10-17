@@ -28,11 +28,11 @@ public class CyclicBufferTrackerSimulator {
         public int simulationLength;
     }
 
-    CyclicBufferTracker<Object> realCBTracker = new CyclicBufferTracker<Object>();
-    CyclicBufferTrackerT<Object> t_CBTracker = new CyclicBufferTrackerT<Object>();
+    CyclicBufferTracker<Object> realCBTracker = new CyclicBufferTracker<>();
+    CyclicBufferTrackerT<Object> t_CBTracker = new CyclicBufferTrackerT<>();
 
-    List<SimulationEvent> scenario = new ArrayList<SimulationEvent>();
-    List<String> keySpace = new ArrayList<String>();
+    List<SimulationEvent> scenario = new ArrayList<>();
+    List<String> keySpace = new ArrayList<>();
     Random randomKeyGen = new Random(100);
     Random simulatorRandom = new Random(11234);
     Parameters params;
@@ -41,7 +41,7 @@ public class CyclicBufferTrackerSimulator {
 
     CyclicBufferTrackerSimulator(Parameters params) {
         this.params = params;
-        Map<String, String> checkMap = new HashMap<String, String>();
+        Map<String, String> checkMap = new HashMap<>();
         for (int i = 0; i < params.keySpaceLen; i++) {
             String k = getRandomKeyStr();
             if (checkMap.containsKey(k)) {

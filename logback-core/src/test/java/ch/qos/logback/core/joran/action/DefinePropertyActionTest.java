@@ -55,7 +55,7 @@ public class DefinePropertyActionTest {
     @Before
     public void setUp() throws Exception {
 
-        HashMap<ElementSelector, Action> rulesMap = new HashMap<ElementSelector, Action>();
+        HashMap<ElementSelector, Action> rulesMap = new HashMap<>();
         rulesMap.put(new ElementSelector("define"), new DefinePropertyAction());
         simpleConfigurator = new SimpleConfigurator(rulesMap);
         simpleConfigurator.setContext(context);

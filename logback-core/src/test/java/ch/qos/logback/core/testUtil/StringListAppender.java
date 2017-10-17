@@ -22,7 +22,7 @@ import ch.qos.logback.core.Layout;
 public class StringListAppender<E> extends AppenderBase<E> {
 
     Layout<E> layout;
-    public List<String> strList = new ArrayList<String>();
+    public List<String> strList = new ArrayList<>();
 
     public void start() {
         strList.clear();

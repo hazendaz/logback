@@ -126,7 +126,7 @@ public class ContextBaseTest {
     @Test
     public void contextThreadpoolIsDaemonized() throws InterruptedException {
         ExecutorService execSvc = context.getExecutorService();
-        final ArrayList<Thread> executingThreads = new ArrayList<Thread>();
+        final ArrayList<Thread> executingThreads = new ArrayList<>();
         execSvc.execute(new Runnable() {
             @Override
             public void run() {

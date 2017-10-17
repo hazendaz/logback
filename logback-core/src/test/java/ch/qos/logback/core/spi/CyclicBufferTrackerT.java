@@ -28,8 +28,8 @@ public class CyclicBufferTrackerT<E> implements ComponentTracker<CyclicBuffer<E>
     int bufferSize = CyclicBufferTracker.DEFAULT_BUFFER_SIZE;
     int maxComponents = CyclicBufferTracker.DEFAULT_NUMBER_OF_BUFFERS;
 
-    List<TEntry<E>> liveList = new LinkedList<TEntry<E>>();
-    List<TEntry<E>> lingererList = new LinkedList<TEntry<E>>();
+    List<TEntry<E>> liveList = new LinkedList<>();
+    List<TEntry<E>> lingererList = new LinkedList<>();
 
     long lastCheck = 0;
 
@@ -43,8 +43,8 @@ public class CyclicBufferTrackerT<E> implements ComponentTracker<CyclicBuffer<E>
         return null;
     }
 
-    private TEntry getFromEitherList(String key) {
-        TEntry entry = getEntry(liveList, key);
+    private TEntry<E> getFromEitherList(String key) {
+        TEntry<E> entry = getEntry(liveList, key);
         if (entry != null)
             return entry;
         else {
@@ -54,7 +54,7 @@ public class CyclicBufferTrackerT<E> implements ComponentTracker<CyclicBuffer<E>
 
     private List<String> keysAsOrderedList(List<TEntry<E>> list) {
         Collections.sort(list);
-        List<String> result = new LinkedList<String>();
+        List<String> result = new LinkedList<>();
         for (int i = 0; i < list.size(); i++) {
             TEntry<E> te = list.get(i);
             result.add(te.key);
@@ -71,26 +71,26 @@ public class CyclicBufferTrackerT<E> implements ComponentTracker<CyclicBuffer<E>
     }
 
     public Set<String> allKeys() {
-        HashSet<String> allKeys = new HashSet<String>();
-        for (TEntry e : liveList)
+        HashSet<String> allKeys = new HashSet<>();
+        for (TEntry<?> e : liveList)
             allKeys.add(e.key);
-        for (TEntry e : lingererList)
+        for (TEntry<?> e : lingererList)
             allKeys.add(e.key);
         return allKeys;
     }
 
     public Collection<CyclicBuffer<E>> allComponents() {
-        List<CyclicBuffer<E>> allComponents = new ArrayList<CyclicBuffer<E>>();
-        for (TEntry e : liveList)
+        List<CyclicBuffer<E>> allComponents = new ArrayList<>();
+        for (TEntry<?> e : liveList)
             allComponents.add(e.value);
-        for (TEntry e : lingererList)
+        for (TEntry<?> e : lingererList)
             allComponents.add(e.value);
 
         return allComponents;
     }
 
     public CyclicBuffer<E> find(String key) {
-        TEntry<E> te = getFromEitherList(key);
+        TEntry<?> te = getFromEitherList(key);
         if (te == null)
             return null;
         else
@@ -100,8 +100,8 @@ public class CyclicBufferTrackerT<E> implements ComponentTracker<CyclicBuffer<E>
     public CyclicBuffer<E> getOrCreate(String key, long timestamp) {
         TEntry<E> te = getFromEitherList(key);
         if (te == null) {
-            CyclicBuffer<E> cb = new CyclicBuffer<E>(bufferSize);
-            te = new TEntry<E>(key, cb, timestamp);
+            CyclicBuffer<E> cb = new CyclicBuffer<>(bufferSize);
+            te = new TEntry<>(key, cb, timestamp);
             liveList.add(te);
             if (liveList.size() > maxComponents) {
                 Collections.sort(liveList);

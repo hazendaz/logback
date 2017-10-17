@@ -120,7 +120,7 @@ public class CyclicBuffer<E> {
     }
 
     public List<E> asList() {
-        List<E> tList = new ArrayList<E>();
+        List<E> tList = new ArrayList<>();
         for (int i = 0; i < length(); i++) {
             tList.add(get(i));
         }

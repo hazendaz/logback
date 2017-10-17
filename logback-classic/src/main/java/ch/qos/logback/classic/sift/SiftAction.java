@@ -30,7 +30,7 @@ public class SiftAction extends Action implements InPlayListener {
 
     @Override
     public void begin(InterpretationContext ic, String name, Attributes attributes) throws ActionException {
-        seList = new ArrayList<SaxEvent>();
+        seList = new ArrayList<>();
         ic.addInPlayListener(this);
     }
 

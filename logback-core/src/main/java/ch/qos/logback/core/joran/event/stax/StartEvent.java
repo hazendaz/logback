@@ -35,7 +35,7 @@ public class StartEvent extends StaxEvent {
     private void populateAttributes(Iterator<Attribute> attributeIterator) {
         while (attributeIterator.hasNext()) {
             if (attributes == null) {
-                attributes = new ArrayList<Attribute>(2);
+                attributes = new ArrayList<>(2);
             }
             attributes.add(attributeIterator.next());
         }

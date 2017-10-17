@@ -44,7 +44,7 @@ public class TextFileUtil {
         // Pattern p = Pattern.compile(regExp);
         String line;
 
-        List<String> wordList = new ArrayList<String>();
+        List<String> wordList = new ArrayList<>();
 
         while ((line = br.readLine()) != null) {
             // line = line.replaceAll("\\p{Punct}+", " ");

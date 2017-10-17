@@ -28,7 +28,7 @@ public class CyclicBufferTest {
 
     @Test
     public void smoke() {
-        CyclicBuffer<String> cb = new CyclicBuffer<String>(2);
+        CyclicBuffer<String> cb = new CyclicBuffer<>(2);
         assertSize(cb, 0);
         cb.add("zero");
         assertSize(cb, 1);
@@ -44,11 +44,11 @@ public class CyclicBufferTest {
 
     @Test
     public void cloning() {
-        CyclicBuffer<String> cb = new CyclicBuffer<String>(2);
+        CyclicBuffer<String> cb = new CyclicBuffer<>(2);
         cb.add("zero");
         cb.add("one");
 
-        CyclicBuffer<String> clone = new CyclicBuffer<String>(cb);
+        CyclicBuffer<String> clone = new CyclicBuffer<>(cb);
         assertSize(clone, 2);
         cb.clear();
         assertSize(cb, 0);

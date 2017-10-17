@@ -28,7 +28,7 @@ public class T_LRUCache<K> {
 
     int sequenceNumber;
     final int cacheSize;
-    List<T_Entry<K>> cacheList = new LinkedList<T_Entry<K>>();
+    List<T_Entry<K>> cacheList = new LinkedList<>();
 
     public T_LRUCache(int size) {
         this.cacheSize = size;
@@ -41,7 +41,7 @@ public class T_LRUCache<K> {
         if (te != null) {
             te.sequenceNumber = sequenceNumber;
         } else {
-            te = new T_Entry<K>(k, sequenceNumber);
+            te = new T_Entry<>(k, sequenceNumber);
             cacheList.add(te);
         }
         Collections.sort(cacheList);
@@ -63,7 +63,7 @@ public class T_LRUCache<K> {
     }
 
     synchronized public List<K> keyList() {
-        List<K> keyList = new ArrayList<K>();
+        List<K> keyList = new ArrayList<>();
         for (T_Entry<K> e : cacheList) {
             keyList.add(e.k);
         }

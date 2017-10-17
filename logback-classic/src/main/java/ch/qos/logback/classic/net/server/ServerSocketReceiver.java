@@ -45,7 +45,7 @@ public class ServerSocketReceiver extends ReceiverBase {
     private String address;
 
     private ServerSocket serverSocket;
-    private ServerRunner runner;
+    private ServerRunner<?> runner;
 
     /**
      * Starts the server.
@@ -70,7 +70,7 @@ public class ServerSocketReceiver extends ReceiverBase {
         return new RemoteAppenderServerListener(socket);
     }
 
-    protected ServerRunner createServerRunner(ServerListener<RemoteAppenderClient> listener, Executor executor) {
+    protected ServerRunner<?> createServerRunner(ServerListener<RemoteAppenderClient> listener, Executor executor) {
         return new RemoteAppenderServerRunner(listener, executor);
     }
 

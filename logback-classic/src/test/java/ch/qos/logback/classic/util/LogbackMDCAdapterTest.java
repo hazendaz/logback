@@ -121,11 +121,11 @@ public class LogbackMDCAdapterTest {
         Map<String, String> parentHM = getMapFromMDCAdapter(mdcAdapter);
         assertTrue(parentHM != childThread.childHM);
 
-        HashMap<String, String> parentHMWitness = new HashMap<String, String>();
+        HashMap<String, String> parentHMWitness = new HashMap<>();
         parentHMWitness.put(firstKey, firstKey + B_SUFFIX);
         assertEquals(parentHMWitness, parentHM);
 
-        HashMap<String, String> childHMWitness = new HashMap<String, String>();
+        HashMap<String, String> childHMWitness = new HashMap<>();
         childHMWitness.put(secondKey, secondKey + A_SUFFIX);
         assertEquals(childHMWitness, childThread.childHM);
 

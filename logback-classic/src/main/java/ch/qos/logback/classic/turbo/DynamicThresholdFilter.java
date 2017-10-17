@@ -125,7 +125,7 @@ import java.util.HashMap;
  * @author Ceki G&uuml;lc&uuml;
  */
 public class DynamicThresholdFilter extends TurboFilter {
-    private Map<String, Level> valueLevelMap = new HashMap<String, Level>();
+    private Map<String, Level> valueLevelMap = new HashMap<>();
     private Level defaultThreshold = Level.ERROR;
     private String key;
 

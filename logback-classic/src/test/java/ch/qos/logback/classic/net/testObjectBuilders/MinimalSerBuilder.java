@@ -15,7 +15,7 @@ package ch.qos.logback.classic.net.testObjectBuilders;
 
 import java.io.Serializable;
 
-public class MinimalSerBuilder implements Builder {
+public class MinimalSerBuilder implements Builder<Object> {
 
     public Object build(int i) {
         return new MinimalSer(i);

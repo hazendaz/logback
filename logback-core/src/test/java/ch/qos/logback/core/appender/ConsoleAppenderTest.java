@@ -63,12 +63,12 @@ public class ConsoleAppenderTest extends AbstractAppenderTest<Object> {
 
     @Override
     public Appender<Object> getAppender() {
-        return new ConsoleAppender<Object>();
+        return new ConsoleAppender<>();
     }
 
     protected Appender<Object> getConfiguredAppender() {
-        ConsoleAppender<Object> ca = new ConsoleAppender<Object>();
-        ca.setEncoder(new NopEncoder<Object>());
+        ConsoleAppender<Object> ca = new ConsoleAppender<>();
+        ca.setEncoder(new NopEncoder<>());
         ca.start();
         return ca;
     }
@@ -76,7 +76,7 @@ public class ConsoleAppenderTest extends AbstractAppenderTest<Object> {
     @Test
     public void smoke() {
         ConsoleAppender<Object> ca = (ConsoleAppender<Object>) getAppender();
-        ca.setEncoder(new DummyEncoder<Object>());
+        ca.setEncoder(new DummyEncoder<>());
         ca.start();
         ca.doAppend(new Object());
         assertEquals(DummyLayout.DUMMY, tee.toString());
@@ -85,7 +85,7 @@ public class ConsoleAppenderTest extends AbstractAppenderTest<Object> {
     @Test
     public void open() {
         ConsoleAppender<Object> ca = (ConsoleAppender<Object>) getAppender();
-        DummyEncoder<Object> dummyEncoder = new DummyEncoder<Object>();
+        DummyEncoder<Object> dummyEncoder = new DummyEncoder<>();
         dummyEncoder.setFileHeader("open");
         ca.setEncoder(dummyEncoder);
         ca.start();
@@ -97,7 +97,7 @@ public class ConsoleAppenderTest extends AbstractAppenderTest<Object> {
     @Test
     public void testClose() {
         ConsoleAppender<Object> ca = (ConsoleAppender<Object>) getAppender();
-        DummyEncoder<Object> dummyEncoder = new DummyEncoder<Object>();
+        DummyEncoder<Object> dummyEncoder = new DummyEncoder<>();
         dummyEncoder.setFileFooter("CLOSED");
         ca.setEncoder(dummyEncoder);
         ca.start();
@@ -113,7 +113,7 @@ public class ConsoleAppenderTest extends AbstractAppenderTest<Object> {
     @Test
     public void changeInConsole() {
         ConsoleAppender<Object> ca = (ConsoleAppender<Object>) getAppender();
-        EchoEncoder<Object> encoder = new EchoEncoder<Object>();
+        EchoEncoder<Object> encoder = new EchoEncoder<>();
         ca.setEncoder(encoder);
         ca.start();
         ca.doAppend("a");
@@ -128,7 +128,7 @@ public class ConsoleAppenderTest extends AbstractAppenderTest<Object> {
     @Test
     public void testUTF16BE() throws UnsupportedEncodingException {
         ConsoleAppender<Object> ca = (ConsoleAppender<Object>) getAppender();
-        DummyEncoder<Object> dummyEncoder = new DummyEncoder<Object>();
+        DummyEncoder<Object> dummyEncoder = new DummyEncoder<>();
         Charset utf16BE = Charset.forName("UTF-16BE");
         dummyEncoder.setCharset(utf16BE);
         ca.setEncoder(dummyEncoder);
@@ -140,7 +140,7 @@ public class ConsoleAppenderTest extends AbstractAppenderTest<Object> {
     @Test
     public void wrongTarget() {
         ConsoleAppender<Object> ca = (ConsoleAppender<Object>) getAppender();
-        EchoEncoder<Object> encoder = new EchoEncoder<Object>();
+        EchoEncoder<Object> encoder = new EchoEncoder<>();
         encoder.setContext(context);
         ca.setContext(context);
         ca.setTarget("foo");

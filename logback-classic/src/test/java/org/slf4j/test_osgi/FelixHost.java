@@ -50,7 +50,7 @@ public class FelixHost {
     @SuppressWarnings("unchecked")
     public void doLaunch() {
         // Create a case-insensitive configuration property map.
-        Map configMap = new StringMap();
+        Map<String, Object> configMap = new StringMap();
         // Configure the Felix instance to be embedded.
         // configMap.put(FelixConstants.EMBEDDED_EXECUTION_PROP, "true");
         // Add core OSGi packages to be exported from the class path
@@ -66,7 +66,7 @@ public class FelixHost {
         try {
             // Create host activator;
 
-            List list = new ArrayList();
+            List<?> list = new ArrayList<>();
 
             // list.add(new HostActivator());
             configMap.put(Constants.FRAMEWORK_SYSTEMPACKAGES_EXTRA, "org.xml.sax, org.xml.sax.helpers, javax.xml.parsers, javax.naming");

@@ -31,7 +31,7 @@ import java.util.List;
 
 public class StaxEventRecorder extends ContextAwareBase {
 
-    List<StaxEvent> eventList = new ArrayList<StaxEvent>();
+    List<StaxEvent> eventList = new ArrayList<>();
     ElementPath globalElementPath = new ElementPath();
 
     public StaxEventRecorder(Context context) {

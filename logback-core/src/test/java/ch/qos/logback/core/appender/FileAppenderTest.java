@@ -39,12 +39,12 @@ public class FileAppenderTest extends AbstractAppenderTest<Object> {
     int diff = RandomUtil.getPositiveInt();
 
     protected Appender<Object> getAppender() {
-        return new FileAppender<Object>();
+        return new FileAppender<>();
     }
 
     protected Appender<Object> getConfiguredAppender() {
-        FileAppender<Object> appender = new FileAppender<Object>();
-        appender.setEncoder(new NopEncoder<Object>());
+        FileAppender<Object> appender = new FileAppender<>();
+        appender.setEncoder(new NopEncoder<>());
         appender.setFile(CoreTestConstants.OUTPUT_DIR_PREFIX + "temp.log");
         appender.setName("test");
         appender.setContext(context);
@@ -56,8 +56,8 @@ public class FileAppenderTest extends AbstractAppenderTest<Object> {
     public void smoke() {
         String filename = CoreTestConstants.OUTPUT_DIR_PREFIX + "/fat-smoke.log";
 
-        FileAppender<Object> appender = new FileAppender<Object>();
-        appender.setEncoder(new DummyEncoder<Object>());
+        FileAppender<Object> appender = new FileAppender<>();
+        appender.setEncoder(new DummyEncoder<>());
         appender.setAppend(false);
         appender.setFile(filename);
         appender.setName("smoke");
@@ -78,8 +78,8 @@ public class FileAppenderTest extends AbstractAppenderTest<Object> {
         assertFalse(file.getParentFile().exists());
         assertFalse(file.exists());
 
-        FileAppender<Object> appender = new FileAppender<Object>();
-        appender.setEncoder(new DummyEncoder<Object>());
+        FileAppender<Object> appender = new FileAppender<>();
+        appender.setEncoder(new DummyEncoder<>());
         appender.setAppend(false);
         appender.setFile(filename);
         appender.setName("testCreateParentFolders");
@@ -100,8 +100,8 @@ public class FileAppenderTest extends AbstractAppenderTest<Object> {
     public void testPrudentModeLogicalImplications() {
         String filename = CoreTestConstants.OUTPUT_DIR_PREFIX + diff + "fat-testPrudentModeLogicalImplications.txt";
         File file = new File(filename);
-        FileAppender<Object> appender = new FileAppender<Object>();
-        appender.setEncoder(new DummyEncoder<Object>());
+        FileAppender<Object> appender = new FileAppender<>();
+        appender.setEncoder(new DummyEncoder<>());
         appender.setFile(filename);
         appender.setName("testPrudentModeLogicalImplications");
         appender.setContext(context);
@@ -132,19 +132,19 @@ public class FileAppenderTest extends AbstractAppenderTest<Object> {
     public void fileNameCollision() {
         String fileName = CoreTestConstants.OUTPUT_DIR_PREFIX + diff + "fileNameCollision";
 
-        FileAppender<Object> appender0 = new FileAppender<Object>();
+        FileAppender<Object> appender0 = new FileAppender<>();
         appender0.setName("FA0");
         appender0.setFile(fileName);
         appender0.setContext(context);
-        appender0.setEncoder(new DummyEncoder<Object>());
+        appender0.setEncoder(new DummyEncoder<>());
         appender0.start();
         assertTrue(appender0.isStarted());
 
-        FileAppender<Object> appender1 = new FileAppender<Object>();
+        FileAppender<Object> appender1 = new FileAppender<>();
         appender1.setName("FA1");
         appender1.setFile(fileName);
         appender1.setContext(context);
-        appender1.setEncoder(new DummyEncoder<Object>());
+        appender1.setEncoder(new DummyEncoder<>());
         appender1.start();
 
         assertFalse(appender1.isStarted());

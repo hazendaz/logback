@@ -52,12 +52,12 @@ public class ScaffoldingForRollingTests {
 
     int diff = RandomUtil.getPositiveInt();
     protected String randomOutputDir = CoreTestConstants.OUTPUT_DIR_PREFIX + diff + "/";
-    EchoEncoder<Object> encoder = new EchoEncoder<Object>();
+    EchoEncoder<Object> encoder = new EchoEncoder<>();
     Context context = new ContextBase();
-    protected List<String> expectedFilenameList = new ArrayList<String>();
+    protected List<String> expectedFilenameList = new ArrayList<>();
     protected long nextRolloverThreshold; // initialized in setUp()
     protected long currentTime; // initialized in setUp()
-    protected List<Future<?>> futureList = new ArrayList<Future<?>>();
+    protected List<Future<?>> futureList = new ArrayList<>();
 
     Calendar calendar = Calendar.getInstance();
 
@@ -82,12 +82,12 @@ public class ScaffoldingForRollingTests {
     }
 
     public static void fileContentCheck(File[] fileArray, int runLength, String prefix, int runStart) throws IOException {
-        List<String> stringList = new ArrayList<String>();
+        List<String> stringList = new ArrayList<>();
         for (File file : fileArray) {
             FileToBufferUtil.readIntoList(file, stringList);
         }
 
-        List<String> witnessList = new ArrayList<String>();
+        List<String> witnessList = new ArrayList<>();
 
         for (int i = runStart; i < runLength; i++) {
             witnessList.add(prefix + i);
@@ -188,7 +188,7 @@ public class ScaffoldingForRollingTests {
     }
 
     protected List<String> filterElementsInListBySuffix(String suffix) {
-        List<String> zipFiles = new ArrayList<String>();
+        List<String> zipFiles = new ArrayList<>();
         for (String filename : expectedFilenameList) {
             if (filename.endsWith(suffix))
                 zipFiles.add(filename);

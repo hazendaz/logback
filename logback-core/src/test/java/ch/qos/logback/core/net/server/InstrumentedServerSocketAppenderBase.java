@@ -34,7 +34,7 @@ public class InstrumentedServerSocketAppenderBase extends AbstractServerSocketAp
     private final ServerListener<RemoteReceiverClient> listener;
     private final ServerRunner<RemoteReceiverClient> runner;
 
-    private ServerListener lastListener;
+    private ServerListener<RemoteReceiverClient> lastListener;
 
     public InstrumentedServerSocketAppenderBase(ServerSocket serverSocket) {
         this(serverSocket, new RemoteReceiverServerListener(serverSocket), null);
@@ -92,7 +92,7 @@ public class InstrumentedServerSocketAppenderBase extends AbstractServerSocketAp
         return listener;
     }
 
-    public ServerListener getLastListener() {
+    public ServerListener<RemoteReceiverClient> getLastListener() {
         return lastListener;
     }
 

@@ -25,7 +25,7 @@ public class DummyResponse implements HttpServletResponse {
 
     public static final int DUMMY_DEFAULT_STATUS = 200;
     public static final int DUMMY_DEFAULT_CONTENT_COUNT = 1000;
-    public static final Map<String, String> DUMMY_DEFAULT_HDEADER_MAP = new HashMap<String, String>();;
+    public static final Map<String, String> DUMMY_DEFAULT_HDEADER_MAP = new HashMap<>();;
 
     static {
         DUMMY_DEFAULT_HDEADER_MAP.put("headerName1", "headerValue1");
@@ -158,7 +158,7 @@ public class DummyResponse implements HttpServletResponse {
 
     public Collection<String> getHeaders(String name) {
         String val = headerMap.get(name);
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         if (val != null)
             list.add(val);
         return list;

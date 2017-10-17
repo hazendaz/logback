@@ -45,7 +45,7 @@ public class LoggerSerializationTest {
     ByteArrayOutputStream bos;
     ObjectOutputStream oos;
     HardenedLoggingEventInputStream hardenedLoggingEventInputStream;
-    List<String> whitelist = new ArrayList<String>();
+    List<String> whitelist = new ArrayList<>();
     
     @Before
     public void setUp() throws Exception {

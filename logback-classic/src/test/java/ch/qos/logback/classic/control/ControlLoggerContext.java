@@ -40,7 +40,7 @@ public class ControlLoggerContext {
     private ControlLogger root;
     //
     // Hashtable loggerMap = new Hashtable();
-    Map<String, ControlLogger> loggerMap = new HashMap<String, ControlLogger>();
+    Map<String, ControlLogger> loggerMap = new HashMap<>();
 
     public ControlLoggerContext() {
         this.root = new ControlLogger("root", null);

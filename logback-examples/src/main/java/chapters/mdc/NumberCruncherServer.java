@@ -65,7 +65,7 @@ public class NumberCruncherServer extends UnicastRemoteObject implements NumberC
             return new int[] { 1 };
         }
 
-        Vector<Integer> factors = new Vector<Integer>();
+        Vector<Integer> factors = new Vector<>();
         int n = number;
 
         for (int i = 2; (i <= n) && ((i * i) <= number); i++) {

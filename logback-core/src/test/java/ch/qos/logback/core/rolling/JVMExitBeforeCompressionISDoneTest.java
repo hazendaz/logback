@@ -21,13 +21,13 @@ import ch.qos.logback.core.util.StatusPrinter;
 @Ignore
 public class JVMExitBeforeCompressionISDoneTest extends ScaffoldingForRollingTests {
 
-    RollingFileAppender<Object> rfa = new RollingFileAppender<Object>();
-    TimeBasedRollingPolicy<Object> tbrp = new TimeBasedRollingPolicy<Object>();
+    RollingFileAppender<Object> rfa = new RollingFileAppender<>();
+    TimeBasedRollingPolicy<Object> tbrp = new TimeBasedRollingPolicy<>();
     DelayingShutdownHook delayingShutdownHook = new DelayingShutdownHook();
     
     static final long FRI_2016_05_13_T_170415_GMT = 1463159055630L;
                                                     
-    EchoEncoder<Object> encoder = new EchoEncoder<Object>();
+    EchoEncoder<Object> encoder = new EchoEncoder<>();
 
     @Before
     @Override
@@ -47,7 +47,7 @@ public class JVMExitBeforeCompressionISDoneTest extends ScaffoldingForRollingTes
         tbrp.setContext(context);
         tbrp.setFileNamePattern(filenamePattern);
         tbrp.setParent(rfa);
-        tbrp.timeBasedFileNamingAndTriggeringPolicy = new DefaultTimeBasedFileNamingAndTriggeringPolicy<Object>();
+        tbrp.timeBasedFileNamingAndTriggeringPolicy = new DefaultTimeBasedFileNamingAndTriggeringPolicy<>();
         tbrp.timeBasedFileNamingAndTriggeringPolicy.setCurrentTime(givenTime);
         rfa.setRollingPolicy(tbrp);
         tbrp.start();

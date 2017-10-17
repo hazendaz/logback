@@ -40,7 +40,7 @@ public class OptionHelperTest {
 
     @Before
     public void setUp() throws Exception {
-        secondaryMap = new HashMap<String, String>();
+        secondaryMap = new HashMap<>();
     }
 
     @Test

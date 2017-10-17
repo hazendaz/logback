@@ -211,7 +211,7 @@ public class JMXConfigurator extends ContextAwareBase implements JMXConfigurator
 
     public List<String> getLoggerList() {
         LoggerContext lc = (LoggerContext) context;
-        List<String> strList = new ArrayList<String>();
+        List<String> strList = new ArrayList<>();
         Iterator<Logger> it = lc.getLoggerList().iterator();
         while (it.hasNext()) {
             Logger log = it.next();
@@ -221,7 +221,7 @@ public class JMXConfigurator extends ContextAwareBase implements JMXConfigurator
     }
 
     public List<String> getStatuses() {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         Iterator<Status> it = context.getStatusManager().getCopyOfStatusList().iterator();
         while (it.hasNext()) {
             list.add(it.next().toString());

@@ -28,7 +28,7 @@ public class DummyRequest implements HttpServletRequest {
     public final static String DUMMY_CONTENT_STRING = "request contents";
     public final static byte[] DUMMY_CONTENT_BYTES = DUMMY_CONTENT_STRING.getBytes();
 
-    public static final Map<String, Object> DUMMY_DEFAULT_ATTR_MAP = new HashMap<String, Object>();
+    public static final Map<String, Object> DUMMY_DEFAULT_ATTR_MAP = new HashMap<>();
 
     public static final String DUMMY_RESPONSE_CONTENT_STRING = "response contents";
     public static final byte[] DUMMY_RESPONSE_CONTENT_BYTES = DUMMY_RESPONSE_CONTENT_STRING.getBytes();
@@ -46,14 +46,14 @@ public class DummyRequest implements HttpServletRequest {
     }
 
     public DummyRequest() {
-        headerMap = new Hashtable<String, String>();
+        headerMap = new Hashtable<>();
         headerMap.put("headerName1", "headerValue1");
         headerMap.put("headerName2", "headerValue2");
 
-        parameterMap =  new Hashtable<String, String[]>();
+        parameterMap =  new Hashtable<>();
         parameterMap.put("param1", new String[] {"value1"});
         
-        attributes = new HashMap<String, Object>(DUMMY_DEFAULT_ATTR_MAP);
+        attributes = new HashMap<>(DUMMY_DEFAULT_ATTR_MAP);
     }
 
     public String getAuthType() {

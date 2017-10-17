@@ -31,14 +31,14 @@ public class BasicStatusManager implements StatusManager {
     int count = 0;
 
     // protected access was requested in http://jira.qos.ch/browse/LBCORE-36
-    final protected List<Status> statusList = new ArrayList<Status>();
-    final protected CyclicBuffer<Status> tailBuffer = new CyclicBuffer<Status>(TAIL_SIZE);
+    final protected List<Status> statusList = new ArrayList<>();
+    final protected CyclicBuffer<Status> tailBuffer = new CyclicBuffer<>(TAIL_SIZE);
     final protected LogbackLock statusListLock = new LogbackLock();
 
     int level = Status.INFO;
 
     // protected access was requested in http://jira.qos.ch/browse/LBCORE-36
-    final protected List<StatusListener> statusListenerList = new ArrayList<StatusListener>();
+    final protected List<StatusListener> statusListenerList = new ArrayList<>();
     final protected LogbackLock statusListenerListLock = new LogbackLock();
 
     // Note on synchronization
@@ -75,7 +75,7 @@ public class BasicStatusManager implements StatusManager {
 
     public List<Status> getCopyOfStatusList() {
         synchronized (statusListLock) {
-            List<Status> tList = new ArrayList<Status>(statusList);
+            List<Status> tList = new ArrayList<>(statusList);
             tList.addAll(tailBuffer.asList());
             return tList;
         }
@@ -137,7 +137,7 @@ public class BasicStatusManager implements StatusManager {
 
     public List<StatusListener> getCopyOfStatusListenerList() {
         synchronized (statusListenerListLock) {
-            return new ArrayList<StatusListener>(statusListenerList);
+            return new ArrayList<>(statusListenerList);
         }
     }
 

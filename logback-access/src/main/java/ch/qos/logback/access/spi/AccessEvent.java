@@ -305,7 +305,7 @@ public class AccessEvent implements Serializable, IAccessEvent {
     public Enumeration<String> getRequestHeaderNames() {
         // post-serialization
         if (httpRequest == null) {
-            Vector<String> list = new Vector<String>(getRequestHeaderMap().keySet());
+            Vector<String> list = new Vector<>(getRequestHeaderMap().keySet());
             return list.elements();
         }
         return httpRequest.getHeaderNames();
@@ -322,7 +322,7 @@ public class AccessEvent implements Serializable, IAccessEvent {
     public void buildRequestHeaderMap() {
         // according to RFC 2616 header names are case insensitive
         // latest versions of Tomcat return header names in lower-case
-        requestHeaderMap = new TreeMap<String, String>(String.CASE_INSENSITIVE_ORDER);
+        requestHeaderMap = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
         Enumeration<String> e = httpRequest.getHeaderNames();
         if (e == null) {
             return;
@@ -334,7 +334,7 @@ public class AccessEvent implements Serializable, IAccessEvent {
     }
 
     public void buildRequestParameterMap() {
-        requestParameterMap = new HashMap<String, String[]>();
+        requestParameterMap = new HashMap<>();
         Enumeration<String> e = httpRequest.getParameterNames();
         if (e == null) {
             return;
@@ -378,7 +378,7 @@ public class AccessEvent implements Serializable, IAccessEvent {
             return;
         }
         
-        attributeMap = new HashMap<String, Object>();
+        attributeMap = new HashMap<>();
 
         Enumeration<String> names = httpRequest.getAttributeNames();
         while (names.hasMoreElements()) {
@@ -576,7 +576,7 @@ public class AccessEvent implements Serializable, IAccessEvent {
 
     public List<String> getResponseHeaderNameList() {
         buildResponseHeaderMap();
-        return new ArrayList<String>(responseHeaderMap.keySet());
+        return new ArrayList<>(responseHeaderMap.keySet());
     }
 
     public void prepareForDeferredProcessing() {

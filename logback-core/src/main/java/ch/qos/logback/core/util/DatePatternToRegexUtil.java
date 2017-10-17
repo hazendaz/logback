@@ -44,7 +44,7 @@ public class DatePatternToRegexUtil {
     }
 
     private List<CharSequenceState> tokenize() {
-        List<CharSequenceState> sequenceList = new ArrayList<CharSequenceState>();
+        List<CharSequenceState> sequenceList = new ArrayList<>();
 
         CharSequenceState lastCharSequenceState = null;
 

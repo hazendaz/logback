@@ -45,7 +45,7 @@ public class IOPerformance extends Thread {
 
         // A FileAppender is created according to the buffering and
         // immediate flush setting of this IO instance.
-        FileAppender<ILoggingEvent> fa = new FileAppender<ILoggingEvent>();
+        FileAppender<ILoggingEvent> fa = new FileAppender<>();
         fa.setName("FILE");
         PatternLayoutEncoder pa = new PatternLayoutEncoder();
         pa.setPattern("%r %5p %c [%t] - %m%n");

@@ -29,9 +29,9 @@ public class BeanDescriptionFactory extends ContextAwareBase {
      * @return a {@link BeanDescription} for the given class.
      */
     public BeanDescription create(Class<?> clazz) {
-        Map<String, Method> propertyNameToGetter = new HashMap<String, Method>();
-        Map<String, Method> propertyNameToSetter = new HashMap<String, Method>();
-        Map<String, Method> propertyNameToAdder = new HashMap<String, Method>();
+        Map<String, Method> propertyNameToGetter = new HashMap<>();
+        Map<String, Method> propertyNameToSetter = new HashMap<>();
+        Map<String, Method> propertyNameToAdder = new HashMap<>();
         Method[] methods = clazz.getMethods();
         for (Method method : methods) {
             if(method.isBridge()) {

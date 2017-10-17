@@ -39,7 +39,7 @@ public class FruitConfigurationTest {
     public List<FruitShell> doFirstPart(String filename) throws Exception {
 
         try {
-            HashMap<ElementSelector, Action> rulesMap = new HashMap<ElementSelector, Action>();
+            HashMap<ElementSelector, Action> rulesMap = new HashMap<>();
             rulesMap.put(new ElementSelector("group/fruitShell"), new FruitShellAction());
             rulesMap.put(new ElementSelector("group/fruitShell/fruit"), new FruitFactoryAction());
             rulesMap.put(new ElementSelector("group/fruitShell/fruit/*"), new NOPAction());

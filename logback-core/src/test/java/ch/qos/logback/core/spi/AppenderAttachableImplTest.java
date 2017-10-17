@@ -38,7 +38,7 @@ public class AppenderAttachableImplTest {
 
     @Before
     public void setUp() throws Exception {
-        aai = new AppenderAttachableImpl<TestEvent>();
+        aai = new AppenderAttachableImpl<>();
     }
 
     @After
@@ -49,10 +49,10 @@ public class AppenderAttachableImplTest {
     @Test
     public void testAddAppender() throws Exception {
         TestEvent event = new TestEvent();
-        NOPAppender<TestEvent> ta = new NOPAppender<TestEvent>();
+        NOPAppender<TestEvent> ta = new NOPAppender<>();
         ta.start();
         aai.addAppender(ta);
-        ta = new NOPAppender<TestEvent>();
+        ta = new NOPAppender<>();
         ta.setName("test");
         ta.start();
         aai.addAppender(ta);
@@ -62,10 +62,10 @@ public class AppenderAttachableImplTest {
 
     @Test
     public void testIteratorForAppenders() throws Exception {
-        NOPAppender<TestEvent> ta = new NOPAppender<TestEvent>();
+        NOPAppender<TestEvent> ta = new NOPAppender<>();
         ta.start();
         aai.addAppender(ta);
-        NOPAppender<TestEvent> tab = new NOPAppender<TestEvent>();
+        NOPAppender<TestEvent> tab = new NOPAppender<>();
         tab.setName("test");
         tab.start();
         aai.addAppender(tab);
@@ -81,12 +81,12 @@ public class AppenderAttachableImplTest {
 
     @Test
     public void getGetAppender() throws Exception {
-        NOPAppender<TestEvent> test = new NOPAppender<TestEvent>();
+        NOPAppender<TestEvent> test = new NOPAppender<>();
         test.setName("test");
         test.start();
         aai.addAppender(test);
 
-        NOPAppender<TestEvent> testOther = new NOPAppender<TestEvent>();
+        NOPAppender<TestEvent> testOther = new NOPAppender<>();
         testOther.setName("testOther");
         testOther.start();
         aai.addAppender(testOther);
@@ -104,10 +104,10 @@ public class AppenderAttachableImplTest {
 
     @Test
     public void testIsAttached() throws Exception {
-        NOPAppender<TestEvent> ta = new NOPAppender<TestEvent>();
+        NOPAppender<TestEvent> ta = new NOPAppender<>();
         ta.start();
         aai.addAppender(ta);
-        NOPAppender<TestEvent> tab = new NOPAppender<TestEvent>();
+        NOPAppender<TestEvent> tab = new NOPAppender<>();
         tab.setName("test");
         tab.start();
         aai.addAppender(tab);
@@ -117,10 +117,10 @@ public class AppenderAttachableImplTest {
 
     @Test
     public void testDetachAndStopAllAppenders() throws Exception {
-        NOPAppender<TestEvent> ta = new NOPAppender<TestEvent>();
+        NOPAppender<TestEvent> ta = new NOPAppender<>();
         ta.start();
         aai.addAppender(ta);
-        NOPAppender<TestEvent> tab = new NOPAppender<TestEvent>();
+        NOPAppender<TestEvent> tab = new NOPAppender<>();
         tab.setName("test");
         tab.start();
         aai.addAppender(tab);
@@ -132,10 +132,10 @@ public class AppenderAttachableImplTest {
 
     @Test
     public void testDetachAppender() throws Exception {
-        NOPAppender<TestEvent> ta = new NOPAppender<TestEvent>();
+        NOPAppender<TestEvent> ta = new NOPAppender<>();
         ta.start();
         aai.addAppender(ta);
-        NOPAppender<TestEvent> tab = new NOPAppender<TestEvent>();
+        NOPAppender<TestEvent> tab = new NOPAppender<>();
         tab.setName("test");
         tab.start();
         aai.addAppender(tab);
@@ -146,11 +146,11 @@ public class AppenderAttachableImplTest {
 
     @Test
     public void testDetachAppenderByName() throws Exception {
-        NOPAppender<TestEvent> ta = new NOPAppender<TestEvent>();
+        NOPAppender<TestEvent> ta = new NOPAppender<>();
         ta.setName("test1");
         ta.start();
         aai.addAppender(ta);
-        NOPAppender<TestEvent> tab = new NOPAppender<TestEvent>();
+        NOPAppender<TestEvent> tab = new NOPAppender<>();
         tab.setName("test");
         tab.start();
         aai.addAppender(tab);

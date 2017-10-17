@@ -37,7 +37,7 @@ import chapters.onJoran.SimpleConfigurator;
  */
 public class Calculator2 {
     public static void main(String[] args) throws Exception {
-        Map<ElementSelector, Action> ruleMap = new HashMap<ElementSelector, Action>();
+        Map<ElementSelector, Action> ruleMap = new HashMap<>();
 
         // Note the wild card character '*', in the paterns, signifying any level
         // of nesting.

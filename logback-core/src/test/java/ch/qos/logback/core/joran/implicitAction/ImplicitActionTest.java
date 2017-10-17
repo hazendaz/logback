@@ -41,7 +41,7 @@ public class ImplicitActionTest {
     @Before
     public void setUp() throws Exception {
         fruitContext.setName("fruits");
-        HashMap<ElementSelector, Action> rulesMap = new HashMap<ElementSelector, Action>();
+        HashMap<ElementSelector, Action> rulesMap = new HashMap<>();
         rulesMap.put(new ElementSelector("/context/"), new FruitContextAction());
         rulesMap.put(new ElementSelector("/context/statusListener"), new StatusListenerAction());
         simpleConfigurator = new SimpleConfigurator(rulesMap);

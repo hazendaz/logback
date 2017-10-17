@@ -44,7 +44,7 @@ import ch.qos.logback.core.util.CoreTestConstants;
 public class TrivialConfiguratorTest {
 
     Context context = new ContextBase();
-    HashMap<ElementSelector, Action> rulesMap = new HashMap<ElementSelector, Action>();
+    HashMap<ElementSelector, Action> rulesMap = new HashMap<>();
 
     public void doTest(String filename) throws Exception {
 

@@ -345,19 +345,19 @@ public class SiftingAppenderTest {
             @Override
             public Appender<ILoggingEvent> buildAppender(Context context, String discriminatingValue) throws JoranException {
 
-                RollingFileAppender<ILoggingEvent> appender = new RollingFileAppender<ILoggingEvent>();
+                RollingFileAppender<ILoggingEvent> appender = new RollingFileAppender<>();
                 appender.setName("ROLLING_APPENDER_" + discriminatingValue);
                 appender.setContext(context);
                 appender.setFile("/var/logs/active_" + discriminatingValue + ".log");
 
-                TimeBasedRollingPolicy<ILoggingEvent> policy = new TimeBasedRollingPolicy<ILoggingEvent>();
+                TimeBasedRollingPolicy<ILoggingEvent> policy = new TimeBasedRollingPolicy<>();
                 policy.setContext(context);
                 policy.setMaxHistory(365);
                 policy.setFileNamePattern(CoreTestConstants.OUTPUT_DIR_PREFIX + "/logback1127/" + discriminatingValue + "_%d{yyyy_MM_dd}_%i.log");
                 policy.setParent(appender);
                 policy.setCleanHistoryOnStart(true);
 
-                SizeAndTimeBasedFNATP<ILoggingEvent> innerpolicy = new SizeAndTimeBasedFNATP<ILoggingEvent>();
+                SizeAndTimeBasedFNATP<ILoggingEvent> innerpolicy = new SizeAndTimeBasedFNATP<>();
                 innerpolicy.setContext(context);
                 innerpolicy.setMaxFileSize(FileSize.valueOf("5KB"));
                 innerpolicy.setTimeBasedRollingPolicy(policy);

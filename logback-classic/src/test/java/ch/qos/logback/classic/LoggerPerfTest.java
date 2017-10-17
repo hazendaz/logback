@@ -159,7 +159,7 @@ public class LoggerPerfTest {
     double computeDurationOfEnabledLog(long len) {
         lbLogger.setLevel(Level.ALL);
 
-        NOPAppender<ILoggingEvent> nopAppender = new NOPAppender<ILoggingEvent>();
+        NOPAppender<ILoggingEvent> nopAppender = new NOPAppender<>();
         nopAppender.start();
         ((ch.qos.logback.classic.Logger) logger).addAppender(nopAppender);
         for (long i = 0; i < len; i++) {
@@ -177,7 +177,7 @@ public class LoggerPerfTest {
 
     @Test
     public void testThreadedLogging() throws InterruptedException {
-        SleepAppender<ILoggingEvent> appender = new SleepAppender<ILoggingEvent>();
+        SleepAppender<ILoggingEvent> appender = new SleepAppender<>();
 
         int MILLIS_PER_CALL = 250;
         int NANOS_PER_CALL = 250 * 1000 * 1000;

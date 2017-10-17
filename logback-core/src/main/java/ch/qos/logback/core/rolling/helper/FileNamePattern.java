@@ -37,7 +37,7 @@ import ch.qos.logback.core.spi.ContextAwareBase;
  */
 public class FileNamePattern extends ContextAwareBase {
 
-    static final Map<String, String> CONVERTER_MAP = new HashMap<String, String>();
+    static final Map<String, String> CONVERTER_MAP = new HashMap<>();
     static {
         CONVERTER_MAP.put(IntegerTokenConverter.CONVERTER_KEY, IntegerTokenConverter.class.getName());
         CONVERTER_MAP.put(DateTokenConverter.CONVERTER_KEY, DateTokenConverter.class.getName());
@@ -62,7 +62,7 @@ public class FileNamePattern extends ContextAwareBase {
             // because it is shown to the user in status messages. We don't want the escaped version
             // to leak out.
             String patternForParsing = escapeRightParantesis(pattern);
-            Parser<Object> p = new Parser<Object>(patternForParsing, new AlmostAsIsEscapeUtil());
+            Parser<Object> p = new Parser<>(patternForParsing, new AlmostAsIsEscapeUtil());
             p.setContext(context);
             Node t = p.parse();
             this.headTokenConverter = p.compile(t, CONVERTER_MAP);

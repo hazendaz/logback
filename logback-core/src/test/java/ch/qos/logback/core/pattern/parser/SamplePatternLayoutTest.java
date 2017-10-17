@@ -26,7 +26,7 @@ public class SamplePatternLayoutTest extends AbstractPatternLayoutBaseTest<Objec
     Context context = new ContextBase();
 
     public PatternLayoutBase<Object> getPatternLayoutBase() {
-        return new SamplePatternLayout<Object>();
+        return new SamplePatternLayout<>();
     }
 
     public Object getEventObject() {

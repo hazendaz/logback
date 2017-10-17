@@ -21,7 +21,7 @@ import javax.management.ObjectName;
 import javax.management.StandardMBean;
 import java.lang.management.ManagementFactory;
 
-public class CountingFilter extends Filter {
+public class CountingFilter extends Filter<Object> {
 
     long total = 0;
     final StatisticalViewImpl accessStatsImpl;

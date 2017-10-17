@@ -58,7 +58,7 @@ public class LoggerContext extends ContextBase implements ILoggerFactory, LifeCy
     final Logger root;
     private int size;
     private int noAppenderWarning = 0;
-    final private List<LoggerContextListener> loggerContextListenerList = new ArrayList<LoggerContextListener>();
+    final private List<LoggerContextListener> loggerContextListenerList = new ArrayList<>();
 
     private Map<String, Logger> loggerCache;
 
@@ -73,7 +73,7 @@ public class LoggerContext extends ContextBase implements ILoggerFactory, LifeCy
 
     public LoggerContext() {
         super();
-        this.loggerCache = new ConcurrentHashMap<String, Logger>();
+        this.loggerCache = new ConcurrentHashMap<>();
 
         this.loggerContextRemoteView = new LoggerContextVO(this);
         this.root = new Logger(Logger.ROOT_LOGGER_NAME, null, this);
@@ -81,7 +81,7 @@ public class LoggerContext extends ContextBase implements ILoggerFactory, LifeCy
         loggerCache.put(Logger.ROOT_LOGGER_NAME, root);
         initEvaluatorMap();
         size = 1;
-        this.frameworkPackages = new ArrayList<String>();
+        this.frameworkPackages = new ArrayList<>();
     }
 
     void initEvaluatorMap() {
@@ -189,7 +189,7 @@ public class LoggerContext extends ContextBase implements ILoggerFactory, LifeCy
 
     public List<Logger> getLoggerList() {
         Collection<Logger> collection = loggerCache.values();
-        List<Logger> loggerList = new ArrayList<Logger>(collection);
+        List<Logger> loggerList = new ArrayList<>(collection);
         Collections.sort(loggerList, new LoggerComparator());
         return loggerList;
     }
@@ -295,7 +295,7 @@ public class LoggerContext extends ContextBase implements ILoggerFactory, LifeCy
     }
 
     private void resetListenersExceptResetResistant() {
-        List<LoggerContextListener> toRetain = new ArrayList<LoggerContextListener>();
+        List<LoggerContextListener> toRetain = new ArrayList<>();
 
         for (LoggerContextListener lcl : loggerContextListenerList) {
             if (lcl.isResetResistant()) {
@@ -310,7 +310,7 @@ public class LoggerContext extends ContextBase implements ILoggerFactory, LifeCy
     }
 
     public List<LoggerContextListener> getCopyOfListenerList() {
-        return new ArrayList<LoggerContextListener>(loggerContextListenerList);
+        return new ArrayList<>(loggerContextListenerList);
     }
 
     void fireOnLevelChange(Logger logger, Level level) {

@@ -48,7 +48,7 @@ abstract public class JaninoEventEvaluatorBase<E> extends EventEvaluatorBase<E> 
 
     abstract protected Object[] getParameterValues(E event);
 
-    protected List<Matcher> matcherList = new ArrayList<Matcher>();
+    protected List<Matcher> matcherList = new ArrayList<>();
 
     @Override
     public void start() {

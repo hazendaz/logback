@@ -38,7 +38,7 @@ public class ConcurrentServerRunnerTest {
     private static final int SHORT_DELAY = 10;
 
     private MockContext context = new MockContext();
-    private MockServerListener<MockClient> listener = new MockServerListener<MockClient>();
+    private MockServerListener<MockClient> listener = new MockServerListener<>();
 
     private ExecutorService executor = Executors.newCachedThreadPool();
     private InstrumentedConcurrentServerRunner runner = new InstrumentedConcurrentServerRunner(listener, executor);

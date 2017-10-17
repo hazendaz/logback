@@ -32,7 +32,7 @@ public class MockAppender extends AppenderBase<ILoggingEvent> {
 
     private final Lock lock = new ReentrantLock();
     private final Condition appendCondition = lock.newCondition();
-    private final BlockingQueue<ILoggingEvent> events = new LinkedBlockingQueue<ILoggingEvent>();
+    private final BlockingQueue<ILoggingEvent> events = new LinkedBlockingQueue<>();
 
     @Override
     protected void append(ILoggingEvent eventObject) {

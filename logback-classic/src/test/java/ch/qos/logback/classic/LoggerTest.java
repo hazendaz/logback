@@ -34,11 +34,11 @@ public class LoggerTest {
     Logger root = lc.getLogger(Logger.ROOT_LOGGER_NAME);
     Logger loggerTest = lc.getLogger(LoggerTest.class);
 
-    ListAppender<ILoggingEvent> listAppender = new ListAppender<ILoggingEvent>();
+    ListAppender<ILoggingEvent> listAppender = new ListAppender<>();
 
     @Test
     public void smoke() {
-        ListAppender<ILoggingEvent> listAppender = new ListAppender<ILoggingEvent>();
+        ListAppender<ILoggingEvent> listAppender = new ListAppender<>();
         listAppender.start();
         root.addAppender(listAppender);
         Logger logger = lc.getLogger(LoggerTest.class);

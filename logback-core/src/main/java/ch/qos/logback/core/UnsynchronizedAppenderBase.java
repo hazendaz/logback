@@ -39,14 +39,14 @@ abstract public class UnsynchronizedAppenderBase<E> extends ContextAwareBase imp
      * The guard prevents an appender from repeatedly calling its own doAppend
      * method.
      */
-    private ThreadLocal<Boolean> guard = new ThreadLocal<Boolean>();
+    private ThreadLocal<Boolean> guard = new ThreadLocal<>();
 
     /**
      * Appenders are named.
      */
     protected String name;
 
-    private FilterAttachableImpl<E> fai = new FilterAttachableImpl<E>();
+    private FilterAttachableImpl<E> fai = new FilterAttachableImpl<>();
 
     public String getName() {
         return name;

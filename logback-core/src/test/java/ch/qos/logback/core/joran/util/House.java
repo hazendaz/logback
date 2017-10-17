@@ -37,9 +37,9 @@ public class House {
 
     Charset charset;
 
-    List<String> adjectiveList = new ArrayList<String>();
-    List<Window> windowList = new ArrayList<Window>();
-    List<SwimmingPool> largePoolList = new ArrayList<SwimmingPool>();
+    List<String> adjectiveList = new ArrayList<>();
+    List<Window> windowList = new ArrayList<>();
+    List<SwimmingPool> largePoolList = new ArrayList<>();
 
     Orange orange;
     

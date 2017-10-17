@@ -218,7 +218,7 @@ public final class Logger implements org.slf4j.Logger, LocationAwareLogger, Appe
     // details.
     public synchronized void addAppender(Appender<ILoggingEvent> newAppender) {
         if (aai == null) {
-            aai = new AppenderAttachableImpl<ILoggingEvent>();
+            aai = new AppenderAttachableImpl<>();
         }
         aai.addAppender(newAppender);
     }
@@ -305,7 +305,7 @@ public final class Logger implements org.slf4j.Logger, LocationAwareLogger, Appe
         }
 
         if (childrenList == null) {
-            childrenList = new CopyOnWriteArrayList<Logger>();
+            childrenList = new CopyOnWriteArrayList<>();
         }
         Logger childLogger;
         if (this.isRootLogger()) {
@@ -352,7 +352,7 @@ public final class Logger implements org.slf4j.Logger, LocationAwareLogger, Appe
         }
 
         if (childrenList == null) {
-            childrenList = new CopyOnWriteArrayList<Logger>();
+            childrenList = new CopyOnWriteArrayList<>();
         }
         Logger childLogger;
         childLogger = new Logger(childName, this, this.loggerContext);

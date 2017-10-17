@@ -32,7 +32,7 @@ public class CaseCombinatorTest {
 
         List<String> result = p.combinations("a-B=");
 
-        List<String> witness = new ArrayList<String>();
+        List<String> witness = new ArrayList<>();
         witness.add("a-b=");
         witness.add("A-b=");
         witness.add("a-B=");
@@ -44,7 +44,7 @@ public class CaseCombinatorTest {
     public void other() {
         List<String> result = p.combinations("aBCd");
         assertEquals(16, result.size());
-        Set<String> witness = new HashSet<String>(result);
+        Set<String> witness = new HashSet<>(result);
         // check that there are no duplicates
         assertEquals(16, witness.size());
     }

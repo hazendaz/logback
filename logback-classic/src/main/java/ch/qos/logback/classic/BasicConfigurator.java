@@ -35,10 +35,10 @@ public class BasicConfigurator extends ContextAwareBase implements Configurator 
     public void configure(LoggerContext lc) {
         addInfo("Setting up default configuration.");
         
-        ConsoleAppender<ILoggingEvent> ca = new ConsoleAppender<ILoggingEvent>();
+        ConsoleAppender<ILoggingEvent> ca = new ConsoleAppender<>();
         ca.setContext(lc);
         ca.setName("console");
-        LayoutWrappingEncoder<ILoggingEvent> encoder = new LayoutWrappingEncoder<ILoggingEvent>();
+        LayoutWrappingEncoder<ILoggingEvent> encoder = new LayoutWrappingEncoder<>();
         encoder.setContext(lc);
         
  

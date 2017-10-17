@@ -35,7 +35,7 @@ public class FullRequestConverter extends AccessConverter {
         buf.append(ae.getRequestURL());
         buf.append(CoreConstants.LINE_SEPARATOR);
 
-        Enumeration headerNames = ae.getRequestHeaderNames();
+        Enumeration<String> headerNames = ae.getRequestHeaderNames();
         while (headerNames.hasMoreElements()) {
             String name = (String) headerNames.nextElement();
             buf.append(name);

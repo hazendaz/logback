@@ -19,7 +19,7 @@ import java.util.List;
 
 abstract public class StatusBase implements Status {
 
-    static private final List<Status> EMPTY_LIST = new ArrayList<Status>(0);
+    static private final List<Status> EMPTY_LIST = new ArrayList<>(0);
 
     int level;
     final String message;
@@ -45,7 +45,7 @@ abstract public class StatusBase implements Status {
             throw new NullPointerException("Null values are not valid Status.");
         }
         if (childrenList == null) {
-            childrenList = new ArrayList<Status>();
+            childrenList = new ArrayList<>();
         }
         childrenList.add(child);
     }

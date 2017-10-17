@@ -32,12 +32,12 @@ import ch.qos.logback.core.util.FileSize;
 
 public class SizeAndTimeBasedFNATP_Test extends ScaffoldingForRollingTests {
     private SizeAndTimeBasedFNATP<Object> sizeAndTimeBasedFNATP = null;
-    private RollingFileAppender<Object> rfa1 = new RollingFileAppender<Object>();
-    private TimeBasedRollingPolicy<Object> tbrp1 = new TimeBasedRollingPolicy<Object>();
-    private RollingFileAppender<Object> rfa2 = new RollingFileAppender<Object>();
-    private TimeBasedRollingPolicy<Object> tbrp2 = new TimeBasedRollingPolicy<Object>();
+    private RollingFileAppender<Object> rfa1 = new RollingFileAppender<>();
+    private TimeBasedRollingPolicy<Object> tbrp1 = new TimeBasedRollingPolicy<>();
+    private RollingFileAppender<Object> rfa2 = new RollingFileAppender<>();
+    private TimeBasedRollingPolicy<Object> tbrp2 = new TimeBasedRollingPolicy<>();
 
-    private EchoEncoder<Object> encoder = new EchoEncoder<Object>();
+    private EchoEncoder<Object> encoder = new EchoEncoder<>();
     int fileSize = 0;
     int fileIndexCounter = 0;
     int sizeThreshold = 0;
@@ -57,7 +57,7 @@ public class SizeAndTimeBasedFNATP_Test extends ScaffoldingForRollingTests {
 
     private void initPolicies(RollingFileAppender<Object> rfa, TimeBasedRollingPolicy<Object> tbrp, String filenamePattern, int sizeThreshold, long givenTime,
                     long lastCheck) {
-        sizeAndTimeBasedFNATP = new SizeAndTimeBasedFNATP<Object>();
+        sizeAndTimeBasedFNATP = new SizeAndTimeBasedFNATP<>();
         tbrp.setContext(context);
         sizeAndTimeBasedFNATP.setMaxFileSize(new FileSize(sizeThreshold));
         tbrp.setTimeBasedFileNamingAndTriggeringPolicy(sizeAndTimeBasedFNATP);

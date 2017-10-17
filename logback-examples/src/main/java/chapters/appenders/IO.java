@@ -44,7 +44,7 @@ public class IO extends Thread {
 
         // A FileAppender is created according to the buffering and
         // immediate flush setting of this IO instance.
-        FileAppender<ILoggingEvent> fa = new FileAppender<ILoggingEvent>();
+        FileAppender<ILoggingEvent> fa = new FileAppender<>();
 
         if (longMessage) {
             PatternLayoutEncoder pa = new PatternLayoutEncoder();

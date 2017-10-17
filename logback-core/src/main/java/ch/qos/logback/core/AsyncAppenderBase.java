@@ -39,7 +39,7 @@ import java.util.concurrent.BlockingQueue;
  */
 public class AsyncAppenderBase<E> extends UnsynchronizedAppenderBase<E> implements AppenderAttachable<E> {
 
-    AppenderAttachableImpl<E> aai = new AppenderAttachableImpl<E>();
+    AppenderAttachableImpl<E> aai = new AppenderAttachableImpl<>();
     BlockingQueue<E> blockingQueue;
 
     /**
@@ -99,7 +99,7 @@ public class AsyncAppenderBase<E> extends UnsynchronizedAppenderBase<E> implemen
             addError("Invalid queue size [" + queueSize + "]");
             return;
         }
-        blockingQueue = new ArrayBlockingQueue<E>(queueSize);
+        blockingQueue = new ArrayBlockingQueue<>(queueSize);
 
         if (discardingThreshold == UNDEFINED)
             discardingThreshold = queueSize / 5;

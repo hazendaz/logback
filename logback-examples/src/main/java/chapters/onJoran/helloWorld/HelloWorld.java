@@ -31,7 +31,7 @@ import chapters.onJoran.SimpleConfigurator;
  */
 public class HelloWorld {
     public static void main(String[] args) throws Exception {
-        Map<ElementSelector, Action> ruleMap = new HashMap<ElementSelector, Action>();
+        Map<ElementSelector, Action> ruleMap = new HashMap<>();
 
         // Associate "hello-world" pattern with HelloWorldAction
         ruleMap.put(new ElementSelector("hello-world"), new HelloWorldAction());

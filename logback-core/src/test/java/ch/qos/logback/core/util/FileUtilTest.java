@@ -32,7 +32,7 @@ public class FileUtilTest {
 
     Context context = new ContextBase();
     FileUtil fileUtil = new FileUtil(context);
-    List<File> cleanupList = new ArrayList<File>();
+    List<File> cleanupList = new ArrayList<>();
     // test-output folder is not always clean
     int diff = new Random().nextInt(10000);
 

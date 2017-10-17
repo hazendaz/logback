@@ -48,7 +48,7 @@ public abstract class ConcurrentServerRunner<T extends Client> extends ContextAw
 
     private final Lock clientsLock = new ReentrantLock();
 
-    private final Collection<T> clients = new ArrayList<T>();
+    private final Collection<T> clients = new ArrayList<>();
 
     private final ServerListener<T> listener;
     private final Executor executor;
@@ -114,7 +114,7 @@ public abstract class ConcurrentServerRunner<T extends Client> extends ContextAw
     private Collection<T> copyClients() {
         clientsLock.lock();
         try {
-            Collection<T> copy = new ArrayList<T>(clients);
+            Collection<T> copy = new ArrayList<>(clients);
             return copy;
         } finally {
             clientsLock.unlock();

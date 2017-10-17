@@ -34,6 +34,6 @@ public class QueueFactory {
      */
     public <E> LinkedBlockingDeque<E> newLinkedBlockingDeque(int capacity) {
         final int actualCapacity = capacity < 1 ? 1 : capacity;
-        return new LinkedBlockingDeque<E>(actualCapacity);
+        return new LinkedBlockingDeque<>(actualCapacity);
     }
 }

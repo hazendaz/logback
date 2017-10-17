@@ -80,7 +80,7 @@ public abstract class HTMLLayoutBase<E> extends LayoutBase<E> {
         int errorCount = 0;
 
         try {
-            Parser<E> p = new Parser<E>(pattern);
+            Parser<E> p = new Parser<>(pattern);
             p.setContext(getContext());
             Node t = p.parse();
             this.head = p.compile(t, getEffectiveConverterMap());
@@ -102,7 +102,7 @@ public abstract class HTMLLayoutBase<E> extends LayoutBase<E> {
      * contained in the context.
      */
     public Map<String, String> getEffectiveConverterMap() {
-        Map<String, String> effectiveMap = new HashMap<String, String>();
+        Map<String, String> effectiveMap = new HashMap<>();
 
         // add the least specific map fist
         Map<String, String> defaultMap = getDefaultConverterMap();
@@ -195,7 +195,7 @@ public abstract class HTMLLayoutBase<E> extends LayoutBase<E> {
     }
 
     private void buildHeaderRowForTable(StringBuilder sbuf) {
-        Converter c = head;
+        Converter<E> c = head;
         String name;
         sbuf.append("<tr class=\"header\">");
         sbuf.append(LINE_SEPARATOR);
@@ -246,7 +246,7 @@ public abstract class HTMLLayoutBase<E> extends LayoutBase<E> {
         }
     }
 
-    protected String computeConverterName(Converter c) {
+    protected String computeConverterName(Converter<E> c) {
         String className = c.getClass().getSimpleName();
         int index = className.indexOf("Converter");
         if (index == -1) {

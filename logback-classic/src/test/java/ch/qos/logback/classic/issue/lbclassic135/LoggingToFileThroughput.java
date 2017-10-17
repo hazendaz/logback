@@ -54,7 +54,7 @@ public class LoggingToFileThroughput {
         patternLayout.setContext(lc);
         patternLayout.setPattern("%d %l [%t] - %msg%n");
         patternLayout.start();
-        FileAppender<ILoggingEvent> fileAppender = new FileAppender<ILoggingEvent>();
+        FileAppender<ILoggingEvent> fileAppender = new FileAppender<>();
         fileAppender.setContext(lc);
         fileAppender.setFile("target/lbclassic135.log");
         fileAppender.setEncoder(patternLayout);

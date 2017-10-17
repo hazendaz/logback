@@ -22,11 +22,11 @@ import ch.qos.logback.core.boolex.EventEvaluator;
 import ch.qos.logback.core.spi.ContextAwareBase;
 import ch.qos.logback.core.spi.LifeCycle;
 
-public class URLEvaluator extends ContextAwareBase implements EventEvaluator, LifeCycle {
+public class URLEvaluator extends ContextAwareBase implements EventEvaluator<Object>, LifeCycle {
 
     boolean started;
     String name;
-    private List<String> URLList = new ArrayList<String>();
+    private List<String> URLList = new ArrayList<>();
 
     public void addURL(String url) {
         URLList.add(url);

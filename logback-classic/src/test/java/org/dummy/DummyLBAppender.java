@@ -22,8 +22,8 @@ import ch.qos.logback.core.AppenderBase;
 
 public class DummyLBAppender extends AppenderBase<ILoggingEvent> {
 
-    public List<ILoggingEvent> list = new ArrayList<ILoggingEvent>();
-    public List<String> stringList = new ArrayList<String>();
+    public List<ILoggingEvent> list = new ArrayList<>();
+    public List<String> stringList = new ArrayList<>();
 
     PatternLayout layout;
 

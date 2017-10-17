@@ -35,7 +35,7 @@ public class AppenderTrackerTest {
     Context context = new ContextBase();
     ListAppenderFactory listAppenderFactory = new ListAppenderFactory();
     int diff = RandomUtil.getPositiveInt();
-    AppenderTracker<Object> appenderTracker = new AppenderTracker<Object>(context, listAppenderFactory);
+    AppenderTracker<Object> appenderTracker = new AppenderTracker<>(context, listAppenderFactory);
     String key = "k-" + diff;
     long now = 3000;
 
@@ -69,7 +69,7 @@ public class AppenderTrackerTest {
 
     @Test
     public void endOfLivedAppendersShouldBeRemovedAfterLingeringTimeout() {
-        Appender a = appenderTracker.getOrCreate(key, now);
+        Appender<Object> a = appenderTracker.getOrCreate(key, now);
         appenderTracker.endOfLife(key);
         now += AppenderTracker.LINGERING_TIMEOUT + 1;
         appenderTracker.removeStaleComponents(now);
@@ -80,11 +80,11 @@ public class AppenderTrackerTest {
 
     @Test
     public void endOfLivedAppenderShouldBeAvailableDuringLingeringPeriod() {
-        Appender a = appenderTracker.getOrCreate(key, now);
+        Appender<Object> a = appenderTracker.getOrCreate(key, now);
         appenderTracker.endOfLife(key);
         // clean
         appenderTracker.removeStaleComponents(now);
-        Appender lingering = appenderTracker.getOrCreate(key, now);
+        Appender<?> lingering = appenderTracker.getOrCreate(key, now);
         assertTrue(lingering.isStarted());
         assertTrue(a == lingering);
         now += AppenderTracker.LINGERING_TIMEOUT + 1;
@@ -96,11 +96,11 @@ public class AppenderTrackerTest {
 
     @Test
     public void trackerShouldHonorMaxComponentsParameter() {
-        List<Appender<Object>> appenderList = new ArrayList<Appender<Object>>();
+        List<Appender<Object>> appenderList = new ArrayList<>();
         int max = 10;
         appenderTracker.setMaxComponents(max);
         for (int i = 0; i < (max + 1); i++) {
-            Appender a = appenderTracker.getOrCreate(key + "-" + i, now++);
+            Appender<Object> a = appenderTracker.getOrCreate(key + "-" + i, now++);
             appenderList.add(a);
         }
         // cleaning only happens in removeStaleComponents
@@ -112,11 +112,11 @@ public class AppenderTrackerTest {
 
     @Test
     public void trackerShouldHonorTimeoutParameter() {
-        List<Appender<Object>> appenderList = new ArrayList<Appender<Object>>();
+        List<Appender<Object>> appenderList = new ArrayList<>();
         int timeout = 2;
         appenderTracker.setTimeout(timeout);
         for (int i = 0; i <= timeout; i++) {
-            Appender a = appenderTracker.getOrCreate(key + "-" + i, now++);
+            Appender<Object> a = appenderTracker.getOrCreate(key + "-" + i, now++);
             appenderList.add(a);
         }
 
@@ -142,7 +142,7 @@ public class AppenderTrackerTest {
     static class ListAppenderFactory implements AppenderFactory<Object> {
 
         public Appender<Object> buildAppender(Context context, String discriminatingValue) throws JoranException {
-            ListAppender<Object> la = new ListAppender<Object>();
+            ListAppender<Object> la = new ListAppender<>();
             la.setContext(context);
             la.setName(discriminatingValue);
             la.start();

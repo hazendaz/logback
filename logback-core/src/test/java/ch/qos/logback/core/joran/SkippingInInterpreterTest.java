@@ -47,7 +47,7 @@ import ch.qos.logback.core.util.CoreTestConstants;
  */
 public class SkippingInInterpreterTest {
 
-    HashMap<ElementSelector, Action> rulesMap = new HashMap<ElementSelector, Action>();
+    HashMap<ElementSelector, Action> rulesMap = new HashMap<>();
     Context context = new ContextBase();
     StatusManager sm = context.getStatusManager();
 

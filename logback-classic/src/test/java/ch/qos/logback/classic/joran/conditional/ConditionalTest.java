@@ -124,7 +124,7 @@ public class ConditionalTest {
         String configFileAsStr = ClassicTestConstants.JORAN_INPUT_PREFIX + "conditional/conditionalIncludeExistingFile.xml";
         configure(configFileAsStr);
 
-        ConsoleAppender consoleAppender = (ConsoleAppender) root.getAppender("CON");
+        ConsoleAppender<?> consoleAppender = (ConsoleAppender<?>) root.getAppender("CON");
         assertNotNull(consoleAppender);
         StatusChecker checker = new StatusChecker(context);
         checker.assertIsErrorFree();
@@ -136,7 +136,7 @@ public class ConditionalTest {
         String configFileAsStr = ClassicTestConstants.JORAN_INPUT_PREFIX + "conditional/conditionalIncludeInexistentFile.xml";
         configure(configFileAsStr);
 
-        ConsoleAppender consoleAppender = (ConsoleAppender) root.getAppender("CON");
+        ConsoleAppender<?> consoleAppender = (ConsoleAppender<?>) root.getAppender("CON");
         assertNull(consoleAppender);
         StatusChecker checker = new StatusChecker(context);
         checker.assertIsErrorFree();

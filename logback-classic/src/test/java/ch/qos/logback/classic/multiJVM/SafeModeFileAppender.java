@@ -53,7 +53,7 @@ public class SafeModeFileAppender {
     static LoggerContext buildLoggerContext(String stamp, String filename, boolean safetyMode) {
         LoggerContext loggerContext = new LoggerContext();
 
-        FileAppender<ILoggingEvent> fa = new FileAppender<ILoggingEvent>();
+        FileAppender<ILoggingEvent> fa = new FileAppender<>();
 
         PatternLayoutEncoder patternLayout = new PatternLayoutEncoder();
         patternLayout.setPattern(stamp + " %5p - %m%n");

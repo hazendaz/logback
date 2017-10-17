@@ -241,7 +241,7 @@ public class HLogger extends MarkerIgnoringBase {
         }
 
         if (childrenMap == null) {
-            childrenMap = new HashMap<String, HLogger>(2);
+            childrenMap = new HashMap<>(2);
         }
         HLogger childHLogger;
         if (this.isRootLogger()) {

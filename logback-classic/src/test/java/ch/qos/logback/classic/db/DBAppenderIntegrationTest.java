@@ -145,7 +145,7 @@ public class DBAppenderIntegrationTest {
         Map<String, String> witness = lc.getCopyOfPropertyMap();
         witness.putAll(MDC.getCopyOfContextMap());
 
-        Map<String, String> map = new HashMap<String, String>();
+        Map<String, String> map = new HashMap<>();
         while (rs.next()) {
             String key = rs.getString(1);
             String val = rs.getString(2);

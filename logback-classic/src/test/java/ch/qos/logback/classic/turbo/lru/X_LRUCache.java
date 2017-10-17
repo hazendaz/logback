@@ -44,7 +44,7 @@ public class X_LRUCache<K, V> extends LinkedHashMap<K, V> {
     }
 
     List<K> keyList() {
-        ArrayList<K> al = new ArrayList<K>();
+        ArrayList<K> al = new ArrayList<>();
         al.addAll(keySet());
         return al;
     }

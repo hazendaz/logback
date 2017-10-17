@@ -68,7 +68,7 @@ public class Loader {
 
     public static Set<URL> getResources(String resource, ClassLoader classLoader) throws IOException {
         // See LBCLASSIC-159
-        Set<URL> urlSet = new HashSet<URL>();
+        Set<URL> urlSet = new HashSet<>();
         Enumeration<URL> urlEnum = classLoader.getResources(resource);
         while (urlEnum.hasMoreElements()) {
             URL url = urlEnum.nextElement();

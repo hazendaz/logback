@@ -27,7 +27,7 @@ import ch.qos.logback.core.joran.spi.InterpretationContext;
 
 abstract public class ThenOrElseActionBase extends Action {
 
-    Stack<ThenActionState> stateStack = new Stack<ThenActionState>();
+    Stack<ThenActionState> stateStack = new Stack<>();
 
     @Override
     public void begin(InterpretationContext ic, String name, Attributes attributes) throws ActionException {
@@ -81,7 +81,7 @@ abstract public class ThenOrElseActionBase extends Action {
 
 class ThenActionState implements InPlayListener {
 
-    List<SaxEvent> eventList = new ArrayList<SaxEvent>();
+    List<SaxEvent> eventList = new ArrayList<>();
     boolean isRegistered = false;
 
     public void inPlay(SaxEvent event) {

@@ -24,7 +24,7 @@ public class LoggerNameUtilTest {
 
     @Test
     public void smoke0() {
-        List<String> witnessList = new ArrayList<String>();
+        List<String> witnessList = new ArrayList<>();
         witnessList.add("a");
         witnessList.add("b");
         witnessList.add("c");
@@ -34,7 +34,7 @@ public class LoggerNameUtilTest {
 
     @Test
     public void smoke1() {
-        List<String> witnessList = new ArrayList<String>();
+        List<String> witnessList = new ArrayList<>();
         witnessList.add("com");
         witnessList.add("foo");
         witnessList.add("Bar");
@@ -44,7 +44,7 @@ public class LoggerNameUtilTest {
 
     @Test
     public void emptyStringShouldReturnAListContainingOneEmptyString() {
-        List<String> witnessList = new ArrayList<String>();
+        List<String> witnessList = new ArrayList<>();
         witnessList.add("");
         List<String> partList = LoggerNameUtil.computeNameParts("");
         assertEquals(witnessList, partList);
@@ -52,7 +52,7 @@ public class LoggerNameUtilTest {
 
     @Test
     public void dotAtLastPositionShouldReturnAListWithAnEmptyStringAsLastElement() {
-        List<String> witnessList = new ArrayList<String>();
+        List<String> witnessList = new ArrayList<>();
         witnessList.add("com");
         witnessList.add("foo");
         witnessList.add("");
@@ -63,7 +63,7 @@ public class LoggerNameUtilTest {
 
     @Test
     public void supportNestedClasses() {
-        List<String> witnessList = new ArrayList<String>();
+        List<String> witnessList = new ArrayList<>();
         witnessList.add("com");
         witnessList.add("foo");
         witnessList.add("Bar");
@@ -76,7 +76,7 @@ public class LoggerNameUtilTest {
     @Test
     public void supportNestedClassesWithNestedDot() {
         // LOGBACK-384
-        List<String> witnessList = new ArrayList<String>();
+        List<String> witnessList = new ArrayList<>();
         witnessList.add("com");
         witnessList.add("foo");
         witnessList.add("Bar");
@@ -89,7 +89,7 @@ public class LoggerNameUtilTest {
 
     @Test
     public void supportNestedClassesAtBeginning() {
-        List<String> witnessList = new ArrayList<String>();
+        List<String> witnessList = new ArrayList<>();
         witnessList.add("foo");
         witnessList.add("Nested");
         witnessList.add("bar");

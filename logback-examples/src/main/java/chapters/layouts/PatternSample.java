@@ -33,7 +33,7 @@ public class PatternSample {
         encoder.setPattern("%-5level [%thread]: %message%n");
         encoder.start();
 
-        ConsoleAppender<ILoggingEvent> appender = new ConsoleAppender<ILoggingEvent>();
+        ConsoleAppender<ILoggingEvent> appender = new ConsoleAppender<>();
         appender.setContext(loggerContext);
         appender.setEncoder(encoder);
         appender.start();

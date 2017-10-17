@@ -24,7 +24,7 @@ public class CyclicBufferAppenderTest {
 
     @Before
     public void before() {
-        cyclicBufferAppender = new CyclicBufferAppender<String>();
+        cyclicBufferAppender = new CyclicBufferAppender<>();
         cyclicBufferAppender.start();
     }
 

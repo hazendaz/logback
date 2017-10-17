@@ -20,7 +20,7 @@ import ch.qos.logback.core.ContextBase;
 
 public class FruitContext extends ContextBase {
 
-    List<Fruit> fruitList = new ArrayList<Fruit>();
+    List<Fruit> fruitList = new ArrayList<>();
 
     public void addFruit(Fruit fs) {
         fruitList.add(fs);
