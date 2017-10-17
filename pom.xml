@@ -363,72 +363,6 @@
           <excludeFilterFile>findbugs-exclude.xml</excludeFilterFile>
         </configuration>
       </plugin>
-
- 
-
-
-      <!-- ================ site plugin ==================== -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <configuration>
-          <reportPlugins>
-
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-jxr-plugin</artifactId>
-              <version>2.5</version>
-              <configuration>
-                <aggregate>true</aggregate>
-                <javadocDir>target/site/apidocs/</javadocDir>
-                <linkJavadoc>true</linkJavadoc>
-              </configuration>
-            </plugin>
-            
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-javadoc-plugin</artifactId>
-              <version>2.10.4</version>
-              <configuration>
-                <aggregate>true</aggregate>
-                <linksource>true</linksource>
-                <links>
-                  <link>
-                    http://docs.oracle.com/javase/6/docs/api/
-                  </link>
-                </links>
-                <groups>
-                  <group>
-                    <title>Logback Core</title>
-                    <packages>ch.qos.logback.core:ch.qos.logback.core.*
-                    </packages>
-                  </group>
-                  <group>
-                    <title>Logback Classic</title>
-                    <packages>
-                      ch.qos.logback:ch.qos.logback.classic:ch.qos.logback.classic.*
-                    </packages>
-                  </group>
-                  <group>
-                    <title>Logback Access</title>
-                    <packages>ch.qos.logback.access:ch.qos.logback.access.*
-                    </packages>
-                  </group>
-                  <group>
-                    <title>SLF4J</title>
-                    <packages>org.slf4j:org.slf4j.*</packages>
-                  </group>
-                  <group>
-                    <title>Examples</title>
-                    <packages>chapter*:joran*</packages>
-                  </group>
-                </groups>
-              </configuration>
-            </plugin>
-
-          </reportPlugins>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
 
@@ -516,35 +450,72 @@
 
     <profile>
       <id>cobertura</id>
-      <build>
+      <reporting>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-site-plugin</artifactId>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>cobertura-maven-plugin</artifactId>
+            <version>${cobertura.maven.plugin.version}</version>
             <configuration>
-              <reportPlugins>
-                
-                
-            
-                <plugin>
-                  <groupId>org.codehaus.mojo</groupId>
-                  <artifactId>cobertura-maven-plugin</artifactId>
-                  <version>${cobertura.maven.plugin.version}</version>
-                  <configuration>
-                    <formats>
-                      <format>html</format>
-                    </formats>
-                    <aggregate>true</aggregate>
-                  </configuration>
-                </plugin>
-              </reportPlugins>
+              <formats>
+                <format>html</format>
+              </formats>
+              <aggregate>true</aggregate>
             </configuration>
           </plugin>
         </plugins>
-      </build>
+      </reporting>
     </profile>
-
-
   </profiles>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <aggregate>true</aggregate>
+          <javadocDir>target/site/apidocs/</javadocDir>
+          <linkJavadoc>true</linkJavadoc>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.10.4</version>
+        <configuration>
+          <aggregate>true</aggregate>
+          <linksource>true</linksource>
+          <links>
+            <link>http://docs.oracle.com/javase/6/docs/api/</link>
+          </links>
+          <groups>
+            <group>
+              <title>Logback Core</title>
+              <packages>ch.qos.logback.core:ch.qos.logback.core.*</packages>
+            </group>
+            <group>
+              <title>Logback Classic</title>
+              <packages> ch.qos.logback:ch.qos.logback.classic:ch.qos.logback.classic.*</packages>
+            </group>
+            <group>
+              <title>Logback Access</title>
+              <packages>ch.qos.logback.access:ch.qos.logback.access.*</packages>
+            </group>
+            <group>
+              <title>SLF4J</title>
+              <packages>org.slf4j:org.slf4j.*</packages>
+            </group>
+            <group>
+              <title>Examples</title>
+              <packages>chapter*:joran*</packages>
+            </group>
+          </groups>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
 
 </project>
