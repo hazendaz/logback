@@ -13,16 +13,21 @@
  */
 package ch.qos.logback.classic.net;
 
+import static org.junit.Assert.fail;
+
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
-import junit.framework.TestCase;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 import ch.qos.logback.classic.net.testObjectBuilders.Builder;
 import ch.qos.logback.classic.net.testObjectBuilders.MinimalSerBuilder;
 import ch.qos.logback.classic.net.testObjectBuilders.TrivialLoggingEventVOBuilder;
 
-public class SerializationPerfTest extends TestCase {
+public class SerializationPerfTest {
 
     ObjectOutputStream oos;
 
@@ -101,8 +106,8 @@ public class SerializationPerfTest extends TestCase {
      *
      */
 
+    @Before
     public void setUp() throws Exception {
-        super.setUp();
         if (runWithExternalMockServer) {
             oos = new ObjectOutputStream(new Socket("localhost", ExternalMockSocketServer.PORT).getOutputStream());
         } else {
@@ -110,13 +115,14 @@ public class SerializationPerfTest extends TestCase {
         }
     }
 
+    @After
     public void tearDown() throws Exception {
-        super.tearDown();
         oos.close();
         oos = null;
     }
 
-    public void runPerfTest(Builder builder, String label) throws Exception {
+    @Test
+    public void runPerfTest(Builder<?> builder, String label) throws Exception {
         // long time1 = System.nanoTime();
 
         // Object builtObject = builder.build(1);
@@ -170,27 +176,15 @@ public class SerializationPerfTest extends TestCase {
         }
         total /= 1000;
         System.out.println(label + " : average time = " + total / loopNumber + " microsecs after " + loopNumber + " writes.");
-
-        // long time2 = System.nanoTime();
-        // System.out.println("********* -> Time needed to run the test method: " +
-        // Long.toString(time2-time1));
     }
 
-    // public void testWithMinimalExternalization() throws Exception {
-    // Builder builder = new MinimalExtBuilder();
-    // runPerfTest(builder, "Minimal object externalization");
-    // }
-
+    @Test
     public void testWithMinimalSerialization() throws Exception {
         Builder<?> builder = new MinimalSerBuilder();
         runPerfTest(builder, "Minimal object serialization");
     }
 
-    // public void testWithExternalization() throws Exception {
-    // Builder builder = new LoggingEventExtBuilder();
-    // runPerfTest(builder, "LoggingEvent object externalization");
-    // }
-
+    @Test
     public void testWithSerialization() throws Exception {
         Builder<?> builder = new TrivialLoggingEventVOBuilder();
         runPerfTest(builder, "LoggingEventVO object serialization");

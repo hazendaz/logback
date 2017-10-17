@@ -18,7 +18,6 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.HashMap;
 
-import ch.qos.logback.core.joran.spi.ElementPath;
 import ch.qos.logback.core.joran.spi.ElementSelector;
 import org.junit.Test;
 

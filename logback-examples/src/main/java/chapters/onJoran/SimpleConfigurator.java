@@ -19,7 +19,6 @@ import java.util.Map;
 import ch.qos.logback.core.joran.GenericConfigurator;
 import ch.qos.logback.core.joran.action.Action;
 import ch.qos.logback.core.joran.action.ImplicitAction;
-import ch.qos.logback.core.joran.spi.ElementPath;
 import ch.qos.logback.core.joran.spi.Interpreter;
 import ch.qos.logback.core.joran.spi.ElementSelector;
 import ch.qos.logback.core.joran.spi.RuleStore;

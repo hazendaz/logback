@@ -13,17 +13,23 @@
  */
 package ch.qos.logback.classic;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
-import junit.framework.*;
+import org.junit.Test;
 
-public class LoggerTestHelper extends TestCase {
+public class LoggerTestHelper {
 
+    @Test
     static void assertNameEquals(Logger logger, String name) {
         assertNotNull(logger);
         assertEquals(name, logger.getName());
     }
 
+    @Test
     static void assertLevels(Level level, Logger logger, Level effectiveLevel) {
         if (level == null) {
             assertNull(logger.getLevel());

@@ -21,8 +21,8 @@ import org.junit.Ignore
 import org.junit.Test
 import ch.qos.logback.classic.Logger
 import ch.qos.logback.classic.Level
-import static junit.framework.Assert.assertNotNull
-import static junit.framework.Assert.assertEquals
+import static org.junit.Assert.assertNotNull
+import static org.junit.Assert.assertEquals
 import ch.qos.logback.core.ConsoleAppender
 import ch.qos.logback.classic.AsyncAppender
 import ch.qos.logback.classic.PatternLayout

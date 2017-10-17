@@ -14,7 +14,6 @@
 package ch.qos.logback.core.pattern.parser;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
@@ -276,7 +275,7 @@ public class ParserTest {
         try {
             Parser<?> p = new Parser<>("hello%(abc");
             p.setContext(context);
-            Node t = p.parse();
+            p.parse();
             fail("where the is exception?");
         } catch (ScanException ise) {
             assertEquals("Expecting RIGHT_PARENTHESIS token but got null", ise.getMessage());

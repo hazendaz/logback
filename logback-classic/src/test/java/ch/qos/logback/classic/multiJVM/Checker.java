@@ -46,8 +46,7 @@ public class Checker {
 
     static void check(String stamp, String filename, boolean safetyMode) throws Exception {
 
-        FileReader fr = new FileReader(FILENAME);
-        BufferedReader br = new BufferedReader(fr);
+        try (BufferedReader br = new BufferedReader(new FileReader(FILENAME))) {
 
         String regExp = "^" + stamp + " DEBUG - " + LoggingThread.msgLong + " (\\d+)$";
         Pattern p = Pattern.compile(regExp);
@@ -73,7 +72,6 @@ public class Checker {
         } else {
             System.out.println("For JVM stamp " + stamp + " found " + LEN + " lines in correct sequence");
         }
-        fr.close();
-        br.close();
+        }
     }
 }

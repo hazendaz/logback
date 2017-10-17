@@ -13,7 +13,7 @@
  */
 package ch.qos.logback.access.spi;
 
-import junit.framework.TestCase;
+import org.junit.TestCase;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

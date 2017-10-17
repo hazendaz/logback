@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.spi.LoggingEvent;
-import junit.framework.TestCase;
+import org.junit.TestCase;
 
 
 // it takes about 250 nanos to create a LoggingEvent

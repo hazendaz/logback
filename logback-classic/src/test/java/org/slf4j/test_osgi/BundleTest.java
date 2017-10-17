@@ -13,27 +13,33 @@
  */
 package org.slf4j.test_osgi;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.io.File;
 
-import junit.framework.TestCase;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-public class BundleTest extends TestCase {
+public class BundleTest  {
 
     FrameworkErrorListener fel = new FrameworkErrorListener();
     CheckingBundleListener mbl = new CheckingBundleListener();
 
     FelixHost felixHost = new FelixHost(fel, mbl);
 
+    @Before
     protected void setUp() throws Exception {
-        super.setUp();
         felixHost.doLaunch();
     }
 
+    @After
     protected void tearDown() throws Exception {
-        super.tearDown();
         felixHost.stop();
     }
 
+    @Test
     public void testSmoke() {
         System.out.println("===========" + new File(".").getAbsolutePath());
         mbl.dumpAll();

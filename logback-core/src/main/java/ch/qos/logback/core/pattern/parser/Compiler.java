@@ -137,13 +137,4 @@ class Compiler<E> extends ContextAwareBase {
         }
     }
 
-    // public void setStatusManager(StatusManager statusManager) {
-    // this.statusManager = statusManager;
-    // }
-    //
-    // void addStatus(Status status) {
-    // if(statusManager != null) {
-    // statusManager.add(status);
-    // }
-    // }
 }

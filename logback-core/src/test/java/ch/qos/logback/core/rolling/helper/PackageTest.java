@@ -14,13 +14,12 @@
 package ch.qos.logback.core.rolling.helper;
 
 import ch.qos.logback.core.util.DatePatternToRegexTest;
-import junit.framework.TestCase;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ CompressTest.class, FileNamePatternTest.class, RollingCalendarTest.class, DatePatternToRegexTest.class })
-public class PackageTest extends TestCase {
+public class PackageTest {
 
 }

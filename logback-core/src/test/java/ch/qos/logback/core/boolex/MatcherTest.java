@@ -13,28 +13,35 @@
  */
 package ch.qos.logback.core.boolex;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 import ch.qos.logback.core.Context;
 import ch.qos.logback.core.ContextBase;
 
-public class MatcherTest extends TestCase {
+public class MatcherTest {
 
     Context context;
     Matcher matcher;
 
+    @Before
     public void setUp() throws Exception {
         context = new ContextBase();
         matcher = new Matcher();
         matcher.setContext(context);
         matcher.setName("testMatcher");
-        super.setUp();
     }
 
+    @After
     public void tearDown() throws Exception {
         matcher = null;
-        super.tearDown();
     }
 
+    @Test
     public void testFullRegion() throws Exception {
         matcher.setRegex(".*test.*");
         matcher.start();
@@ -44,6 +51,7 @@ public class MatcherTest extends TestCase {
         assertTrue(matcher.matches("xxxxtestxxxx"));
     }
 
+    @Test
     public void testPartRegion() throws Exception {
         matcher.setRegex("test");
         matcher.start();
@@ -53,6 +61,7 @@ public class MatcherTest extends TestCase {
         assertTrue(matcher.matches("xxxxtestxxxx"));
     }
 
+    @Test
     public void testCaseInsensitive() throws Exception {
         matcher.setRegex("test");
         matcher.setCaseSensitive(false);
@@ -64,6 +73,7 @@ public class MatcherTest extends TestCase {
         assertTrue(matcher.matches("TesT"));
     }
 
+    @Test
     public void testCaseSensitive() throws Exception {
         matcher.setRegex("test");
         matcher.setCaseSensitive(true);

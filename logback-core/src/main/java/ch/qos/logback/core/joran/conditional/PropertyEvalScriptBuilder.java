@@ -38,7 +38,7 @@ public class PropertyEvalScriptBuilder extends ContextAwareBase {
     Map<String, String> map = new HashMap<>();
 
     public Condition build(String script) throws IllegalAccessException, CompileException, InstantiationException, SecurityException, NoSuchMethodException,
-                    IllegalArgumentException, InvocationTargetException {
+                    InvocationTargetException {
 
         ClassBodyEvaluator cbe = new ClassBodyEvaluator();
         cbe.setImplementedInterfaces(new Class[] { Condition.class });

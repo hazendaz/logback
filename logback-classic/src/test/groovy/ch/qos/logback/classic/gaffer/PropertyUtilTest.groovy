@@ -14,7 +14,7 @@
 package ch.qos.logback.classic.gaffer
 
 import org.junit.Test
-import static junit.framework.Assert.assertEquals
+import static org.junit.Assert.assertEquals
 
 /**
  * @author Ceki G&uuml;c&uuml;

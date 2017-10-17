@@ -16,7 +16,6 @@ package ch.qos.logback.core.rolling.helper;
 import ch.qos.logback.core.rolling.RolloverFailure;
 
 import java.io.File;
-import java.lang.reflect.Method;
 import java.nio.file.FileStore;
 import java.nio.file.Files;
 import java.nio.file.Path;

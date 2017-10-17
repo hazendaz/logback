@@ -167,9 +167,7 @@ public class Parser<E> extends ContextAwareBase {
     }
 
     FormattingNode SINGLE() throws ScanException {
-        // System.out.println("in SINGLE()");
         Token t = getNextToken();
-        // System.out.println("==" + t);
         SimpleKeywordNode keywordNode = new SimpleKeywordNode(t.getValue());
 
         Token ot = getCurentToken();

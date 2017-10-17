@@ -84,12 +84,13 @@ public class JettyFixtureBase {
     class BasicHandler extends AbstractHandler {
         public void handle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
             OutputStream out = response.getOutputStream();
-            ByteArrayISO8859Writer writer = new ByteArrayISO8859Writer();
-            writer.write("hello world");
-            writer.flush();
-            response.setContentLength(writer.size());
-            writer.writeTo(out);
-            out.flush();
+            try (ByteArrayISO8859Writer writer = new ByteArrayISO8859Writer()) {
+                writer.write("hello world");
+                writer.flush();
+                response.setContentLength(writer.size());
+                writer.writeTo(out);
+                out.flush();
+            }
 
             baseRequest.setHandled(true);
 

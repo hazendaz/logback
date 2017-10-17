@@ -51,8 +51,9 @@ public class ConfigurationWatchList extends ContextAwareBase {
     public void setMainURL(URL mainURL) {
         // main url can be null
         this.mainURL = mainURL;
-        if (mainURL != null)
+        if (mainURL != null) {
             addAsFileToWatch(mainURL);
+        }
     }
 
     private void addAsFileToWatch(URL url) {
@@ -85,7 +86,6 @@ public class ConfigurationWatchList extends ContextAwareBase {
             }
         }
         return false;
-        // return (lastModified != fileToScan.lastModified() && lastModified != SENTINEL);
     }
 
     @SuppressWarnings("deprecation")

@@ -28,7 +28,6 @@ import org.xml.sax.Attributes;
 import ch.qos.logback.core.Context;
 import ch.qos.logback.core.ContextBase;
 import ch.qos.logback.core.status.Status;
-import ch.qos.logback.core.status.StatusManager;
 import ch.qos.logback.core.util.CoreTestConstants;
 
 /**
@@ -71,9 +70,7 @@ public class SaxEventRecorderTest {
     @Test
     public void test2() throws Exception {
         List<SaxEvent> seList = doTest("ampEvent.xml");
-        StatusManager sm = context.getStatusManager();
         assertTrue(statusChecker.getHighestLevel(0) == Status.INFO);
-        // dump(seList);
         assertEquals(3, seList.size());
 
         BodyEvent be = (BodyEvent) seList.get(1);
@@ -83,9 +80,7 @@ public class SaxEventRecorderTest {
     @Test
     public void test3() throws Exception {
         List<SaxEvent> seList = doTest("inc.xml");
-        StatusManager sm = context.getStatusManager();
         assertTrue(statusChecker.getHighestLevel(0) == Status.INFO);
-        // dump(seList);
         assertEquals(4, seList.size());
 
         StartEvent se = (StartEvent) seList.get(1);

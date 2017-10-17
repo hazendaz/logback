@@ -13,12 +13,8 @@
  */
 package ch.qos.logback.classic.issue.lbcore243;
 
-import ch.qos.logback.classic.LoggerContext;
-import ch.qos.logback.classic.joran.JoranConfigurator;
 import ch.qos.logback.core.joran.spi.JoranException;
 import org.apache.log4j.xml.DOMConfigurator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 // WARNING This code compiles but does not measure anything useful because log4j-over-slf4j is a dependency. Log4j
 // should be used instead

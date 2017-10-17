@@ -147,11 +147,10 @@ public abstract class DBAppenderBase<E> extends UnsynchronizedAppenderBase<E> {
                 rs = idStatement.executeQuery(selectInsertIdStr);
             }
 
-            // A ResultSet cursor is initially positioned before the first row;
+            // A ResultSet cursor is initially positioned before the first row,
             // the first call to the method next makes the first row the current row
             rs.next();
-            long eventId = rs.getLong(1);
-            return eventId;
+            return rs.getLong(1);
         } finally {
             if (rs != null) {
                 try {
