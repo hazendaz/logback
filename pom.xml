@@ -40,6 +40,14 @@
     <tag>HEAD</tag>
   </scm>
 
+  <distributionManagement>
+    <site>
+      <id>gh-pages</id>
+      <name>Logback GitHub Pages</name>
+      <url>git:ssh://git@github.com/hazendaz/logback.git?gh-pages#</url>
+    </site>
+  </distributionManagement>
+
   <modules>
     <module>logback-core</module>
     <module>logback-classic</module>
@@ -423,20 +431,6 @@
       </plugin>
     </plugins>
   </build>
-
-  <distributionManagement>
-
-    <site>
-      <id>qos_ch</id>
-      <url>scp://te.qos.ch/var/www/logback.qos.ch/htdocs/</url>
-    </site>
-
-    <repository>
-      <id>sonatype-nexus-staging</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-
-  </distributionManagement>
 
   <profiles>
     <profile>
