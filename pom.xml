@@ -34,8 +34,10 @@
   </licenses>
 
   <scm>
-    <url>https://github.com/ceki/logback</url>
-    <connection>git@github.com:ceki/logback.git</connection>
+    <connection>scm:git:ssh://git@github.com/hazendaz/logback.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/hazendaz/logback.git</developerConnection>
+    <url>https://github.com/hazendaz/logback</url>
+    <tag>HEAD</tag>
   </scm>
 
   <modules>

@@ -16,6 +16,13 @@
   <name>Logback Classic Module</name>
   <description>logback-classic module</description>
 
+  <scm>
+    <connection>scm:git:ssh://git@github.com/hazendaz/logback.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/hazendaz/logback.git</developerConnection>
+    <url>https://github.com/hazendaz/logback</url>
+    <tag>HEAD</tag>
+  </scm>
+
   <repositories>
     <repository>
       <!-- Required for ojdbc -->

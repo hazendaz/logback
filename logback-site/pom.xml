@@ -17,6 +17,13 @@
 
   <inceptionYear>1999</inceptionYear>
 
+  <scm>
+    <connection>scm:git:ssh://git@github.com/hazendaz/logback.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/hazendaz/logback.git</developerConnection>
+    <url>https://github.com/hazendaz/logback</url>
+    <tag>HEAD</tag>
+  </scm>
+
   <build>
     <resources>
       <resource>
