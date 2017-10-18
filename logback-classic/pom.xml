@@ -315,8 +315,8 @@
               <target>
                 <property name="currentVersion" value="${project.version}"/>
                 <property name="slf4j.version" value="${slf4j.version}"/>
-                <property name="basedir" value="${basedir}"/>
-                <ant antfile="${basedir}/osgi-build.xml"/>
+                <property name="basedir" value="${project.basedir}"/>
+                <ant antfile="${project.basedir}/osgi-build.xml"/>
               </target>
             </configuration>
             <goals>
@@ -330,7 +330,7 @@
             <configuration>
               <target>
                 <property name="slf4j.version" value="${slf4j.version}"/>
-                <ant antfile="${basedir}/integration.xml"/>
+                <ant antfile="${project.basedir}/integration.xml"/>
               </target>
             </configuration>
             <goals>
