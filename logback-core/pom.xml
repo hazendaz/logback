@@ -25,7 +25,7 @@
 
   <dependencies>
     <dependency>
-       <groupId>org.codehaus.janino</groupId>
+      <groupId>org.codehaus.janino</groupId>
       <artifactId>janino</artifactId>
       <scope>compile</scope>
       <optional>true</optional>
@@ -36,8 +36,8 @@
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>javax.mail</groupId>
-      <artifactId>mail</artifactId>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>javax.mail</artifactId>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
