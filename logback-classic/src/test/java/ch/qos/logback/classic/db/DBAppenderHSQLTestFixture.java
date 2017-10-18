@@ -61,13 +61,6 @@ public class DBAppenderHSQLTestFixture {
 
         }
 
-        // try {
-        // Class.forName(DRIVER_CLASS);
-        // } catch (Exception e) {
-        // e.printStackTrace();
-        // System.out.println(this + ".setUp() error: " + e.getMessage());
-        // }
-        // Thread.yield();
         System.out.println(server.getState());
 
         int waitCount = 0;

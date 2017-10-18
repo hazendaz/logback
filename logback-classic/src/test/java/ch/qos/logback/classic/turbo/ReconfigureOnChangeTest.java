@@ -90,7 +90,7 @@ public class ReconfigureOnChangeTest {
     int expectedResets = 2;
 
     @BeforeClass
-    static public void classSetup() {
+    public static void classSetup() {
         FileTestUtil.makeTestOutputDir();
     }
 

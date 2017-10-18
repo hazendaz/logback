@@ -25,7 +25,7 @@ import ch.qos.logback.classic.control.ControlLoggerContext;
 public class CLCTest extends TestCase {
     ControlLoggerContext clc;
 
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         clc = new ControlLoggerContext();
     }
 

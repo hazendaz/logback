@@ -81,7 +81,7 @@ public class ReconfigureOnChangeTaskTest {
     StatusChecker statusChecker = new StatusChecker(loggerContext);
 
     @BeforeClass
-    static public void classSetup() {
+    public static void classSetup() {
         FileTestUtil.makeTestOutputDir();
     }
 
