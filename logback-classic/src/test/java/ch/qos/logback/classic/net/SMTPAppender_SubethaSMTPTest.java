@@ -29,6 +29,7 @@ import javax.mail.internet.MimeMultipart;
 
 import org.dom4j.io.SAXReader;
 import org.junit.*;
+import org.mockito.Mock;
 import org.subethamail.smtp.AuthenticationHandler;
 import org.subethamail.smtp.AuthenticationHandlerFactory;
 import org.subethamail.smtp.MessageHandlerFactory;
@@ -59,6 +60,7 @@ public class SMTPAppender_SubethaSMTPTest {
     static int DIFF = 1024 + new Random().nextInt(30000);
     static Wiser WISER;
 
+    @Mock
     SMTPServer smtpServer;
     SMTPAppender smtpAppender;
     LoggerContext loggerContext = new LoggerContext();
