@@ -67,7 +67,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <!-- Dependencies -->
-    <junit.version>4.12</junit.version>
+    <junit.version>4.12.1</junit.version>
     <javax.mail.version>1.6.0</javax.mail.version>
     <janino.version>3.0.7</janino.version>
     <groovy.version>2.4.6</groovy.version>
@@ -100,8 +100,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>

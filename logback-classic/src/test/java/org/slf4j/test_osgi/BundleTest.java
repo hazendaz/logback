@@ -30,12 +30,12 @@ public class BundleTest  {
     FelixHost felixHost = new FelixHost(fel, mbl);
 
     @Before
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         felixHost.doLaunch();
     }
 
     @After
-    protected void tearDown() throws Exception {
+    public void tearDown() throws Exception {
         felixHost.stop();
     }
 

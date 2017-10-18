@@ -16,6 +16,7 @@ package ch.qos.logback.classic.pattern;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.MDC;
@@ -34,7 +35,6 @@ import ch.qos.logback.core.pattern.DynamicConverter;
 import ch.qos.logback.core.pattern.FormatInfo;
 
 import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
 
 public class ConverterTest {
 
@@ -316,7 +316,7 @@ public class ConverterTest {
 
             String expected = "Caller+4\t at java.lang.reflect.Method.invoke(";
             String actual = buf.toString().substring(0, expected.length());
-            assertThat(actual, is(expected));
+            Assertions.assertThat(actual).isEqualTo(expected);
         }
     }
 

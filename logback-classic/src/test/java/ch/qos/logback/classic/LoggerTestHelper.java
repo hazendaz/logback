@@ -19,18 +19,15 @@ import static org.junit.Assert.assertNull;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
-import org.junit.Test;
 
 public class LoggerTestHelper {
 
-    @Test
-    static void assertNameEquals(Logger logger, String name) {
+    public static void assertNameEquals(Logger logger, String name) {
         assertNotNull(logger);
         assertEquals(name, logger.getName());
     }
 
-    @Test
-    static void assertLevels(Level level, Logger logger, Level effectiveLevel) {
+    public static void assertLevels(Level level, Logger logger, Level effectiveLevel) {
         if (level == null) {
             assertNull(logger.getLevel());
         } else {

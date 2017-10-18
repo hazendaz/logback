@@ -150,6 +150,12 @@
       <artifactId>integration</artifactId>
       <version>${slf4j.version}</version>
       <scope>test</scope>
+      <exclusions>
+          <exclusion>
+              <groupId>junit</groupId>
+              <artifactId>junit</artifactId>
+          </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -201,6 +207,12 @@
       <artifactId>mockito-core</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- Until we can fix groovy -->
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <version>1.3</version>
+    </dependency>
 
   </dependencies>
 
@@ -236,13 +248,6 @@
                   <groupId>org.slf4j</groupId>
                   <artifactId>slf4j-api</artifactId>
                   <version>${slf4j.version}</version>
-                  <overWrite>false</overWrite>
-                  <outputDirectory>${project.basedir}/lib</outputDirectory>
-                </artifactItem>
-                <artifactItem>
-                  <groupId>org.hamcrest</groupId>
-                  <artifactId>hamcrest-core</artifactId>
-                  <version>1.3</version>
                   <overWrite>false</overWrite>
                   <outputDirectory>${project.basedir}/lib</outputDirectory>
                 </artifactItem>
@@ -305,8 +310,8 @@
             <version>1.9.9</version>
           </dependency>
           <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
             <version>${junit.version}</version>
           </dependency>
         </dependencies>
