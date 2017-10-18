@@ -13,14 +13,18 @@
  */
 package ch.qos.logback.access.net;
 
+import static org.junit.Assert.fail;
+
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
+import org.junit.After;
+import org.junit.Before;
+
 import ch.qos.logback.access.spi.IAccessEvent;
-import org.junit.TestCase;
 import ch.qos.logback.access.dummy.DummyAccessEventBuilder;
 
-public class SerializationPerfTest extends TestCase {
+public class SerializationPerfTest {
 
     ObjectOutputStream oos;
 
@@ -29,14 +33,14 @@ public class SerializationPerfTest extends TestCase {
     int pauseFrequency = 10;
     long pauseLengthInMillis = 20;
 
+    @Before
     public void setUp() throws Exception {
-        super.setUp();
         oos = new ObjectOutputStream(new NOPOutputStream());
 
     }
 
+    @After
     public void tearDown() throws Exception {
-        super.tearDown();
         oos.close();
         oos = null;
     }

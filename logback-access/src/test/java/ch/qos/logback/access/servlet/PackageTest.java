@@ -13,12 +13,11 @@
  */
 package ch.qos.logback.access.servlet;
 
-import org.junit.TestCase;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ TeeFilterTest.class })
-public class PackageTest extends TestCase {
+public class PackageTest {
 }

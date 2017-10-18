@@ -13,13 +13,11 @@
  */
 package ch.qos.logback.access.net;
 
-import org.junit.TestCase;
-
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ URLEvaluatorTest.class })
-public class PackageTest extends TestCase {
+public class PackageTest {
 }
