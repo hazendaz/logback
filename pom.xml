@@ -57,9 +57,16 @@
   </modules>
 
   <properties>
+    <!-- Maven settings for java 7 -->
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+    <signature.artifact>java17</signature.artifact>
+    <signature.version>1.0</signature.version>
+
+    <!-- Utf8 source encoding -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!-- Dependencies -->
     <junit.version>4.12</junit.version>
     <javax.mail.version>1.6.0</javax.mail.version>
     <janino.version>3.0.7</janino.version>
@@ -75,10 +82,6 @@
     <javadoc.plugin.version>2.10.4</javadoc.plugin.version>
     <cobertura.maven.plugin.version>2.7</cobertura.maven.plugin.version>
     <maven-license-plugin.version>3.0</maven-license-plugin.version>
-
-    <!-- Signature Settings -->
-    <signature.artifact>java17</signature.artifact>
-    <signature.version>1.0</signature.version>
   </properties>
 
   <developers>
