@@ -183,6 +183,10 @@
             <groupId>javax.activation</groupId>
             <artifactId>activation</artifactId>
         </exclusion>
+        <exclusion>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+        </exclusion>
       </exclusions>
     </dependency>
     <dependency>
