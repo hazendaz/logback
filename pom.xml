@@ -73,7 +73,7 @@
     <tomcat.version>8.5.23</tomcat.version>
     <jetty.version>8.2.0.v20160908</jetty.version>
     <!--<jetty.version>9.2.9.v20150224</jetty.version>-->
-    <jansi.version>1.14</jansi.version>
+    <jansi.version>1.16</jansi.version>
     <javadoc.plugin.version>2.10.4</javadoc.plugin.version>
     <cobertura.maven.plugin.version>2.7</cobertura.maven.plugin.version>
     <maven-license-plugin.version>3.0</maven-license-plugin.version>
