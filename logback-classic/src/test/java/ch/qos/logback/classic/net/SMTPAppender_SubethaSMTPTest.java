@@ -18,6 +18,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
+import java.net.InetSocketAddress;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -30,6 +31,7 @@ import javax.mail.internet.MimeMultipart;
 import org.dom4j.io.SAXReader;
 import org.junit.*;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.subethamail.smtp.AuthenticationHandler;
 import org.subethamail.smtp.AuthenticationHandlerFactory;
 import org.subethamail.smtp.MessageHandlerFactory;
@@ -60,7 +62,6 @@ public class SMTPAppender_SubethaSMTPTest {
     static int DIFF = 1024 + new Random().nextInt(30000);
     static Wiser WISER;
 
-    @Mock
     SMTPServer smtpServer;
     SMTPAppender smtpAppender;
     LoggerContext loggerContext = new LoggerContext();
@@ -240,7 +241,8 @@ public class SMTPAppender_SubethaSMTPTest {
     @Test
     public void authenticated() throws Exception {
         MessageHandlerFactory mla = WISER.getServer().getMessageHandlerFactory();
-        smtpServer = new SMTPServer(mla);
+        smtpServer = Mockito.mock(SMTPServer.class);
+        smtpServer.setMessageHandlerFactory(mla);
         smtpServer.setAuthenticationHandlerFactory(new TrivialAuthHandlerFactory());
         smtpServer.start();
 
@@ -272,7 +274,8 @@ public class SMTPAppender_SubethaSMTPTest {
     @Test
     public void authenticatedSSL() throws Exception {
         MessageHandlerFactory mla = WISER.getServer().getMessageHandlerFactory();
-        smtpServer = new SMTPServer(mla);
+        smtpServer = Mockito.mock(SMTPServer.class);
+        smtpServer.setMessageHandlerFactory(mla);
         smtpServer.setAuthenticationHandlerFactory(new TrivialAuthHandlerFactory());
         smtpServer.start();
 
