@@ -1,4 +1,7 @@
 language: java
-notifications:
-  email:
-      - notification@qos.ch
+sudo: false
+
+jdk:
+  - oraclejdk8
+  - openjdk8
+  - openjdk7
