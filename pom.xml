@@ -62,7 +62,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>4.12</junit.version>
     <javax.mail.version>1.4.1</javax.mail.version>
-    <janino.version>3.0.6</janino.version>
+    <janino.version>3.0.7</janino.version>
     <groovy.version>2.4.6</groovy.version>
     <!-- slf4j.version property is used below, in
          logback-classic/pom.xml and in setClasspath.cmd 
