@@ -56,8 +56,8 @@
     </dependency>
 
     <dependency>
-      <groupId>ch.qos.cal10n.plugins</groupId>
-      <artifactId>maven-cal10n-plugin</artifactId>
+      <groupId>ch.qos.cal10n</groupId>
+      <artifactId>cal10n-api</artifactId>
       <version>${cal10n.version}</version>
       <scope>test</scope>
     </dependency>
